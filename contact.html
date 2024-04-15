@@ -20,21 +20,34 @@
 </head>
 
 <body>
-    <header>
+    <nav>
         <img src="logo.png" class="logo" alt="LOGO">
         <ul>
+            <li class="kontakt"> KONTAKT</li>
             <li class="aktualnosci">AKTUALNOŚCI</li>
             <li class="kalendarz">KALENDARZ</li>
+
         </ul>
-    </header>
+    </nav>
+
+    <h2>Formularz konatkowy</h2>
 
     <div class="formularz">
-        <input name="imie" placeholder='Wpisz swoje imię'>
-        <input type="email" name="ad_email" placeholder="Wpisz adres e-mail">
-        <textarea name="uwaga" placeholder="Miejsce na Twoją wiadomość"></textarea>
+        <input type="text" name="imie" placeholder='Wpisz swoje imię' required>
+
+        <input type="tel" placeholder="Podaj swój numer telefonu">
+
+        <input type="email" name="ad_email" id="ad_emial" placeholder="Wpisz adres e-mail" required>
+        <label for="ad_emial" class="label_email">*Na ten adres odeślemy naszą odpowiedź</label>
+
+        <textarea name="uwaga" placeholder="Miejsce na Twoją wiadomość" required></textarea>
+
+        <input type="file">
+
         <input type="checkbox" name="rodo" id="rodo" class="rodo">
-        <label for="rodo">Akceptuję politykę prywatności i wyrażam zgodę na przetwarzanie moich danych osobowych</label>
-        <button name="wyslij" class="wyslij">Wyślij</button>
+        <label for="rodo">Akceptuję politykę prywatności</label>
+
+        <button type="submit" name="wyslij" class="wyslij">Wyślij</button>
     </div>
 
 

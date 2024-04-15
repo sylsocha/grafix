@@ -1,4 +1,3 @@
-/* Month view 3 */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +11,7 @@ body{
     font-family: "Urbanist", sans-serif;
 }
 
-header{
+nav{
     height: 100px;
     background-color: #3868A6;
 
@@ -36,14 +35,12 @@ li{
     background-color: #3868A6;
     color: #FFFFFF;
     display: inline;
-    width: 200px;
     height: 30px;
     font-weight: 400;
-    font-size: 20px;
     text-align: center;
-    margin-left: 1%;
+    margin-top: 35px;
+    margin-left: 2%;
     position: absolute;
-    top: 35px;
 }
 
 .kalendarz{
@@ -54,20 +51,21 @@ li{
     left: 70%;
 }
 
-footer{
-    height: 100px;
-    background-colory: #D7D7D9;
+.kontakt{
+    left: 60%
 }
 
+footer{
+    margin-top: 60%;
+    height: 200px;
+    background-color: #D7D7D9;
+}
 
 .formularz{
-    position: absolute;
-    background-image: url("front-view-back-school-concept-with-copy-space.jpg");
-    background-color: #cccccc;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin: 2% auto 4% auto;
+    width: 50%;
+    border: 2px solid #3868A6;
+    border-radius: 10px;
 }
 
 input,
@@ -79,35 +77,86 @@ textarea,
     font-family: "Urbanist", sans-serif;
     font-size: 100%;
     font-weight: 500;
-    padding: 0.5%;
-    border: 2px solid #3868A6;
+    padding: 0.5% 1%;
+    border: 2px solid #D7D7D9;
     border-radius: 10px;
-    width: 40%;
+    width: 75%;
+}
+
+
+.label_email{
+    display: block;
+    margin: -3% auto 4% auto;
+    width: 75%;
 }
 
 .rodo{
     display: inline;
     width: 3%;
+    margin-left: 15%;
+    margin-top: -2%;
 }
 
 .wyslij{
     width: 20%;
-    margin-left: 70%;
+    margin-right: 20%;
 }
 
 .wyslij:hover{
     background-color: #3868A6;
+    border-color: #3868A6;
     color: #FFFFFF;
 }
+
+h2{
+    font-family: "Major Mono Display", monospace;
+    font-size: 200%;
+    font-weight: 700;
+    color: #3868A6;
+    margin: 3% auto 0 auto;
+    text-align: center;
+}
+
+
+
+
 
 
 h1{
-
     font-family: "Major Mono Display", monospace;
+    font-size: 180%;
+    padding: 1%;
     color: #FFFFFF;
     background: rgba(56, 104, 166, 0.4);
     border-radius: 10px;
+    text-align: center;
+    margin: 27% auto;
+    width: 1000px;
+    align-self: flex-start;
 }
+
+p{
+    background: none;
+    width: 35%;
+    height: 60%;
+    position: absolute;
+    transform: translate(100%,70%);
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-shrink: inherit;
+    flex-wrap: wrap;
+    order: initial;
+    align-items: center;
+
+    background-image: url("tlo_do_formularza.png");
+    height: 1280px;
+}
+
+
+
 
 
 
