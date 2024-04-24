@@ -7,14 +7,12 @@
 
 
 body{
-    position: relative;
     font-family: "Urbanist", sans-serif;
 }
 
 nav{
     height: 100px;
     background-color: #3868A6;
-
 }
 
 .logo{
@@ -56,7 +54,6 @@ li{
 }
 
 footer{
-    margin-top: 60%;
     height: 200px;
     background-color: #D7D7D9;
 }
@@ -118,31 +115,61 @@ h2{
 }
 
 
+@media only screen and (max-width: 1920px){
+    h1{
+        font-family: "Major Mono Display", monospace;
+        font-size: 200%;
+        padding: 1%;
+        color: #FFFFFF;
+        background: rgba(56, 104, 166, 0.4);
+        border-radius: 10px;
+        text-align: center;
+        margin: 30% auto 40% auto;
+        width: 60%;
+        align-self: flex-start;
+    }
 
+    p{
+        background: none;
+        width: 35%;
+        font-size: 130%;
+        position: absolute;
+        margin-top: 15%;
+        transform: translate(100%,70%);
+        text-align: center;
+    }
 
-
-
-h1{
-    font-family: "Major Mono Display", monospace;
-    font-size: 180%;
-    padding: 1%;
-    color: #FFFFFF;
-    background: rgba(56, 104, 166, 0.4);
-    border-radius: 10px;
-    text-align: center;
-    margin: 27% auto;
-    width: 1000px;
-    align-self: flex-start;
 }
 
-p{
-    background: none;
-    width: 35%;
-    height: 60%;
-    position: absolute;
-    transform: translate(100%,70%);
-    text-align: center;
+
+
+@media only screen and (max-width: 600px){
+    h1{
+        font-family: "Major Mono Display", monospace;
+        font-size: 130%;
+        padding: 1%;
+        color: #FFFFFF;
+        background: rgba(56, 104, 166, 0.4);
+        border-radius: 10px;
+        text-align: center;
+        margin: 30% auto 40% auto;
+        width: 70%;
+        align-self: flex-start;
+    }
+
+    p{
+        background: none;
+        width: 35%;
+        font-size: 100%;
+        position: absolute;
+        margin-top: 15%;
+        transform: translate(100%,70%);
+        text-align: center;
+    }
+
 }
+
+
 
 .container{
     display: flex;
@@ -150,9 +177,9 @@ p{
     flex-wrap: wrap;
     order: initial;
     align-items: center;
-
-    background-image: url("tlo_do_formularza.png");
-    height: 1280px;
+    background-image: url("potos/tlo_do_formularza.png");
+    background-position: center;
+    background-size: cover;
 }
 
 
