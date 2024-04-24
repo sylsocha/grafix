@@ -1,0 +1,55 @@
+.formularz{
+    margin: 2% auto 4% auto;
+    width: 50%;
+    border: 2px solid #3868A6;
+    border-radius: 10px;
+}
+
+input,
+textarea,
+.wyslij,
+.rodo{
+    display: block;
+    margin: 4% auto;
+    font-family: "Urbanist", sans-serif;
+    font-size: 100%;
+    font-weight: 500;
+    padding: 0.5% 1%;
+    border: 2px solid #D7D7D9;
+    border-radius: 10px;
+    width: 75%;
+}
+
+
+.label_email{
+    display: block;
+    margin: -3% auto 4% auto;
+    width: 75%;
+}
+
+.rodo{
+    display: inline;
+    width: 3%;
+    margin-left: 15%;
+    margin-top: -2%;
+}
+
+.wyslij{
+    width: 20%;
+    margin-right: 20%;
+}
+
+.wyslij:hover{
+    background-color: #3868A6;
+    border-color: #3868A6;
+    color: #FFFFFF;
+}
+
+h2{
+    font-family: "Major Mono Display", monospace;
+    font-size: 200%;
+    font-weight: 700;
+    color: #3868A6;
+    margin: 3% auto 0 auto;
+    text-align: center;
+}

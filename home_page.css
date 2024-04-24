@@ -15,106 +15,41 @@ nav{
     background-color: #3868A6;
 }
 
+
 .logo{
-    margin-left: 3%;
+    margin: 10px 3%;
     position: absolute;
-    top: 10px;
     height: 80px;
     width: auto;
 }
 
-ul{
-    margin-left: 50%;
+nav ul{
+    display: flex;
+    margin: 35px 60%;
     background-color: #3868A6;
+    position: absolute;
 }
 
 
-li{
+nav li{
     background-color: #3868A6;
-    display: inline;
     height: 30px;
+    display: inline;
     font-weight: 400;
     text-align: center;
-    margin-top: 35px;
-    margin-left: 2%;
-    position: absolute;
+    margin-left: 20%;
+    text-decoration: none;
 }
 a{
     background-color: #3868A6;
     color: #FFFFFF;
 }
 
-.kalendarz{
-    left: 80%;
-}
 
-.aktualnosci{
-    left: 70%;
-}
-
-.kontakt{
-    left: 60%
-}
 
 footer{
     height: 200px;
     background-color: #D7D7D9;
-}
-
-.formularz{
-    margin: 2% auto 4% auto;
-    width: 50%;
-    border: 2px solid #3868A6;
-    border-radius: 10px;
-}
-
-input,
-textarea,
-.wyslij,
-.rodo{
-    display: block;
-    margin: 4% auto;
-    font-family: "Urbanist", sans-serif;
-    font-size: 100%;
-    font-weight: 500;
-    padding: 0.5% 1%;
-    border: 2px solid #D7D7D9;
-    border-radius: 10px;
-    width: 75%;
-}
-
-
-.label_email{
-    display: block;
-    margin: -3% auto 4% auto;
-    width: 75%;
-}
-
-.rodo{
-    display: inline;
-    width: 3%;
-    margin-left: 15%;
-    margin-top: -2%;
-}
-
-.wyslij{
-    width: 20%;
-    margin-right: 20%;
-}
-
-.wyslij:hover{
-    background-color: #3868A6;
-    border-color: #3868A6;
-    color: #FFFFFF;
-}
-
-h2{
-    font-family: "Major Mono Display", monospace;
-    font-size: 200%;
-    font-weight: 700;
-    color: #3868A6;
-    margin: 3% auto 0 auto;
-    text-align: center;
 }
 
 
@@ -173,7 +108,6 @@ h2{
 }
 
 
-
 .container{
     display: flex;
     flex-shrink: inherit;
@@ -184,8 +118,6 @@ h2{
     background-position: center;
     background-size: cover;
 }
-
-
 
 
 
