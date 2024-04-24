@@ -31,7 +31,6 @@ ul{
 
 li{
     background-color: #3868A6;
-    color: #FFFFFF;
     display: inline;
     height: 30px;
     font-weight: 400;
@@ -39,6 +38,10 @@ li{
     margin-top: 35px;
     margin-left: 2%;
     position: absolute;
+}
+a{
+    background-color: #3868A6;
+    color: #FFFFFF;
 }
 
 .kalendarz{
