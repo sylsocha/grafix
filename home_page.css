@@ -25,7 +25,7 @@ nav{
 
 nav ul{
     display: flex;
-    margin: 35px 60%;
+    margin: 35px 50%;
     background-color: #3868A6;
     position: absolute;
 }
@@ -40,12 +40,11 @@ nav li{
     margin-left: 20%;
     text-decoration: none;
 }
+
 a{
     background-color: #3868A6;
     color: #FFFFFF;
 }
-
-
 
 footer{
     height: 200px;
@@ -67,7 +66,7 @@ footer{
         align-self: flex-start;
     }
 
-    p{
+    #hero{
         background: none;
         width: 35%;
         font-size: 130%;
@@ -95,7 +94,7 @@ footer{
         align-self: flex-start;
     }
 
-    p{
+    #hero{
         background: none;
         width: 35%;
         font-size: 100%;
@@ -121,7 +120,7 @@ footer{
         align-self: flex-start;
     }
 
-    p{
+    #hero{
         background: none;
         width: 35%;
         font-size: 90%;
@@ -133,7 +132,7 @@ footer{
 }
 
 
-.container{
+.hero{
     display: flex;
     flex-shrink: inherit;
     flex-wrap: wrap;
@@ -144,7 +143,15 @@ footer{
     background-size: cover;
 }
 
-
+#o_nas{
+    background-color: #3868A6;
+    border-radius: 10px;
+    color: #FFFFFF;
+    width:40%;
+    text-align: center;
+    padding: 5% 2%;
+    margin: 5% auto 10% auto;
+}
 
 .major-mono{
     font-family: "Major Mono Display", monospace;
