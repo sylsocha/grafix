@@ -73,7 +73,7 @@ footer{
         font-size: 130%;
         position: absolute;
         margin-top: 15%;
-        transform: translate(100%,70%);
+        transform: translate(100%,80%);
         text-align: center;
     }
 
@@ -81,7 +81,7 @@ footer{
 
 
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 860px){
     h1{
         font-family: "Major Mono Display", monospace;
         font-size: 130%;
@@ -102,6 +102,31 @@ footer{
         position: absolute;
         margin-top: 15%;
         transform: translate(100%,70%);
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 500px){
+    h1{
+        font-family: "Major Mono Display", monospace;
+        font-size: 115%;
+        padding: 1%;
+        color: #FFFFFF;
+        background: rgba(56, 104, 166, 0.4);
+        border-radius: 10px;
+        text-align: center;
+        margin: 30% auto 40% auto;
+        width: 70%;
+        align-self: flex-start;
+    }
+
+    p{
+        background: none;
+        width: 35%;
+        font-size: 90%;
+        position: absolute;
+        transform: translate(100%,65%);
         text-align: center;
     }
 
