@@ -51,111 +51,123 @@ footer{
     background-color: #D7D7D9;
 }
 
+h1{
+    font-family: "Major Mono Display", monospace;
+    font-size: 180%;
+    padding: 1%;
+    color: #FFFFFF;
+    background: rgba(56, 104, 166, 0.4);
+    border-radius: 30px;
+    text-align: center;
+    margin: 5% auto 23% auto;
+    width: 60%;
+    align-self: flex-start;
+}
+
+#hero{
+    background: none;
+    width: 35%;
+    font-size: 130%;
+    margin-top: 5%;
+    position: absolute;
+    transform: translate(100%,80%);
+    text-align: center;
+}
+
+#dalej{
+    padding: 1%;
+    background-color: #3868A6;
+    border-color: #3868A6;
+    color: #FFFFFF;
+    margin-top: 15%;
+    border-radius: 30px;
+    font-family: "Urbanist", sans-serif;
+    font-size: 90%;
+    text-transform: uppercase;
+    position: absolute;
+    width: 15%;
+    transform: translate(300%,100%);
+}
+
+#o_nas{
+    background-color: #3868A6;
+    border-radius: 30px;
+    color: #FFFFFF;
+    width:60%;
+    font-size: 130%;
+    text-align: center;
+    padding: 5% 2%;
+    margin: 5% auto 10% auto;
+}
 
 @media only screen and (max-width: 1920px){
     h1{
-        font-family: "Major Mono Display", monospace;
         font-size: 180%;
-        padding: 1%;
-        color: #FFFFFF;
-        background: rgba(56, 104, 166, 0.4);
-        border-radius: 10px;
-        text-align: center;
         margin: 5% auto 23% auto;
         width: 60%;
-        align-self: flex-start;
     }
 
     #hero{
-        background: none;
         width: 35%;
         font-size: 130%;
-        margin-top: 10%;
-        position: absolute;
         transform: translate(100%,80%);
-        text-align: center;
+    }
+
+    #dalej{
+        font-size: 90%;
     }
 
     #o_nas{
-        background-color: #3868A6;
-        border-radius: 10px;
-        color: #FFFFFF;
         width:60%;
         font-size: 130%;
-        text-align: center;
-        padding: 5% 2%;
-        margin: 5% auto 10% auto;
     }
 }
 
 
 @media only screen and (max-width: 1045px){
     h1{
-        font-family: "Major Mono Display", monospace;
         font-size: 140%;
-        padding: 1%;
-        color: #FFFFFF;
-        background: rgba(56, 104, 166, 0.4);
-        border-radius: 10px;
-        text-align: center;
         margin: 3% auto 23% auto;
         width: 70%;
-        align-self: flex-start;
     }
 
     #hero{
-        background: none;
         width: 35%;
         font-size: 110%;
-        position: absolute;
-        margin-top: 5%;
         transform: translate(100%,70%);
-        text-align: center;
+    }
+
+    #dalej{
+        font-size: 80%;
     }
 
     #o_nas{
-        background-color: #3868A6;
-        border-radius: 10px;
-        color: #00FF00;
         width:60%;
         font-size: 100%;
-        text-align: center;
-        padding: 5% 2%;
         margin: 5% auto 10% auto;
     }
 }
 
 @media only screen and (max-width: 768px){
     h1{
-        font-family: "Major Mono Display", monospace;
         font-size: 100%;
-        padding: 1%;
-        color: #FFFFFF;
-        background: rgba(56, 104, 166, 0.4);
-        border-radius: 10px;
-        text-align: center;
-        margin: 5% auto 30% auto;
+        margin: 5% auto 35% auto;
         width: 70%;
-        align-self: flex-start;
     }
 
     #hero{
-        background: none;
         width: 35%;
         font-size: 80%;
-        position: absolute;
         transform: translate(100%,50%);
-        text-align: center;
+    }
+
+    #dalej{
+        font-size: 70%;
     }
 
     #o_nas{
-        background-color: #3868A6;
-        border-radius: 10px;
         font-size: 80%;
-        color: #FF0000;
         width:80%;
-        text-align: center;
-        padding: 5% 2%;
         margin: 5% auto 10% auto;
     }
 }
@@ -164,15 +176,11 @@ footer{
 @media only screen and (max-device-width: 600px){
     nav{
         height: 120px;
-        background-color: #3868A6;
     }
-
 
     .logo{
         margin: 20px 3%;
-        position: absolute;
         height: 80px;
-        width: auto;
     }
 
     nav ul{
@@ -180,35 +188,27 @@ footer{
     }
 
     h1{
-        font-family: "Major Mono Display", monospace;
         font-size: 250%;
-        padding: 1%;
-        color: #FFFFFF;
-        background: rgba(56, 104, 166, 0.4);
-        border-radius: 10px;
-        text-align: center;
         margin: 5% auto 30% auto;
         width: 70%;
-        align-self: flex-start;
     }
 
     #hero{
-        background: none;
         width: 35%;
         font-size: 180%;
-        position: absolute;
         transform: translate(100%,50%);
-        text-align: center;
+    }
+
+    #dalej{
+        margin-top: 25%;
+        font-size: 110%;
+        width: 15%;
+        transform: translate(300%,100%);
     }
 
     #o_nas{
-        background-color: #3868A6;
-        border-radius: 10px;
         font-size: 150%;
-        color: #FF00FF;
         width:80%;
-        text-align: center;
-        padding: 5% 2%;
         margin: 5% auto 10% auto;
     }
 }
