@@ -81,6 +81,7 @@ footer{
         border-radius: 10px;
         color: #FFFFFF;
         width:40%;
+        font-size: 130%;
         text-align: center;
         padding: 5% 2%;
         margin: 5% auto 10% auto;
@@ -116,8 +117,9 @@ footer{
     #o_nas{
         background-color: #3868A6;
         border-radius: 10px;
-        color: #FFFFFF;
+        color: #FFFF00;
         width:60%;
+        font-size: 100%;
         text-align: center;
         padding: 5% 2%;
         margin: 5% auto 10% auto;
@@ -151,7 +153,7 @@ footer{
         background-color: #3868A6;
         border-radius: 10px;
         font-size: 80%;
-        color: #FFFFFF;
+        color: #FF0000;
         width:80%;
         text-align: center;
         padding: 5% 2%;
