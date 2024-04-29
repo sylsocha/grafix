@@ -22,13 +22,16 @@ nav{
     width: auto;
 }
 
-nav ul{
+.menu{
     display: flex;
     margin: 30px 50%;
     background-color: #3868A6;
     position: absolute;
 }
 
+.hamburger{
+    display: none;
+}
 
 nav li{
     background-color: #3868A6;
@@ -185,21 +188,36 @@ h1{
         height: 80px;
     }
 
-    nav ul{
-        margin-top: 40px;
+    .menu{
+        display: none;
+    }
+
+    .hamburger{
+        display: inherit;
+        height: 80px;
+        background: #3868A6;
+        position: absolute;
+        margin: 20px 0 0 85%;
+    }
+
+    .hamburger:focus{
+
     }
 
     h1{
         font-size: 350%;
         margin: 20% 27% 100% 3%;
-        width: 70%;
+        width: 63%;
+        padding: 3%;
+        text-align: left;
     }
 
     #hero{
         width: 30%;
         font-size: 230%;
         margin-top: 30%;
-        transform: translate(235%,50%);
+        transform: translate(225%,50%);
+        text-align: right;
     }
 
     #dalej{
