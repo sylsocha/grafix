@@ -80,7 +80,7 @@ footer{
         background-color: #3868A6;
         border-radius: 10px;
         color: #FFFFFF;
-        width:40%;
+        width:60%;
         font-size: 130%;
         text-align: center;
         padding: 5% 2%;
@@ -90,16 +90,16 @@ footer{
 
 
 
-@media only screen and (max-width: 1045px) and (min-width: 901px){
+@media only screen and (max-width: 1045px){
     h1{
         font-family: "Major Mono Display", monospace;
-        font-size: 130%;
+        font-size: 140%;
         padding: 1%;
         color: #FFFFFF;
         background: rgba(56, 104, 166, 0.4);
         border-radius: 10px;
         text-align: center;
-        margin: 5% auto 23% auto;
+        margin: 3% auto 23% auto;
         width: 70%;
         align-self: flex-start;
     }
@@ -107,7 +107,7 @@ footer{
     #hero{
         background: none;
         width: 35%;
-        font-size: 100%;
+        font-size: 110%;
         position: absolute;
         margin-top: 5%;
         transform: translate(100%,70%);
@@ -126,7 +126,7 @@ footer{
     }
 }
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 768px){
     h1{
         font-family: "Major Mono Display", monospace;
         font-size: 100%;
