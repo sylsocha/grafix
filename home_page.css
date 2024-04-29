@@ -89,7 +89,6 @@ footer{
 }
 
 
-
 @media only screen and (max-width: 1045px){
     h1{
         font-family: "Major Mono Display", monospace;
@@ -161,6 +160,58 @@ footer{
     }
 }
 
+
+@media only screen and (max-device-width: 600px){
+    nav{
+        height: 120px;
+        background-color: #3868A6;
+    }
+
+
+    .logo{
+        margin: 10px 3%;
+        position: absolute;
+        height: 80px;
+        width: auto;
+    }
+
+    nav ul{
+        margin-top: 40px;
+    }
+
+    h1{
+        font-family: "Major Mono Display", monospace;
+        font-size: 200%;
+        padding: 1%;
+        color: #FFFFFF;
+        background: rgba(56, 104, 166, 0.4);
+        border-radius: 10px;
+        text-align: center;
+        margin: 5% auto 30% auto;
+        width: 70%;
+        align-self: flex-start;
+    }
+
+    #hero{
+        background: none;
+        width: 35%;
+        font-size: 150%;
+        position: absolute;
+        transform: translate(100%,50%);
+        text-align: center;
+    }
+
+    #o_nas{
+        background-color: #3868A6;
+        border-radius: 10px;
+        font-size: 150%;
+        color: #FF00FF;
+        width:80%;
+        text-align: center;
+        padding: 5% 2%;
+        margin: 5% auto 10% auto;
+    }
+}
 
 .hero{
     display: flex;
