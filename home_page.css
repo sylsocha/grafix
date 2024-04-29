@@ -76,6 +76,15 @@ footer{
         text-align: center;
     }
 
+    #o_nas{
+        background-color: #3868A6;
+        border-radius: 10px;
+        color: #FFFFFF;
+        width:40%;
+        text-align: center;
+        padding: 5% 2%;
+        margin: 5% auto 10% auto;
+    }
 }
 
 
@@ -104,6 +113,15 @@ footer{
         text-align: center;
     }
 
+    #o_nas{
+        background-color: #3868A6;
+        border-radius: 10px;
+        color: #FFFFFF;
+        width:60%;
+        text-align: center;
+        padding: 5% 2%;
+        margin: 5% auto 10% auto;
+    }
 }
 
 @media only screen and (max-width: 580px){
@@ -123,12 +141,22 @@ footer{
     #hero{
         background: none;
         width: 35%;
-        font-size: 70%;
+        font-size: 80%;
         position: absolute;
-        transform: translate(100%,65%);
+        transform: translate(100%,50%);
         text-align: center;
     }
 
+    #o_nas{
+        background-color: #3868A6;
+        border-radius: 10px;
+        font-size: 80%;
+        color: #FFFFFF;
+        width:80%;
+        text-align: center;
+        padding: 5% 2%;
+        margin: 5% auto 10% auto;
+    }
 }
 
 
@@ -141,16 +169,6 @@ footer{
     background-image: url("potos/home_page_backgroud.png");
     background-position: center;
     background-size: cover;
-}
-
-#o_nas{
-    background-color: #3868A6;
-    border-radius: 10px;
-    color: #FFFFFF;
-    width:40%;
-    text-align: center;
-    padding: 5% 2%;
-    margin: 5% auto 10% auto;
 }
 
 .major-mono{
