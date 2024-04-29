@@ -169,7 +169,7 @@ footer{
 
 
     .logo{
-        margin: 10px 3%;
+        margin: 20px 3%;
         position: absolute;
         height: 80px;
         width: auto;
@@ -181,7 +181,7 @@ footer{
 
     h1{
         font-family: "Major Mono Display", monospace;
-        font-size: 200%;
+        font-size: 250%;
         padding: 1%;
         color: #FFFFFF;
         background: rgba(56, 104, 166, 0.4);
@@ -195,7 +195,7 @@ footer{
     #hero{
         background: none;
         width: 35%;
-        font-size: 150%;
+        font-size: 180%;
         position: absolute;
         transform: translate(100%,50%);
         text-align: center;
