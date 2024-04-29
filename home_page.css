@@ -11,7 +11,7 @@ body{
 }
 
 nav{
-    height: 100px;
+    height: 80px;
     background-color: #3868A6;
 }
 
@@ -19,13 +19,13 @@ nav{
 .logo{
     margin: 10px 3%;
     position: absolute;
-    height: 80px;
+    height: 60px;
     width: auto;
 }
 
 nav ul{
     display: flex;
-    margin: 35px 50%;
+    margin: 30px 50%;
     background-color: #3868A6;
     position: absolute;
 }
@@ -55,13 +55,13 @@ footer{
 @media only screen and (max-width: 1920px){
     h1{
         font-family: "Major Mono Display", monospace;
-        font-size: 200%;
+        font-size: 180%;
         padding: 1%;
         color: #FFFFFF;
         background: rgba(56, 104, 166, 0.4);
         border-radius: 10px;
         text-align: center;
-        margin: 30% auto 40% auto;
+        margin: 5% auto 23% auto;
         width: 60%;
         align-self: flex-start;
     }
@@ -70,8 +70,8 @@ footer{
         background: none;
         width: 35%;
         font-size: 130%;
+        margin-top: 10%;
         position: absolute;
-        margin-top: 15%;
         transform: translate(100%,80%);
         text-align: center;
     }
@@ -80,7 +80,7 @@ footer{
 
 
 
-@media only screen and (max-width: 860px){
+@media only screen and (max-width: 1045px){
     h1{
         font-family: "Major Mono Display", monospace;
         font-size: 130%;
@@ -89,7 +89,7 @@ footer{
         background: rgba(56, 104, 166, 0.4);
         border-radius: 10px;
         text-align: center;
-        margin: 30% auto 40% auto;
+        margin: 5% auto 23% auto;
         width: 70%;
         align-self: flex-start;
     }
@@ -99,23 +99,23 @@ footer{
         width: 35%;
         font-size: 100%;
         position: absolute;
-        margin-top: 15%;
+        margin-top: 5%;
         transform: translate(100%,70%);
         text-align: center;
     }
 
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 580px){
     h1{
         font-family: "Major Mono Display", monospace;
-        font-size: 115%;
+        font-size: 100%;
         padding: 1%;
         color: #FFFFFF;
         background: rgba(56, 104, 166, 0.4);
         border-radius: 10px;
         text-align: center;
-        margin: 30% auto 40% auto;
+        margin: 5% auto 30% auto;
         width: 70%;
         align-self: flex-start;
     }
@@ -123,7 +123,7 @@ footer{
     #hero{
         background: none;
         width: 35%;
-        font-size: 90%;
+        font-size: 70%;
         position: absolute;
         transform: translate(100%,65%);
         text-align: center;
@@ -138,7 +138,7 @@ footer{
     flex-wrap: wrap;
     order: initial;
     align-items: center;
-    background-image: url("potos/tlo_do_formularza.png");
+    background-image: url("potos/home_page_backgroud.png");
     background-position: center;
     background-size: cover;
 }
