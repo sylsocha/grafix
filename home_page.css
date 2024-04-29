@@ -126,7 +126,7 @@ footer{
     }
 }
 
-@media only screen and (max-width: 580px){
+@media only screen and (max-width: 768px){
     h1{
         font-family: "Major Mono Display", monospace;
         font-size: 100%;
