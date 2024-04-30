@@ -75,10 +75,10 @@
     }
 
     #hero{
-        width: 30%;
+        width: 28%;
         font-size: 230%;
         margin-top: 30%;
-        transform: translate(225%,50%);
+        transform: translate(250%,50%);
         text-align: right;
     }
 
@@ -87,7 +87,7 @@
     }
 
     #o_nas{
-        font-size: 150%;
+        font-size: 180%;
         width:80%;
         margin: 5% auto 10% auto;
     }
@@ -110,14 +110,10 @@
     .wyslij,
     .rodo,
     .custom_file_upload{
-        display: block;
         margin: 10% auto;
-        font-family: "Urbanist", sans-serif;
         font-size: 210%;
         font-weight: 500;
-        padding: 2% 2%;
-        border: 2px solid #D7D7D9;
-        border-radius: 10px;
+        padding: 2%;
         width: 75%;
     }
 
@@ -149,7 +145,6 @@
         width: 40%;
         font-size: 180%;
         margin-top: 5%;
-        padding: 2%;
         border-color: #3868A6;
     }
 
@@ -160,11 +155,7 @@
     }
 
     h2{
-        font-family: "Major Mono Display", monospace;
         font-size: 350%;
-        font-weight: 700;
-        color: #3868A6;
         margin: 10% auto 0 auto;
-        text-align: center;
     }
 }
