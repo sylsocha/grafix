@@ -30,12 +30,14 @@
         width: 70px;
         background-color: #FFFFFF;
         border-radius: 10000px;
+        outline: none;
     }
 
     .hamburger input{
         appearance: none;
         outline: none;
         cursor: pointer;
+        border-color: #FFFFFF;
     }
 
     .hamburger:has(input:checked) + nav{
