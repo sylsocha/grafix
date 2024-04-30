@@ -91,6 +91,7 @@ h1{
     font-family: "Urbanist", sans-serif;
     text-transform: uppercase;
     position: absolute;
+    cursor: pointer;
 }
 
 #o_nas{
@@ -219,13 +220,13 @@ h1{
     }
 
     .hamburger:has(input:checked) + nav{
-        transform: translate(300%, 119px);
+        transform: translate(257%, 119px);
         flex-direction: column;
         margin: 0;
         background-color: #3868A6;
         position: absolute;
-        width: 25%;
-        font-size: 150%;
+        width: 28%;
+        font-size: 180%;
         padding: 3% 0 3% 0;
         border-bottom-left-radius: 30px;
     }
@@ -235,8 +236,7 @@ h1{
         height: 30px;
         font-weight: 400;
         text-align: right;
-        margin: 0 10% 15% 0;
-        text-decoration: none;
+        margin: 5% 15% 20% 0;
     }
     a{
         background: none;
