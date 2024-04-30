@@ -115,7 +115,7 @@
         font-family: "Urbanist", sans-serif;
         font-size: 210%;
         font-weight: 500;
-        padding: 1% 2%;
+        padding: 2% 2%;
         border: 2px solid #D7D7D9;
         border-radius: 10px;
         width: 75%;
@@ -128,11 +128,7 @@
     .custom_file_upload{
         width: 40%;
         font-size: 210%;
-        margin-bottom: 10%;
-    }
-
-    .rodo{
-        height: 25px;
+        margin-bottom: 15%;
     }
 
     .label_email{
@@ -142,17 +138,17 @@
     }
 
     .rodo{
+        height: 25px;
         display: inline;
         width: 3%;
-        margin-left: 15%;
-        margin-top: -2%;
+        margin-left: 14%;
+        margin-top: -5%;
     }
 
     .wyslij{
+        width: 40%;
         font-size: 180%;
-        width: 20%;
-        margin-right: 20%;
-        margin-top: 10%;
+        margin-top: 5%;
         padding: 2%;
         border-color: #3868A6;
     }
