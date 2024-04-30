@@ -219,7 +219,7 @@ h1{
     }
 
     .hamburger:has(input:checked) + nav{
-        transform: translate(300%, 120px);
+        transform: translate(300%, 119px);
         flex-direction: column;
         margin: 0;
         background-color: #3868A6;
