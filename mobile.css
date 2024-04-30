@@ -108,7 +108,8 @@
     input,
     textarea,
     .wyslij,
-    .rodo{
+    .rodo
+    .custom_file_upload{
         display: block;
         margin: 10% auto;
         font-family: "Urbanist", sans-serif;
@@ -122,6 +123,16 @@
 
     label{
         font-size: 170%;
+    }
+
+    .custom_file_upload{
+        width: 40%;
+        font-size: 210%;
+        margin-bottom: 10%;
+    }
+
+    .rodo{
+        height: 25px;
     }
 
     .label_email{

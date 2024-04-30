@@ -8,7 +8,8 @@
 input,
 textarea,
 .wyslij,
-.rodo{
+.rodo,
+.custom_file_upload{
     display: block;
     margin: 4% auto;
     font-family: "Urbanist", sans-serif;
@@ -25,6 +26,17 @@ textarea,
     display: block;
     margin: -3% auto 4% auto;
     width: 75%;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.custom_file_upload{
+    cursor: pointer;
+    width: 15%;
+    text-align: center;
+    color: #808080;
 }
 
 .rodo{
