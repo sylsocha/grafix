@@ -45,7 +45,7 @@
         background-color: #3868A6;
         position: absolute;
         width: 28%;
-        font-size: 180%;
+        font-size: 200%;
         padding: 3% 0 3% 0;
         border-bottom-left-radius: 30px;
     }
@@ -55,7 +55,7 @@
         height: 30px;
         font-weight: 400;
         text-align: right;
-        margin: 5% 15% 20% 0;
+        margin: 8% 20% 25% 0;
     }
 
     a{
@@ -97,7 +97,7 @@
     */
 
     .formularz{
-        margin: 10% auto 10% auto;
+        margin: 10% auto 20% auto;
         width: 90%;
     }
 
@@ -106,9 +106,9 @@
     .wyslij,
     .rodo{
         display: block;
-        margin: 7% auto;
+        margin: 10% auto;
         font-family: "Urbanist", sans-serif;
-        font-size: 150%;
+        font-size: 200%;
         font-weight: 500;
         padding: 1% 2%;
         border: 2px solid #D7D7D9;
@@ -117,12 +117,12 @@
     }
 
     label{
-        font-size: 130%;
+        font-size: 150%;
     }
 
     .label_email{
         display: block;
-        margin: -3% auto 4% auto;
+        margin: -7% auto 4% auto;
         width: 75%;
     }
 
@@ -134,8 +134,10 @@
     }
 
     .wyslij{
+        font-size: 180%;
         width: 20%;
         margin-right: 20%;
+        margin-top: 0;
         padding: 2%;
         border-color: #3868A6;
     }
@@ -148,7 +150,7 @@
 
     h2{
         font-family: "Major Mono Display", monospace;
-        font-size: 250%;
+        font-size: 300%;
         font-weight: 700;
         color: #3868A6;
         margin: 10% auto 0 auto;
