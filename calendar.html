@@ -18,14 +18,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav>
-    <a href="index.html"><img src="potos/logo.png" class="logo" alt="LOGO"></a>
-    <div><ul>
-        <li class="kontakt"><a href="./contact.html">KONTAKT</a></li>
-        <li class="aktualnosci"><a href="./news.html">AKTUALNOŚCI</a></li>
-        <li class="kalendarz"><a href="./calendar.html">KALENDARZ</a></li>
-    </ul>
-    </div>
-</nav>
+<div class="navbar">
+    <a href="./index.html"><img src="potos/logo.png" class="logo" alt="LOGO"></a>
+    <label class="hamburger">
+        <input type="checkbox">
+    </label>
+    <nav>
+        <div class="menu_elem"><a href="./contact.html">KONTAKT</a></div>
+        <div class="menu_elem"><a href="./news.html">AKTUALNOŚCI</a></div>
+        <div class="menu_elem"><a href="./calendar.html">KALENDARZ</a></div>
+    </nav>
+</div>
 </body>
 </html>
