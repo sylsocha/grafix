@@ -1,0 +1,61 @@
+:root{
+    --menu-color: rgb(230, 230, 232, 0.8);
+}
+
+header{
+    position: relative;
+}
+
+.hero_image_news{
+    width: 100%;
+    position: absolute;
+}
+
+.hero_news{
+    position: absolute;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    background-color: var(--menu-color);
+    width: 70%;
+    min-height: 300px;
+    margin: 10% 15%;
+    z-index: 1;
+    gap:5%;
+    padding: 3%;
+    border-radius: 30px;
+}
+
+.option_container{
+    position: initial;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    background: var(--menu-color);
+    border-radius: 30px;
+    padding: 10% 0 0 0;
+}
+
+.ikona{
+    height: 50px;
+    margin: 2% auto;
+    background: none;
+}
+
+.menu_option{
+    background: none;
+    color: #000000;
+    padding: 2%;
+    text-align: center;
+    height: 100%;
+}
+
+main{
+    margin: 50% 0 5% 10%;
+}
+
+p{
+    margin-top: 5%;
+}
