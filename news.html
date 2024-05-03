@@ -2,10 +2,11 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <link href="home_page.css" rel="stylesheet">
-    <link href="mobile.css" rel="stylesheet">
+    <link href="styles/home_page.css" rel="stylesheet">
+    <link href="styles/mobile.css" rel="stylesheet">
+    <link href="styles/news.css" rel="stylesheet">
     <title>GRAFIX</title>
-    <link rel="shortcut icon" type="image/png" href="potos/favikon.png">
+    <link rel="shortcut icon" type="image/png" href="photos/favikon.png">
 
     <!--import major mono display-->
 
@@ -22,18 +23,48 @@
 <body>
 
 <div class="navbar">
-    <a href="./index.html"><img src="potos/logo.png" class="logo" alt="LOGO"></a>
+    <a href="./index.html"><img src="photos/logo.png" class="logo" alt="LOGO"></a>
     <label class="hamburger">
         <input type="checkbox">
     </label>
     <nav>
-        <div class="menu_elem"><a href="./contact.html" style="text-decoration:none">KONTAKT</a></div>
-        <div class="menu_elem"><a href="./news.html" style="text-decoration:none">AKTUALNOŚCI</a></div>
-        <div class="menu_elem"><a href="./calendar.html" style="text-decoration:none">KALENDARZ</a></div>
+        <div class="menu_elem"><a href="./contact.html">KONTAKT</a></div>
+        <div class="menu_elem"><a href="./news.html">AKTUALNOŚCI</a></div>
+        <div class="menu_elem"><a href="./calendar.html">KALENDARZ</a></div>
     </nav>
 </div>
 
+<header>
+        <img src="photos/news_hero.jpeg" alt="stocznia" class="hero_image_news">
 
+
+    <div class="hero_news">
+        <h2 id="branza">wybierz swoją branżę</h2>
+        <div class="option_container">
+            <a href="#huta" class="menu_option"><img src="photos/hammer-solid.png" alt="młot" class="ikona"></a>
+            <a href="#huta" class="menu_option">chwała wielkiej hucie</a>
+        </div>
+        <div class="option_container">
+            <a href="#stocznia" class="menu_option"><img src="photos/ship-solid.png" alt="statek" class="ikona"></a>
+            <a href="#stocznia" class="menu_option">jesteśmy w Radomiu - stoczniowcy</a>
+        </div>
+        <div class="option_container">
+            <a href="#stacja" class="menu_option"><img src="photos/gas-pump-solid.png" alt="dystrubutor paliwa" class="ikona"></a>
+            <a href="#stacja" class="menu_option">biedak ma w gazie - stacje paliw</a>
+        </div>
+    </div>
+
+</header>
+
+<main>
+    <p id="huta">HUTA</p>
+    <p id="stocznia">STOCZNIA</p>
+    <p id="stacja">STACJA</p>
+</main>
+
+
+<footer>
+</footer>
 
 </body>
 </html>
