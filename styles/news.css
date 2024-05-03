@@ -67,13 +67,19 @@ header{
 /* CHWAŁĄ WIELKIEJ HUCIE */
 
 main{
-    margin: 38% 0 5% 0;
+    margin: 47% 0 5% 0;
 }
+
+.zdjecie_branzy{
+    width: 100%;
+    margin-top: 5%;
+}
+
 
 h3{
     font-family: "Major Mono Display", monospace;
     font-size: 150%;
-    margin: 0 auto 0 auto;
+    margin: -10% auto 0 auto;
     width: 50%;
     text-align: center;
     padding: 14% 0 4% 0;
@@ -91,7 +97,7 @@ h3{
 }
 
 .akapit_brazy{
-
+    margin: auto;
 }
 
 .zdjecie{
