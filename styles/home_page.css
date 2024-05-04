@@ -25,7 +25,7 @@ body{
 
 nav{
     display: flex;
-    margin: 30px 50%;
+    margin: 30px 55%;
     background-color: #3868A6;
     position: absolute;
 }
@@ -133,6 +133,13 @@ h1{
 
 
 @media only screen and (max-width: 1045px){
+    nav{
+        display: flex;
+        margin: 30px 40%;
+        background-color: #3868A6;
+        position: absolute;
+    }
+
     h1{
         font-size: 140%;
         margin: 3% auto 23% auto;
@@ -160,6 +167,10 @@ h1{
 
 
 @media only screen and (max-width: 768px){
+    nav{
+        margin: 30px 20%;
+    }
+
     h1{
         font-size: 100%;
         margin: 5% auto 35% auto;

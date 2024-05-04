@@ -33,7 +33,7 @@ header{
     justify-content: space-evenly;
     background-color: var(--menu-color);
     width: 70%;
-    min-height: 300px;
+    height: 400px;
     margin: 3% 15%;
     z-index: 1;
     gap:5%;
@@ -64,7 +64,7 @@ header{
     text-align: center;
 }
 
-/* CHWAŁĄ WIELKIEJ HUCIE */
+/* PO WYBORZE BRANŻY */
 
 main{
     margin: 47% 0 5% 0;
@@ -87,20 +87,86 @@ h3{
 }
 
 .container_branzy{
-    margin: 0 auto 0 auto;
+    margin: 0 auto 5% auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     width: 80%;
-    gap: 5%;
+    height: max-content;
+    column-gap: 5%;
     justify-content: center;
 }
 
 .akapit_brazy{
-    margin: auto;
+    margin: 0 auto;
+    background: none;
 }
 
 .zdjecie{
     width: 100%;
     margin: auto;
+}
+
+#container_stacja{
+    grid-template-rows: 1fr 1fr;
+}
+
+@media  only screen and (max-width: 1045px){
+    .hero_news{
+        height: 300px;
+        width: 80%;
+        margin: 3% 10%;
+    }
+
+    .ikona{
+        height: 40px;
+    }
+
+    #branza{
+        font-size: 200%;
+    }
+
+    .container_branzy{
+        width: 90%;
+        font-size: 95%;
+    }
+}
+
+@media  only screen and (max-width: 900px) {
+    .hero_news{
+        width: 90%;
+        min-height: 150px;
+        max-height: 200px;
+        margin: 3% 5%;
+        padding: 2%;
+        row-gap: 0;
+        grid-auto-rows: 0.25fr 1fr;
+        gap:5%;
+    }
+
+    #branza{
+        font-size: 180%;
+    }
+
+    .ikona{
+        height: 30px;
+    }
+
+    .menu_option{
+        font-size: 80%;
+    }
+
+    .container_branzy{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .zdjecie{
+        width: 70%;
+        margin: 5% auto 5% auto;
+    }
+
+    #container_stacja{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
+    }
 }
