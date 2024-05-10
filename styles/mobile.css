@@ -166,7 +166,7 @@
 
     .hero_news{
         width: 90%;
-        height: 400px;
+        height: 200px;
         margin: 3% 5%;
         padding: 2%;
         row-gap: 0;
@@ -183,7 +183,7 @@
     }
 
     .menu_option{
-        font-size: 200%;
+        font-size: 150%;
     }
 
     .container_branzy{

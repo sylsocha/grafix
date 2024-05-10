@@ -111,7 +111,7 @@ h3{
     grid-template-rows: 1fr 1fr;
 }
 
-@media  only screen and (max-width: 1045px){
+@media  only screen and (max-width: 1045px) and (min-device-width: 769px){
     .hero_news{
         height: 300px;
         width: 80%;
