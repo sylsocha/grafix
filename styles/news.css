@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root{
     --menu-color: rgb(230, 230, 232, 0.7);
 }
@@ -28,18 +34,12 @@ header{
     position: absolute;
     display: grid;
     align-items: center;
-    grid-auto-rows: 0.5fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-evenly;
     background-color: var(--menu-color);
-    width: 70%;
-    height: 400px;
-    margin: 3% 15%;
     z-index: 1;
-    gap:5%;
-    padding: 3%;
+    gap: 5%;
     border-radius: 30px;
-    border: 3px solid blueviolet;
 }
 
 .option_container{
@@ -50,10 +50,10 @@ header{
     justify-content: center;
     background: var(--menu-color);
     border-radius: 30px;
+    padding: 7% 5%;
 }
 
 .ikona{
-    height: 50px;
     margin: 2% auto;
     background: none;
 }
@@ -61,7 +61,6 @@ header{
 .menu_option{
     background: none;
     color: #000000;
-    padding-top: 7%;
     text-align: center;
 }
 
@@ -79,9 +78,7 @@ main{
 
 h3{
     font-family: "Major Mono Display", monospace;
-    font-size: 150%;
     margin: -10% auto 0 auto;
-    width: 50%;
     text-align: center;
     padding: 14% 0 4% 0;
 
@@ -90,8 +87,6 @@ h3{
 .container_branzy{
     margin: 0 auto 5% auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
     width: 80%;
     height: max-content;
     column-gap: 5%;
@@ -103,16 +98,50 @@ h3{
     background: none;
 }
 
-.zdjecie{
-    width: 100%;
-    margin: auto;
+@media only screen and (max-width: 1920px) and (min-width: 1046px){
+
+    #branza{
+        font-size: 230%;
+    }
+
+    .hero_news{
+        grid-auto-rows: 0.5fr 1fr;
+        width: 70%;
+        height: 400px;
+        margin: 3% 15%;
+        padding: 3%;
+        border: 3px solid yellow;
+    }
+
+    .ikona{
+        height: 50px;
+    }
+
+    .menu_option{
+        padding-top: 7%;
+    }
+
+    h3{
+        font-size: 150%;
+        width: 50%;
+    }
+
+    .container_branzy{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .zdjecie{
+        width: 100%;
+        margin: auto;
+    }
+
+    #container_stacja{
+        grid-template-rows: 1fr 1fr;
+    }
 }
 
-#container_stacja{
-    grid-template-rows: 1fr 1fr;
-}
-
-@media only screen and (max-width: 1045px){
+@media only screen and (max-width: 1045px) and (min-device-width: 769px){
     .hero_news{
         height: 300px;
         width: 80%;
@@ -124,6 +153,10 @@ h3{
         height: 40px;
     }
 
+    .menu_option{
+        padding-top: 7%;
+    }
+
     #branza{
         font-size: 200%;
     }
@@ -131,6 +164,17 @@ h3{
     .container_branzy{
         width: 90%;
         font-size: 95%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .zdjecie{
+        width: 100%;
+        margin: auto;
+    }
+
+    #container_stacja{
+        grid-template-rows: 1fr 1fr;
     }
 }
 
@@ -156,6 +200,7 @@ h3{
 
     .menu_option{
         font-size: 80%;
+        padding-top: 7%;
     }
 
     .container_branzy{

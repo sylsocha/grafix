@@ -171,9 +171,9 @@
     */
 
     .hero_news{
-        width: 90%;
-        height: 200px;
-        margin: 3% 5%;
+        width: 95%;
+        height: 400px;
+        margin: 3% 2%;
         padding: 2%;
         row-gap: 0;
         grid-auto-rows: 0.25fr 1fr;
@@ -186,11 +186,12 @@
     }
 
     .ikona{
-        height: 30px;
+        height: 60px;
     }
 
     .menu_option{
-        font-size: 150%;
+        font-size: 160%;
+        padding: 1%;
     }
 
     .container_branzy{
