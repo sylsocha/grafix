@@ -170,10 +170,19 @@
     AKTUALNOŚCI
     */
 
+    .hero_image_news{
+        display: none;
+    }
+
+    .hero_image_news_mobile{
+        width: 100%;
+        position: absolute;
+    }
+
     .hero_news{
         width: 95%;
         height: 400px;
-        margin: 3% 2%;
+        margin: 10% 2%;
         padding: 2%;
         row-gap: 0;
         grid-auto-rows: 0.25fr 1fr;
