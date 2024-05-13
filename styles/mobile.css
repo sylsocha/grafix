@@ -202,6 +202,10 @@
         padding: 1%;
     }
 
+    main{
+        margin-top: 70%;
+    }
+
     .container_branzy{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
