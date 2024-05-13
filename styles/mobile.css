@@ -198,17 +198,25 @@
         grid-template-rows: 1fr 1fr;
         margin: 0 auto;
         justify-content: center;
-        border:2px solid red;
+        border:2px solid mediumvioletred;
     }
     .zdjecie{
         width: 90%;
         margin: auto;
-        border: 2px dotted blue;
+        border: 2px dotted blueviolet;
+    }
+
+    #container_stocznia{
+        grid-template-rows: 0.5fr 1fr;
+    }
+
+    #container_huta{
+        grid-template-rows: 1fr 0.5fr;
     }
 
     #container_stacja{
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
+        grid-template-rows: 1fr 0.3fr 0.3fr 1fr;
         justify-content: center;
     }
 
