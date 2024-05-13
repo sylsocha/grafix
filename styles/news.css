@@ -97,6 +97,9 @@ h3{
 }
 
 @media only screen and (max-width: 1920px) and (min-width: 1046px){
+    .hero_image_news_mobile{
+        display: none;
+    }
 
     #branza{
         font-size: 230%;
@@ -140,6 +143,10 @@ h3{
 }
 
 @media only screen and (max-width: 1045px) and (min-device-width: 769px){
+    .hero_image_news_mobile{
+        display: none;
+    }
+
     .hero_news{
         height: 300px;
         width: 80%;
@@ -177,6 +184,10 @@ h3{
 }
 
 @media only screen and (max-width: 900px) {
+    .hero_image_news_mobile{
+        display: none;
+    }
+
     .hero_news{
         width: 90%;
         height: 200px;
