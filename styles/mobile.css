@@ -207,11 +207,11 @@
     }
 
     #container_stocznia{
-        grid-template-rows: 0.5fr 1fr;
+        grid-template-rows: 0.6fr 1fr;
     }
 
     #container_huta{
-        grid-template-rows: 1fr 0.5fr;
+        grid-template-rows: 1fr 0.6fr;
     }
 
     #container_stacja{
@@ -222,5 +222,10 @@
 
     .akapit_brazy{
         border: 2px dashed yellowgreen;
+    }
+
+    #stacja1,
+    #stacja2{
+        margin-top: 2%;
     }
 }
