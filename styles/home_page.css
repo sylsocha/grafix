@@ -123,11 +123,10 @@ h1{
 .cat_menu_elem{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.8fr 0.2fr 0.5fr;
-    transform: translate(10%,0);
+    grid-template-rows: 0.8fr 0.2fr 1.5fr;
     justify-items: center;
     gap: 5%;
-    width: 45%;
+    width: 50%;
 }
 
 .category_photo{
@@ -139,6 +138,7 @@ h1{
 .cat_menu{
     grid-row: 2;
     text-decoration: none;
+    text-align: center;
     color: #000000;
     font-family: "Major Mono Display", monospace;
     font-size: 110%;
@@ -210,10 +210,22 @@ h1{
         transform: translate(210%,100%);
     }
 
+    #h2_category{
+        margin: 2% auto;
+    }
+
+    .category{
+        width: 90%;
+    }
+
+    .category_photo{
+        width: 20%;
+    }
+
     #o_nas{
         width:60%;
         font-size: 100%;
-        margin: 5% auto 10% auto;
+        margin: 10% auto;
     }
 }
 
@@ -243,7 +255,24 @@ h1{
     #dalej{
         font-size: 70%;
         width: 30%;
-        transform: translate(125%,100%);
+        transform: translate(125%,160%);
+    }
+
+    #h2_category{
+        font-size: 120%;
+    }
+
+    .category{
+        width: 100%;
+    }
+
+    .cat_menu{
+        font-size: 90%;
+        width: 90%;
+    }
+
+    .p_category{
+        font-size: 80%;
     }
 
     #o_nas{
