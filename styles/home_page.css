@@ -28,7 +28,7 @@ body{
 
 nav{
     display: flex;
-    margin: 30px 45%;
+    margin: 30px 40%;
     background: none;
     position: absolute;
 }
@@ -39,10 +39,10 @@ nav{
 
 .menu_elem{
     background: none;
-    height: 30px;
+    height: 40px;
     font-weight: 400;
     text-align: center;
-    margin-left: 20%;
+    margin-left: 15%;
     text-decoration: none;
 }
 
@@ -51,6 +51,9 @@ nav{
     color: #FFFFFF;
     outline: none;
     text-decoration:none;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
 }
 
 footer{
@@ -190,7 +193,7 @@ h1{
 
 @media only screen and (max-width: 1045px){
     nav{
-        margin: 30px 30%;
+        margin: 30px 15%;
         background-color: #3868A6;
         position: absolute;
     }

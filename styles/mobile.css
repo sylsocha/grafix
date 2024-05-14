@@ -72,8 +72,9 @@
         margin: 8% auto 25% auto;
     }
 
-    a{
+    .a_menu{
         background: none;
+        white-space: unset;
     }
 
     /*HERO HOMEPAGE*/
