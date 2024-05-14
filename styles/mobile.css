@@ -9,6 +9,9 @@
 }
 
 @media only screen and (max-device-width: 768px){
+
+    /*NAVBAR*/
+
     .navbar{
         height: var(--nav_height);
     }
@@ -73,6 +76,8 @@
         background: none;
     }
 
+    /*HOMEPAGE*/
+
     h1{
         font-size: 350%;
         margin: 20% 27% 100% 3%;
@@ -92,6 +97,49 @@
     #dalej{
         display: none;
     }
+
+    /*kategorie*/
+
+
+
+    #h2_category{
+        margin: -60% auto 5% auto;
+        width: 100%;
+    }
+
+    .category{
+        width: 100%;
+    }
+
+    .cat_menu_elem{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.8fr 0.5fr 1.5fr;
+        justify-items: center;
+        gap: 5%;
+        width: 50%;
+    }
+
+    .category_photo{
+        width: 30%;
+        margin-left: 35%;
+    }
+
+    .cat_menu{
+        font-size: 170%;
+        width: 90%;
+    }
+
+    .p_category{
+        font-size: 180%;
+        width: 90%;
+        margin-bottom: 30%;
+    }
+
+
+
+
+
 
     #o_nas{
         font-size: 180%;
