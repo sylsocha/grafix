@@ -141,7 +141,6 @@ h1{
     text-align: center;
     color: #000000;
     font-family: "Major Mono Display", monospace;
-    font-size: 110%;
 }
 
 .p_category{
@@ -176,6 +175,10 @@ h1{
         font-size: 90%;
         width: 15%;
         transform: translate(300%,100%);
+    }
+
+    .cat_menu{
+        font-size: 110%;
     }
 
     #o_nas{
@@ -220,6 +223,10 @@ h1{
 
     .category_photo{
         width: 20%;
+    }
+
+    .cat_menu{
+        font-size: 110%;
     }
 
     #o_nas{
