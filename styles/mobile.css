@@ -76,7 +76,7 @@
         background: none;
     }
 
-    /*HOMEPAGE*/
+    /*HERO HOMEPAGE*/
 
     h1{
         font-size: 350%;
@@ -100,8 +100,6 @@
 
     /*kategorie*/
 
-
-
     #h2_category{
         margin: -60% auto 5% auto;
         width: 100%;
@@ -112,12 +110,7 @@
     }
 
     .cat_menu_elem{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.8fr 0.5fr 1.5fr;
-        justify-items: center;
-        gap: 5%;
-        width: 50%;
+        grid-template-rows: 0.8fr 0.5fr 3fr;
     }
 
     .category_photo{
@@ -126,20 +119,15 @@
     }
 
     .cat_menu{
-        font-size: 170%;
+        font-size: 200%;
         width: 90%;
     }
 
     .p_category{
-        font-size: 180%;
+        font-size: 200%;
         width: 90%;
         margin-bottom: 30%;
     }
-
-
-
-
-
 
     #o_nas{
         font-size: 180%;
