@@ -234,7 +234,7 @@
         padding: 1%;
     }
 
-    main {
+    .main_news {
         margin-top: 70%;
     }
 
@@ -319,5 +319,58 @@
 
     h3{
         font-size: 180%;
+    }
+
+    /*CATEGORY*/
+
+    .prod_in_cat{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr;
+        width: 90%;
+        margin: 5% auto;
+        padding: 1.5%;
+        border: 2px solid #D7D7D9;
+        gap: 2%;
+        border-radius: 30px;
+    }
+
+    .prod_photo{
+        width: 100%;
+        grid-column: 1;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        border-radius: 20px;
+    }
+
+    .nazw_prod{
+        grid-row: 1;
+        grid-column-start: 2;
+        grid-column-end: 5;
+        width: 100%;
+        padding-top: 2%;
+    }
+
+    .opis_mały{
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row: 2;
+        width: 100%;
+        padding-top: 2%;
+        font-size: 120%;
+    }
+
+    .icon_in_cat{
+        grid-row: 3;
+        width: 25%;
+        margin-left: 40%;
+    }
+
+    .cena{
+        grid-column: 4;
+        grid-row-start: 3;
+        grid-row-end: 3;
+        text-align: center;
+        font-size: 150%;
     }
 }
