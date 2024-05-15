@@ -37,6 +37,14 @@
     font-size: 160%;
 }
 
+.zamow{
+    border: none;
+    background-color: #BF1120;
+    border-radius: 30px;
+    font-family: "Urbanist", sans-serif;
+    color: #FFFFFF;
+}
+
 @media only screen and (min-width: 1045px) and (min-device-width: 768px) {
     .prod_in_cart{
         grid-template-columns: 0.3fr 0.8fr 0.7fr 0.7fr 0.1fr;
@@ -90,6 +98,13 @@
         grid-row: 2;
         font-size: 110%;
         margin-top: -7%;
+    }
+
+    .zamow{
+        font-size: 100%;
+        width: 20%;
+        padding: 1% 2%;
+        margin: 10% 40%;
     }
 }
 
@@ -151,6 +166,12 @@
         margin-top: 2%;
     }
 
+    .zamow{
+        font-size: 100%;
+        width: 25%;
+        padding: 2%;
+        margin: 10% 40%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -181,5 +202,12 @@
 
     .label_select_sztuki{
         width: 80%;
+    }
+
+    .zamow{
+        font-size: 100%;
+        width: 30%;
+        padding: 2%;
+        margin: 10% 35%;
     }
 }

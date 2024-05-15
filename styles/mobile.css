@@ -493,4 +493,11 @@
         margin-left: 3%;
         margin-top: 0;
     }
+
+    .zamow{
+        font-size: 200%;
+        width: 40%;
+        padding: 2%;
+        margin: 10% 30%;
+    }
 }
