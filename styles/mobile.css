@@ -139,9 +139,8 @@
         background-image: url("../photos/mobile_background.png");
     }
 
-    /*
-    CONTACT FORM
-    */
+    /*CONTACT FORM AND ORDER FORM*/
+
     .formularz {
         margin: 10% auto 20% auto;
         width: 90%;
@@ -199,6 +198,22 @@
     .h2_contact {
         font-size: 350%;
         margin: 10% auto 0 auto;
+    }
+
+    .container_sposob{
+        margin: 3% 0 7% 13%;
+    }
+
+    .h3_sposob{
+        font-size: 250%;
+    }
+
+    .label_s{
+        margin-top: 5%;
+    }
+
+    .znizka{
+        font-size: 120%;
     }
 
     /*
