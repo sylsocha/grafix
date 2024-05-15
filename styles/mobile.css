@@ -274,24 +274,24 @@
     .formularz_logowania{
         width: 100%;
         border: 2px solid mediumvioletred;
+        padding: 10% 0;
     }
 
     .log_form{
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: 20%;
         justify-items: center;
         border: 2px solid orange;
+        padding: 20% 0;
     }
 
     #main_log{
-        margin: 20% auto;
+        margin: 0;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1.5fr 2fr 1fr;
         border: 5px solid deepskyblue;
-        gap: 20%;
     }
 
     .log_form_button{
