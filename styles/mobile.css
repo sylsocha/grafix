@@ -456,10 +456,6 @@
         grid-template-columns: 1fr 1.2fr 0.3fr;
         grid-template-rows: 0.3fr 0.2fr 0.2fr 0.3fr;
         width: 95%;
-        margin: 5% auto;
-        padding: 1.5%;
-        border: 2px solid #D7D7D9;
-        gap: 2%;
     }
 
     .href_to_icon{
