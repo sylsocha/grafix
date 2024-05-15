@@ -43,6 +43,7 @@
     border-radius: 30px;
     font-family: "Urbanist", sans-serif;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 @media only screen and (min-width: 1045px) and (min-device-width: 768px) {

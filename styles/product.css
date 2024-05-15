@@ -139,6 +139,7 @@
         height: 40%;
         width: 50%;
         margin: 2% 20%;
+        cursor: pointer;
     }
 }
 
