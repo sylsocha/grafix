@@ -276,6 +276,11 @@
         padding: 25% 0;
     }
 
+    .ikona_log{
+        width: 20%;
+        margin: 0 40%;
+    }
+
     .log_form{
         display: grid;
         grid-template-columns: 1fr;
