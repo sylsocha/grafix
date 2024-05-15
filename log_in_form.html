@@ -38,8 +38,13 @@
     </nav>
 </div>
 
-<main>
-    <div class="formularz">
+<main id="main_log">
+    <div class="log_form">
+        <a href="#rejestracja" id="link_to_rej" class="log_form_button">Rejestracja</a>
+        <a href="#logowanie" id="link_to_log" class="log_form_button">Logowanie</a>
+    </div>
+
+    <div class="formularz_logowania" id="rejestracja">
         <h2>formulArz rejestrAcji</h2>
 
         <input type="text" name="imie" placeholder='Wpisz swoje imię*' required>
@@ -59,14 +64,14 @@
         <button type="submit" name="wyslij" class="wyslij">Zarejestruj</button>
     </div>
 
-    <div class="formularz">
+    <div class="formularz_logowania" id="logowanie">
         <h2>formulArz logowAnia</h2>
 
         <input type="email" name="ad_email" id="ad_emial" placeholder="Wpisz adres e-mail" required>
 
         <input type="password" name="haslo" placeholder="Wpisz hasło" required>
 
-        <button type="submit" name="wyslij" class="wyslij">Wyślij</button>
+        <button type="submit" name="wyslij" class="wyslij">Zaloguj</button>
     </div>
 </main>
 

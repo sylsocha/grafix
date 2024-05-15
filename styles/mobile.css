@@ -8,36 +8,35 @@
     --nav_height: 130px;
 }
 
-@media only screen and (max-device-width: 768px){
+@media only screen and (max-device-width: 768px) {
 
     /*NAVBAR*/
-
-    .navbar{
+    .navbar {
         height: var(--nav_height);
     }
 
-    .logo{
+    .logo {
         margin: 0 3%;
         height: var(--nav_height);
     }
 
-    .hamburger:has(input:not(:checked)) + nav{
+    .hamburger:has(input:not(:checked)) + nav {
         display: none;
     }
 
-    .hamburger{
+    .hamburger {
         position: absolute;
         display: flex;
         flex-direction: column;
         gap: 10px;
-        margin: calc((var(--nav_height) - 50px) /2) 0 0 85%;
+        margin: calc((var(--nav_height) - 50px) / 2) 0 0 85%;
         background-color: #3868A6;
         cursor: pointer;
     }
 
     .hamburger input,
     .hamburger:before,
-    .hamburger:after{
+    .hamburger:after {
         content: "";
         height: 10px;
         width: 70px;
@@ -46,14 +45,14 @@
         outline: none;
     }
 
-    .hamburger input{
+    .hamburger input {
         appearance: none;
         outline: none;
         cursor: pointer;
         border-color: #FFFFFF;
     }
 
-    .hamburger:has(input:checked) + nav{
+    .hamburger:has(input:checked) + nav {
         transform: translate(150%, calc(var(--nav_height) - 1px));
         flex-direction: column;
         margin: 0;
@@ -66,20 +65,19 @@
         z-index: 2;
     }
 
-    .menu_elem{
+    .menu_elem {
         background: none;
         height: 30px;
         margin: 8% auto 25% auto;
     }
 
-    .a_menu{
+    .a_menu {
         background: none;
         white-space: unset;
     }
 
     /*HERO HOMEPAGE*/
-
-    h1{
+    h1 {
         font-size: 350%;
         margin: 20% 27% 100% 3%;
         width: 63%;
@@ -87,64 +85,62 @@
         text-align: left;
     }
 
-    #hero{
+    #hero {
         width: 28%;
         font-size: 230%;
         margin-top: 30%;
-        transform: translate(250%,50%);
+        transform: translate(250%, 50%);
         text-align: right;
     }
 
-    #dalej{
+    #dalej {
         display: none;
     }
 
     /*kategorie*/
-
-    #h2_category{
+    #h2_category {
         margin: -60% auto 5% auto;
         width: 100%;
     }
 
-    .category{
+    .category {
         width: 100%;
     }
 
-    .cat_menu_elem{
+    .cat_menu_elem {
         grid-template-rows: 0.8fr 0.5fr 3fr;
     }
 
-    .category_photo{
+    .category_photo {
         width: 30%;
         margin-left: 35%;
     }
 
-    .cat_menu{
+    .cat_menu {
         font-size: 250%;
         width: 90%;
     }
 
-    .p_category{
+    .p_category {
         font-size: 220%;
         width: 90%;
         margin-bottom: 30%;
     }
 
-    #o_nas{
+    #o_nas {
         font-size: 180%;
-        width:80%;
+        width: 80%;
         margin: 5% auto 10% auto;
     }
 
-    .hero{
+    .hero {
         background-image: url("../photos/mobile_background.png");
     }
 
     /*
     CONTACT FORM
     */
-
-    .formularz{
+    .formularz {
         margin: 10% auto 20% auto;
         width: 90%;
     }
@@ -153,7 +149,7 @@
     textarea,
     .wyslij,
     .rodo,
-    .custom_file_upload{
+    .custom_file_upload {
         margin: 10% auto;
         font-size: 210%;
         font-weight: 500;
@@ -161,23 +157,23 @@
         width: 75%;
     }
 
-    label{
+    label {
         font-size: 170%;
     }
 
-    .custom_file_upload{
+    .custom_file_upload {
         width: 40%;
         font-size: 210%;
         margin-bottom: 15%;
     }
 
-    .label_email{
+    .label_email {
         display: block;
         margin: -7% auto 4% auto;
         width: 75%;
     }
 
-    .rodo{
+    .rodo {
         height: 25px;
         display: inline;
         width: 3%;
@@ -185,20 +181,20 @@
         margin-top: -5%;
     }
 
-    .wyslij{
+    .wyslij {
         width: 40%;
         font-size: 180%;
         margin-top: 5%;
         border-color: #3868A6;
     }
 
-    .wyslij:hover{
+    .wyslij:hover {
         background-color: #3868A6;
         border-color: #3868A6;
         color: #FFFFFF;
     }
 
-    h2{
+    h2 {
         font-size: 350%;
         margin: 10% auto 0 auto;
     }
@@ -206,71 +202,111 @@
     /*
     AKTUALNOŚCI
     */
-
-    .hero_image_news{
+    .hero_image_news {
         display: none;
     }
 
-    .hero_image_news_mobile{
+    .hero_image_news_mobile {
         width: 100%;
         position: absolute;
     }
 
-    .hero_news{
+    .hero_news {
         width: 95%;
         height: 400px;
         margin: 10% 2%;
         padding: 2%;
         row-gap: 0;
         grid-auto-rows: 0.25fr 1fr;
-        gap:5%;
+        gap: 5%;
     }
 
-    #branza{
+    #branza {
         font-size: 180%;
     }
 
-    .ikona{
+    .ikona {
         height: 60px;
     }
 
-    .menu_option{
+    .menu_option {
         font-size: 160%;
         padding: 1%;
     }
 
-    main{
+    main {
         margin-top: 70%;
     }
 
-    .container_branzy{
+    .container_branzy {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         margin: 0 auto;
         justify-content: center;
     }
 
-    .zdjecie{
+    .zdjecie {
         width: 100%;
         margin: auto;
     }
 
-    #container_stocznia{
+    #container_stocznia {
         grid-template-rows: 0.7fr 1fr;
     }
 
-    #container_huta{
+    #container_huta {
         grid-template-rows: 1fr 0.7fr;
     }
 
-    #container_stacja{
+    #container_stacja {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 0.3fr 0.2fr 1fr;
         justify-content: center;
     }
 
     #stacja1,
-    #stacja2{
+    #stacja2 {
         margin-top: 10%;
+    }
+
+    /*LOGOWANIE*/
+
+    .formularz_logowania{
+        width: 100%;
+        border: 2px solid mediumvioletred;
+    }
+
+    .log_form{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20%;
+        justify-items: center;
+        border: 2px solid orange;
+    }
+
+    #main_log{
+        margin: 20% auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5fr 2fr 1fr;
+        border: 5px solid deepskyblue;
+        gap: 20%;
+    }
+
+    .log_form_button{
+        padding: 1%;
+        background-color: rgb(191, 17, 32, 0.9);
+        border-color: #BF1120;
+        color: #FFFFFF;
+        border-radius: 30px;
+        font-family: "Urbanist", sans-serif;
+        font-size: 200%;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        width: 30%;
+        height: 60px;
     }
 }

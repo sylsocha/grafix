@@ -1,10 +1,10 @@
 main{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.formularz{
+.formularz_logowania{
     margin: 2% auto 4% auto;
-    width: 50%;
     border-right: 1px solid #D7D7D9;
     border-left: 1px solid #D7D7D9;
 }
@@ -15,35 +15,24 @@ input,
     display: block;
     margin: 4% auto;
     font-family: "Urbanist", sans-serif;
-    font-size: 100%;
     font-weight: 500;
-    padding: 0.5% 1%;
     border: 2px solid #D7D7D9;
     border-radius: 10px;
-    width: 50%;
-}
-
-label{
-    font-size: 85%  ;
 }
 
 .label_email{
     display: block;
     margin: -3% auto 4% auto;
-    width: 75%;
 }
 
 .rodo{
     display: inline;
-    width: 3%;
     margin-left: 15%;
     margin-top: -2%;
 }
 
 .wyslij{
     width: 20%;
-    margin-right: 20%;
-    border-color: #3868A6;
 }
 
 .wyslij:hover{
@@ -54,7 +43,6 @@ label{
 
 h2{
     font-family: "Major Mono Display", monospace;
-    font-size: 200%;
     font-weight: 700;
     color: #3868A6;
     margin: 3% auto 0 auto;
@@ -62,12 +50,62 @@ h2{
 }
 
 h3{
-    font-size: 80%;
     margin-left: 18%;
     font-weight: 400;
 }
 
-@media only screen and (max-width: 1045px){
+@media only screen and (max-width: 1920px) and (min-width: 1046px) {
+    .log_form{
+        display: none;
+    }
+
+    .formularz_logowania{
+        width: 100%;
+    }
+
+    input,
+    .wyslij,
+    .rodo{
+        width: 50%;
+        padding: 1% 1.5%;
+        font-size: 100%;
+    }
+
+    label{
+        font-size: 85%  ;
+    }
+
+    .label_email{
+        width: 75%;
+    }
+
+    .rodo{
+        display: inline;
+        width: 3%;
+    }
+
+    .wyslij{
+        width: 20%;
+    }
+
+    h2{
+        font-size: 200%;
+    }
+
+    h3{
+        font-size: 80%;
+    }
+}
+
+
+@media only screen and (max-width: 1045px) and (min-device-width: 769px){
+    .log_form{
+        display: none;
+    }
+
+    .formularz_logowania{
+        width: 100%;
+    }
 
     input,
     .wyslij,
@@ -87,6 +125,14 @@ h3{
         width: 15px;
     }
 
+    label{
+        font-size: 85%  ;
+    }
+
+    .label_email{
+        width: 75%;
+    }
+
     .wyslij{
         width: 40%;
         font-size: 100%;
@@ -94,5 +140,10 @@ h3{
 
     h2{
         margin: 4% auto 0 auto;
+        font-size: 200%;
+    }
+
+    h3{
+        font-size: 80%;
     }
 }
