@@ -97,9 +97,9 @@
         display: none;
     }
 
-    /*kategorie*/
+    /*wybór kategorii*/
     #h2_category {
-        margin: -60% auto 5% auto;
+        margin: -60% auto 7% auto;
         width: 100%;
     }
 
@@ -109,6 +109,7 @@
 
     .cat_menu_elem {
         grid-template-rows: 0.8fr 0.5fr 3fr;
+        row-gap: 7%;
     }
 
     .category_photo {
@@ -330,7 +331,7 @@
     .prod_in_cat{
         display: grid;
         grid-template-columns: 1.5fr 1fr 1fr 1fr;
-        grid-template-rows: 0.33fr 0.33fr 0.33fr;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr;
         width: 90%;
         margin: 5% auto;
         padding: 1.5%;

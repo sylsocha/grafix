@@ -1,0 +1,18 @@
+.product{
+    display: grid;
+}
+
+@media only screen and (min-width: 1046px) and (min-device-width: 769px) {
+    .product{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        width: 80%;
+        margin: 5% auto;
+    }
+
+    .product_photo{
+        width: 70%;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+}
