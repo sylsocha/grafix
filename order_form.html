@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <link href="styles/home_page.css" rel="stylesheet">
-    <link href="styles/mobile.css" rel="stylesheet">
     <link href="styles/order.css" rel="stylesheet">
+    <link href="styles/contact.css" rel="stylesheet">
+    <link href="styles/mobile.css" rel="stylesheet">
     <title>GRAFIX</title>
     <link rel="shortcut icon" type="image/png" href="photos/favikon.png">
 
@@ -36,25 +37,48 @@
 </div>
 
 <main>
-    <h2 class="h2_contact">formulArz do zAmówieniA</h2>
+    <h2 class="h2_contact">formulArz zAmówieniA</h2>
 
     <div class="formularz">
         <input type="text" name="imie" placeholder='Imię' required>
         <input type="text" name="nazwisko" placeholder='Nazwisko' required>
         <input type="text" name="ulica" placeholder='Ulica' required>
         <input type="text" name="nr_domu" placeholder='Numer domu' required>
-        <input type="number" name="nr_mieszk" placeholder='Numer mieszkania'>
+        <input type="text" name="nr_mieszk" placeholder='Numer mieszkania'>
         <input type="email" name="ad_email" id="ad_emial" placeholder="Adres e-mail" required>
         <input type="tel" placeholder="Numer telefonu" required>
         <label>
-            Jeśli zamawiasz kalendarz z danego roku, podaj nam powód dlaczego wybierasz dany rok, a dostaniesz zniżkę 5%<br>
-            <textarea name="zniżka" placeholder="Miejsce na Twoją wiadomość"></textarea>
+            <textarea name="zniżka" placeholder="Jeśli zamawiasz kalendarz z danego roku, podaj nam powód dlaczego wybierasz dany rok, a dostaniesz zniżkę 5%"></textarea>
         </label>
 
         <input type="checkbox" name="rodo" id="rodo" class="rodo">
         <label for="rodo">Akceptuję politykę prywatności</label>
 
-        <input type="radio" name="dostawa" checked>
+        <div class="container_sposob">
+            <h3 class="h3_sposob">sposób dostawy</h3>
+            <label class="label_s">
+                <input type="radio" name="dostawa" checked>Kurier Inpost
+            </label>
+            <label class="label_s">
+                <input type="radio" name="dostawa">Kurier DPD
+            </label>
+            <label class="label_s">
+                <input type="radio" name="dostawa">Poczta polska
+            </label>
+        </div>
+
+        <div class="container_sposob">
+            <h3 class="h3_sposob">sposób płatności</h3>
+            <label class="label_s">
+                <input type="radio" name="platnosc" checked>Karta
+            </label>
+            <label class="label_s">
+                <input type="radio" name="platnosc">Kod BLIK
+            </label>
+            <label class="label_s">
+                <input type="radio" name="platnosc">Żabsy
+            </label>
+        </div>
 
         <button type="submit" name="wyslij" class="wyslij">Wyślij</button>
     </div>
