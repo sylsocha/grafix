@@ -196,7 +196,7 @@
         color: #FFFFFF;
     }
 
-    h2 {
+    .h2_contact {
         font-size: 350%;
         margin: 10% auto 0 auto;
     }
@@ -330,7 +330,6 @@
     }
 
     .prod_in_cat{
-        display: grid;
         grid-template-columns: 1.5fr 1fr 1fr 1fr;
         grid-template-rows: 0.5fr 0.5fr 0.5fr;
         width: 90%;
@@ -338,7 +337,6 @@
         padding: 1.5%;
         border: 2px solid #D7D7D9;
         gap: 2%;
-        border-radius: 30px;
     }
 
     .prod_photo{
@@ -449,5 +447,54 @@
         width: 60%;
         margin: 0 20%;
         font-size: 200%;
+    }
+
+    /*KOSZYK*/
+
+    .prod_in_cart{
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 0.3fr;
+        grid-template-rows: 0.3fr 0.2fr 0.2fr 0.3fr;
+        width: 95%;
+        margin: 5% auto;
+        padding: 1.5%;
+        border: 2px solid #D7D7D9;
+        gap: 2%;
+    }
+
+    .href_to_icon{
+        grid-row: 1;
+        grid-column: 3;
+        margin-top: 10%;
+    }
+
+    .icon_in_cart{
+        width: 50%;
+    }
+
+    .label_select_sztuki{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row: 3;
+    }
+
+    .select_sztuki{
+        font-size: 100%;
+    }
+
+    .cena_za_sztuke{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row: 4;
+        margin-left: 3%;
+        margin-top: 3%;
+    }
+
+    .cena_za_x_sztuk{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row: 2;
+        margin-left: 3%;
+        margin-top: 0;
     }
 }

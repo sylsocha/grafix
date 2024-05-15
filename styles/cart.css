@@ -17,7 +17,6 @@
 }
 
 .label_select_sztuki{
-    width: 80%;
     margin-left: 3%;
 }
 
@@ -31,6 +30,11 @@
     font-weight: 700;
     cursor: pointer;
     margin-left: 2%;
+}
+
+.cena_za_x_sztuk,
+.cena_za_sztuke{
+    font-size: 160%;
 }
 
 @media only screen and (min-width: 1045px) and (min-device-width: 768px) {
@@ -67,6 +71,7 @@
         grid-column: 2;
         grid-row: 2;
         margin-top: -7%;
+        width: 80%;
     }
 
     .select_sztuki{
@@ -125,6 +130,7 @@
         grid-column: 2;
         grid-row: 2;
         margin-top: -2%;
+        width: 80%;
     }
 
     .select_sztuki{
@@ -173,5 +179,7 @@
         width: 80%;
     }
 
-    .na
+    .label_select_sztuki{
+        width: 80%;
+    }
 }
