@@ -37,7 +37,7 @@
 </div>
 
 <main>
-    <h2 class="h2_contact">formulArz zAmówieniA</h2>
+    <h2 class="h2_contact">dAne do zAmówieniA</h2>
 
     <div class="formularz">
         <input type="text" name="imie" placeholder='Imię' required>
@@ -45,6 +45,8 @@
         <input type="text" name="ulica" placeholder='Ulica' required>
         <input type="text" name="nr_domu" placeholder='Numer domu' required>
         <input type="text" name="nr_mieszk" placeholder='Numer mieszkania'>
+        <input type="text" name="miasto" placeholder="Miasto">
+        <input type="text" pattern="^\d{2}-\d{3}$" name="kodpocztowy" placeholder="Kod pocztowy">
         <input type="email" name="ad_email" id="ad_emial" placeholder="Adres e-mail" required>
         <input type="tel" placeholder="Numer telefonu" required>
         <label>
@@ -80,7 +82,7 @@
             </label>
         </div>
 
-        <button type="submit" name="wyslij" class="wyslij">Wyślij</button>
+        <a href="./sum_up.html" style="text-decoration: none"><button type="submit" name="wyslij" class="wyslij">Wyślij</button></a>
     </div>
 </main>
 
