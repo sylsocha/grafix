@@ -1,0 +1,81 @@
+.prod_in_cat{
+    display: grid;
+    grid-template-columns: 0.3fr 2.5fr 0.2fr 0.2fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 5%;
+    width: 80%;
+    margin: 5% auto;
+    padding: 1.5%;
+    border: 2px solid #D7D7D9;
+    border-radius: 30px;
+}
+
+.prod_photo{
+    width: 150%;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    border-radius: 20px;
+}
+
+.nazw_prod{
+    grid-row: 1;
+    width: 100%;
+    padding-top: 2%;
+}
+
+.opis_mały{
+    grid-row: 2;
+    width: 100%;
+    padding-top: 2%;
+}
+
+.icon_in_cat{
+    width: 55%;
+    margin-top: 25%;
+}
+
+.cena{
+    grid-column: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    text-align: center;
+    padding-top: 50%;
+}
+
+
+@media only screen and (max-width: 1045px) and (min-device-width: 768px) {
+
+    .prod_in_cat{
+        grid-template-columns: 0.3fr 2fr 0.2fr 0.2fr;
+        column-gap: 6%;
+        width: 90%;
+    }
+
+    .icon_in_cat{
+        width: 70%;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .prod_in_cat{
+        grid-template-columns: 0.4fr 2fr 0.2fr 0.1fr;
+        grid-template-rows: 0.6fr 1fr;
+        column-gap: 6%;
+        width: 95%;
+    }
+
+    .opis_mały{
+        font-size: 90%;
+    }
+
+    .cena{
+        font-size: 100%;
+        padding-top: 80%;
+    }
+
+    .icon_in_cat{
+        width: 80%;
+        margin-top: 30%;
+    }
+}
