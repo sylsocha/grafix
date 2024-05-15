@@ -10,10 +10,8 @@ main{
 }
 
 input,
-textarea,
 .wyslij,
-.rodo,
-.custom_file_upload{
+.rodo{
     display: block;
     margin: 4% auto;
     font-family: "Urbanist", sans-serif;
@@ -22,7 +20,7 @@ textarea,
     padding: 0.5% 1%;
     border: 2px solid #D7D7D9;
     border-radius: 10px;
-    width: 75%;
+    width: 50%;
 }
 
 label{
@@ -33,17 +31,6 @@ label{
     display: block;
     margin: -3% auto 4% auto;
     width: 75%;
-}
-
-input[type="file"]{
-    display: none;
-}
-
-.custom_file_upload{
-    cursor: pointer;
-    width: 30%;
-    text-align: center;
-    color: #808080;
 }
 
 .rodo{
@@ -74,61 +61,38 @@ h2{
     text-align: center;
 }
 
+h3{
+    font-size: 80%;
+    margin-left: 18%;
+    font-weight: 400;
+}
+
 @media only screen and (max-width: 1045px){
-    .formularz{
-        width: 75%;
-    }
 
     input,
-    textarea,
     .wyslij,
-    .rodo,
-    .custom_file_upload{
+    .rodo {
         margin: 4% auto;
         font-size: 100%;
         padding: 1% 1.5%;
         width: 75%;
     }
 
-    .custom_file_upload{
-        width: 40%;
-        font-size: 100%;
-
-    }
-
-    .label_email{
-        display: block;
-        margin: -3% auto 4% auto;
-        width: 75%;
-    }
-
     .rodo{
-        height: 15px;
         display: inline;
-        width: 3%;
+        height: 15px;
         margin-left: 13%;
         margin-top: -7%;
         margin-bottom: 0;
+        width: 15px;
     }
 
     .wyslij{
         width: 40%;
         font-size: 100%;
-        border-color: #3868A6;
-    }
-
-    .wyslij:hover{
-        background-color: #3868A6;
-        border-color: #3868A6;
-        color: #FFFFFF;
     }
 
     h2{
-        font-family: "Major Mono Display", monospace;
-        font-size: 200%;
-        font-weight: 700;
-        color: #3868A6;
         margin: 4% auto 0 auto;
-        text-align: center;
     }
 }

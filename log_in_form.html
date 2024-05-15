@@ -42,41 +42,29 @@
     <div class="formularz">
         <h2>formulArz rejestrAcji</h2>
 
-        <input type="text" name="imie" placeholder='Wpisz swoje imię' required>
+        <input type="text" name="imie" placeholder='Wpisz swoje imię*' required>
+
+        <input type="text" name="nazwisko" placeholder='Wpisz swoje nazwisko*' required>
+
+        <input type="email" name="ad_email" id="ad_emial_rej" placeholder="Wpisz adres e-mail*" required>
+
+        <input type="password" name="haslo" placeholder="Wpisz hasło*" required>
 
         <input type="tel" placeholder="Podaj swój numer telefonu">
 
-        <input type="email" name="ad_email" id="ad_emial1" placeholder="Wpisz adres e-mail" required>
-        <label for="ad_emial" class="label_email">*Na ten adres odeślemy naszą odpowiedź</label>
-
-        <textarea name="uwaga" placeholder="Miejsce na Twoją wiadomość" required></textarea>
-
-        <label for="file_upload" class="custom_file_upload">Załącz pliki</label>
-        <input type="file" id="file_upload1">
-
-        <input type="checkbox" name="rodo" id="rodo1" class="rodo">
+        <input type="checkbox" name="rodo" id="rodo" class="rodo">
         <label for="rodo">Akceptuję politykę prywatności</label>
+        <h3>*Pola oznaczone gwiazdką, są obowiązkowe</h3>
 
-        <button type="submit" name="wyslij" class="wyslij">Wyślij</button>
+        <button type="submit" name="wyslij" class="wyslij">Zarejestruj</button>
     </div>
 
     <div class="formularz">
         <h2>formulArz logowAnia</h2>
 
-        <input type="text" name="imie" placeholder='Wpisz swoje imię' required>
-
-        <input type="tel" placeholder="Podaj swój numer telefonu">
-
         <input type="email" name="ad_email" id="ad_emial" placeholder="Wpisz adres e-mail" required>
-        <label for="ad_emial" class="label_email">*Na ten adres odeślemy naszą odpowiedź</label>
 
-        <textarea name="uwaga" placeholder="Miejsce na Twoją wiadomość" required></textarea>
-
-        <label for="file_upload" class="custom_file_upload">Załącz pliki</label>
-        <input type="file" id="file_upload">
-
-        <input type="checkbox" name="rodo" id="rodo" class="rodo">
-        <label for="rodo">Akceptuję politykę prywatności</label>
+        <input type="password" name="haslo" placeholder="Wpisz hasło" required>
 
         <button type="submit" name="wyslij" class="wyslij">Wyślij</button>
     </div>
