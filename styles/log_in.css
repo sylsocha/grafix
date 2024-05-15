@@ -55,7 +55,8 @@ h3{
 }
 
 @media only screen and (max-width: 1920px) and (min-width: 1046px) {
-    .log_form{
+    .log_form,
+    .log_photo{
         display: none;
     }
 
@@ -99,7 +100,8 @@ h3{
 
 
 @media only screen and (max-width: 1045px) and (min-device-width: 769px){
-    .log_form{
+    .log_form,
+    .log_photo{
         display: none;
     }
 

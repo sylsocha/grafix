@@ -283,30 +283,35 @@
         grid-template-rows: 1fr 1fr;
         justify-items: center;
         border: 2px solid orange;
-        padding: 20% 0;
+        padding: 15% 0;
+        gap:10%
+    }
+
+    .log_photo{
+        width: 100%;
     }
 
     #main_log{
         margin: 0;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1.5fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         border: 5px solid deepskyblue;
     }
 
     .log_form_button{
-        padding: 1%;
+        padding: 2%;
         background-color: rgb(191, 17, 32, 0.9);
         border-color: #BF1120;
         color: #FFFFFF;
-        border-radius: 30px;
+        border-radius: 50px;
         font-family: "Urbanist", sans-serif;
         font-size: 200%;
         text-transform: uppercase;
         cursor: pointer;
         text-align: center;
         text-decoration: none;
-        width: 30%;
-        height: 60px;
+        width: 50%;
+        height: 80px;
     }
 }
