@@ -13,96 +13,165 @@
 .nazw_prod{
     grid-row: 1;
     width: 100%;
-    padding-top: 2%;
+    margin-left: 3%;
 }
 
 .label_select_sztuki{
-
+    width: 80%;
+    margin-left: 3%;
 }
 
 .select_sztuki{
-
-}
-
-.cena_za_x_sztuk{
+    width: 50%;
+    padding: 1%;
+    border: 2px solid #D7D7D9;
+    border-radius: 10px;
     text-align: center;
+    font-family: "Urbanist", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 2%;
 }
 
-@media only screen and (min-width: 1046px) and (min-device-width: 768px) {
+@media only screen and (min-width: 1045px) and (min-device-width: 768px) {
     .prod_in_cart{
-        grid-template-columns: 0.3fr 2.5fr 0.2fr 0.2fr;
-        grid-template-rows: 1fr 1fr;
-        column-gap: 5%;
+        grid-template-columns: 0.3fr 0.8fr 0.7fr 0.7fr 0.1fr;
+        grid-template-rows: 0.4fr 0.4fr;
         width: 80%;
     }
 
     .prod_photo{
-        width: 150%;
+        width: 80%;
         grid-row-start: 1;
         grid-row-end: 3;
     }
 
+    .nazw_prod{
+        margin-top: 7%;
+    }
+
+    .href_to_icon{
+        grid-row: 1;
+        grid-column: 5;
+    }
+
     .icon_in_cart{
-        width: 55%;
-        margin-top: 25%;
+        width: 100%;
+        margin-top:70%;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column: 5;
+    }
+
+    .label_select_sztuki{
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: -7%;
+    }
+
+    .select_sztuki{
+        font-size: 110%;
+    }
+
+    .cena_za_sztuke{
+        grid-column: 3;
+        grid-row: 2;
+        font-size: 110%;
+        margin-top: -7%;
     }
 
     .cena_za_x_sztuk{
         grid-column: 4;
-        grid-row-start: 1;
-        grid-row-end: 3;
-        padding-top: 50%;
+        grid-row: 2;
+        font-size: 110%;
+        margin-top: -7%;
     }
 }
 
 
 @media only screen and (max-width: 1045px) and (min-device-width: 768px) {
 
+
     .prod_in_cart{
-        grid-template-columns: 0.3fr 2fr 0.2fr 0.2fr;
-        grid-template-rows: 1fr 1fr;
-        column-gap: 6%;
+        grid-template-columns: 0.3fr 1fr 1fr 0.2fr;
+        grid-template-rows: 0.4fr 0.4fr;
         width: 90%;
     }
 
     .prod_photo{
-        width: 150%;
+        width: 80%;
         grid-row-start: 1;
         grid-row-end: 3;
     }
 
-    .cena_za_x_sztuk{
+    .nazw_prod{
+        margin-top: 2%;
+    }
+
+    .href_to_icon{
+        grid-row: 1;
         grid-column: 4;
-        grid-row-start: 1;
-        grid-row-end: 3;
-        padding-top: 50%;
     }
 
     .icon_in_cart{
-        width: 70%;
-        margin-top: 25%;
+        width: 60%;
+        margin-top: 20%;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column: 4;
+    }
+
+    .label_select_sztuki{
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: -2%;
+    }
+
+    .select_sztuki{
+        font-size: 100%;
+    }
+
+    .cena_za_sztuke{
+        grid-column: 3;
+        grid-row: 2;
+        font-size: 100%;
+        margin-top: -1%;
+    }
+
+    .cena_za_x_sztuk{
+        grid-column: 3;
+        grid-row: 1;
+        font-size: 100%;
+        margin-top: 2%;
     }
 
 }
 
 @media only screen and (max-width: 768px) {
     .prod_in_cart{
-        grid-template-columns: 0.4fr 2fr 0.2fr 0.1fr;
-        grid-template-rows: 0.6fr 1fr;
-        column-gap: 6%;
+        grid-template-columns: 0.4fr 1.2fr 1fr 0.1fr;
+        grid-template-rows: 1.2fr 0.8fr;
         width: 95%;
     }
 
-    .cena{
-        grid-column: 4;
+    .prod_photo{
+        width: 100%;
+    }
+
+    .nazw_prod,
+    .cena_za_x_sztuk{
+        margin-top: 5%;
+    }
+
+    .href_to_icon{
         grid-row-start: 1;
         grid-row-end: 3;
-        font-size: 100%;
-        padding-top: 80%;
+        margin-top: 100%;
     }
 
     .icon_in_cart{
         width: 80%;
-        margin-top: 30%;
     }
+
+    .na
 }
