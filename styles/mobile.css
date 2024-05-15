@@ -323,10 +323,14 @@
 
     /*CATEGORY*/
 
+    .main_cat{
+        margin: 10% auto 30% auto;
+    }
+
     .prod_in_cat{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 0.5fr 0.5fr 0.5fr;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        grid-template-rows: 0.33fr 0.33fr 0.33fr;
         width: 90%;
         margin: 5% auto;
         padding: 1.5%;
@@ -349,6 +353,7 @@
         grid-column-end: 5;
         width: 100%;
         padding-top: 2%;
+        font-size: 250%;
     }
 
     .opis_mały{
@@ -357,7 +362,7 @@
         grid-row: 2;
         width: 100%;
         padding-top: 2%;
-        font-size: 120%;
+        font-size: 150%;
     }
 
     .icon_in_cat{
