@@ -455,12 +455,12 @@
         width: 40%;
     }
 
-    .zamow{
+    .zamow_teraz{
         grid-row: 5;
         grid-column: 2;
         height: fit-content;
         width: 60%;
-        margin: 0 20%;
+        margin: 5% 20% 0 10%;
         font-size: 200%;
     }
 
@@ -514,5 +514,36 @@
         width: 40%;
         padding: 2%;
         margin: 10% 30%;
+    }
+
+    /*PODSUMOWANIE*/
+
+    .dane{
+        width: 90%;
+    }
+
+    .prod_in_sum{
+        grid-template-columns: 0.5fr 1.5fr;
+        grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr;
+        width: 90%;
+    }
+
+    .prod_photo_sum{
+        width: 90%;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .nazw_prod_sum,
+    .h4_sum{
+        padding: 2%;
+        grid-column: 2;
+    }
+
+    .dalej_sum{
+        font-size: 120%;
+        width: 80%;
+        padding: 4%;
+        margin: 10% 7%;
     }
 }

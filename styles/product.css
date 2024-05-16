@@ -10,7 +10,7 @@
     font-family: "Urbanist", sans-serif;
 }
 
-.zamow{
+.zamow_teraz{
     text-align: center;
     padding: 2%;
     background-color: #BF1120;
@@ -195,7 +195,7 @@
         width: 30%;
     }
 
-    .zamow{
+    .zamow_teraz{
         grid-row: 5;
         grid-column: 2;
         height: 30%;

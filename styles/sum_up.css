@@ -1,0 +1,143 @@
+.dane{
+    margin: auto;
+}
+
+.h2_sum_up{
+    font-family: "Major Mono Display", monospace;
+}
+
+.dana_sum{
+    color: #808080;
+    font-weight: 400;
+    margin-top: 1%;
+}
+
+.produkty{
+    margin: auto;
+}
+
+.prod_in_sum{
+    display: grid;
+    margin: 5% auto;
+    padding: 1.5%;
+    border: 2px solid #D7D7D9;
+    border-radius: 30px;
+}
+
+.prod_photo_sum{
+    border-radius: 20px;
+}
+
+.nazw_prod_sum{
+    grid-row: 1;
+    width: 100%;
+    margin-left: 0;
+}
+
+.sum_but_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+    margin: 0 auto 10% auto;
+}
+
+.dalej_sum{
+    border: none;
+    background-color: #BF1120;
+    border-radius: 30px;
+    font-family: "Urbanist", sans-serif;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1045px) and (min-device-width: 768px) {
+    .dane{
+        width: 70%;
+    }
+
+    .prod_in_sum{
+        grid-template-columns: 0.6fr 1.3fr 1.1fr;
+        grid-template-rows: 0.2fr 0.2fr;
+        width: 70%;
+    }
+
+    .prod_photo_sum{
+        width: 40%;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .nazw_prod_sum,
+    .h4_sum{
+        padding: 2%;
+    }
+
+    .dalej_sum{
+        font-size: 100%;
+        width: 60%;
+        padding: 2% 2%;
+        margin: 0 20%;
+    }
+}
+
+
+@media only screen and (max-width: 1045px) and (min-device-width: 768px) {
+    .dane{
+        width: 90%;
+    }
+
+    .prod_in_sum{
+        grid-template-columns: 0.6fr 1.3fr 1.1fr;
+        grid-template-rows: 0.2fr 0.2fr;
+        width: 90%;
+    }
+
+    .prod_photo_sum{
+        width: 50%;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .nazw_prod_sum,
+    .h4_sum{
+        padding: 3%;
+    }
+
+    .sum_but_container{
+        width: 70%;
+    }
+
+    .dalej_sum{
+        font-size: 100%;
+        width: 60%;
+        padding: 2%;
+        margin: 10% 20%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .dane{
+        width: 90%;
+    }
+
+    .prod_in_cart{
+        grid-template-columns: 0.5fr 1fr 1.2fr;
+        grid-template-rows: 0.2fr 0.2fr;
+        width: 95%;
+    }
+
+    .prod_photo_sum{
+        width: 60%;
+    }
+
+    .sum_but_container{
+        width: 80%;
+    }
+
+    .dalej_sum{
+        font-size: 100%;
+        width: 80%;
+        padding: 2%;
+        margin: 10% 5%;
+    }
+}
