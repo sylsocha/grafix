@@ -36,6 +36,9 @@
 </div>
 
 <main>
+    <?php
+
+    echo<<<END
     <div class="product">
         <img src="photos/calendars/dates/close-up-calendar-design.jpg" alt="product" class="product_photo">
         <h3 class="nazwa_prod">Nazwa produktu</h3>
@@ -45,8 +48,10 @@
             <input type="number" placeholder="1 - 10" min='1' max='10' class="liczba_produktu">
         </label>
         <a href="cart.php" class="icon_prod"><img src="photos/icons/cart-plus-solid_red.png" class="add_to_cart" alt="dodaj do koszyka"></a>
-        <a href="./order_form.html"><button type="submit" class="zamow_teraz">Zamów teraz</button></a>
+        <a href="order_form.php"><button type="submit" class="zamow_teraz">Zamów teraz</button></a>
     </div>
+END;
+    ?>
 </main>
 
 <footer>

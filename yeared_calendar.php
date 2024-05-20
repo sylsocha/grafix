@@ -36,20 +36,24 @@
 </div>
 
 <main class="main_cat">
+    <?php
+    for($i = 0; $i <= 5; $i++)
+    echo <<<END
     <div class="prod_in_cat">
         <img src="photos/calendars/dates/close-up-calendar-design.jpg" alt="produkt" class="prod_photo">
         <h3 class="nazw_prod">Nazwa produktu</h3>
         <p class="opis_mały">Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
-        <a href="product.html"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
+        <a href="product.php"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
         <a href=""><img src="photos/icons/cart-plus-solid_red.png" class="icon_in_cat" alt="Dodaj do koszyka"></a>
         <h2 class="cena">43,99zł</h2>
     </div>
-
+END;
+?>
     <div class="prod_in_cat">
         <img src="photos/calendars/dates/2023-monthly-calendar-still-life.jpg" alt="produkt" class="prod_photo">
         <h3 class="nazw_prod">Nazwa produktu</h3>
         <p class="opis_mały">Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
-        <a href="product.html"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
+        <a href="product.php"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
         <a href=""><img src="photos/icons/cart-plus-solid_red.png" class="icon_in_cat" alt="Dodaj do koszyka"></a>
         <h2 class="cena">73,69zł</h2>
     </div>
@@ -58,7 +62,7 @@
         <img src="photos/calendars/dates/desk-calendar-with-texts-english(1).jpg" alt="produkt" class="prod_photo">
         <h3 class="nazw_prod">Nazwa produktu</h3>
         <p class="opis_mały">Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
-        <a href="product.html"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
+        <a href="product.php"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
         <a href=""><img src="photos/icons/cart-plus-solid_red.png" class="icon_in_cat" alt="Dodaj do koszyka"></a>
         <h2 class="cena">83,59zł</h2>
     </div>
@@ -67,7 +71,7 @@
         <img src="photos/calendars/dates/top-view-desk-2021-calendar.jpg" alt="produkt" class="prod_photo">
         <h3 class="nazw_prod">Nazwa produktu</h3>
         <p class="opis_mały">Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
-        <a href="product.html"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
+        <a href="product.php"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
         <a href=""><img src="photos/icons/cart-plus-solid_red.png" class="icon_in_cat" alt="Dodaj do koszyka"></a>
         <h2 class="cena">47,89zł</h2>
     </div>

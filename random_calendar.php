@@ -36,41 +36,19 @@
 </div>
 
 <main class="main_cat">
+    <?php
+    for($i = 0; $i <= 5; $i++)
+        echo <<<END
     <div class="prod_in_cat">
         <img src="photos/calendars/no_dates/birthday-reminders-calendar-silver-stars.jpg" alt="produkt" class="prod_photo">
         <h3 class="nazw_prod">Nazwa produktu</h3>
         <p class="opis_mały">Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
-        <a href="product.html"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
+        <a href="product.php"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
         <a href=""><img src="photos/icons/cart-plus-solid_red.png" class="icon_in_cat" alt="Dodaj do koszyka"></a>
         <h2 class="cena">43,99zł</h2>
     </div>
-
-    <div class="prod_in_cat">
-        <img src="photos/calendars/no_dates/flat-lay-calendar-office-accessories.jpg" alt="produkt" class="prod_photo">
-        <h3 class="nazw_prod">Nazwa produktu</h3>
-        <p class="opis_mały">Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
-        <a href="product.html"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
-        <a href=""><img src="photos/icons/cart-plus-solid_red.png" class="icon_in_cat" alt="Dodaj do koszyka"></a>
-        <h2 class="cena">73,69zł</h2>
-    </div>
-
-    <div class="prod_in_cat">
-        <img src="photos/calendars/no_dates/top-view-desk-february-calendar.jpg" alt="produkt" class="prod_photo">
-        <h3 class="nazw_prod">Nazwa produktu</h3>
-        <p class="opis_mały">Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
-        <a href="product.html"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
-        <a href=""><img src="photos/icons/cart-plus-solid_red.png" class="icon_in_cat" alt="Dodaj do koszyka"></a>
-        <h2 class="cena">63,29zł</h2>
-    </div>
-
-    <div class="prod_in_cat">
-        <img src="photos/calendars/no_dates/top-view-stationery-minimalist-calendar.jpg" alt="produkt" class="prod_photo">
-        <h3 class="nazw_prod">Nazwa produktu</h3>
-        <p class="opis_mały">Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
-        <a href="product.html"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
-        <a href=""><img src="photos/icons/cart-plus-solid_red.png" class="icon_in_cat" alt="Dodaj do koszyka"></a>
-        <h2 class="cena">56,49zł</h2>
-    </div>
+END;
+?>
 </main>
 
 <footer>

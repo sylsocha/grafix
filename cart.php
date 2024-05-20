@@ -41,7 +41,7 @@
     echo <<<END
     <div class="prod_in_cart">
         <img src="photos/calendars/no_dates/birthday-reminders-calendar-silver-stars.jpg" alt="produkt" class="prod_photo">
-        <a href="product.html" style="text-decoration: none; color: black"><h3 class="nazw_prod">Nazwa produktu</h3></a>
+        <a href="product.php" style="text-decoration: none; color: black"><h3 class="nazw_prod">Nazwa produktu</h3></a>
         <label class="label_select_sztuki">
             Liczba sztuk:
             <select class="select_sztuki">
@@ -58,14 +58,14 @@
                 <option>10</option>
             </select>
         </label>
-        <a href="product.html" class="href_to_icon"><img src="photos/icons/trash-can-solid.png" class="icon_in_cart" alt="Usuń z koszyka"></a>
+        <a href="product.php" class="href_to_icon"><img src="photos/icons/trash-can-solid.png" class="icon_in_cart" alt="Usuń z koszyka"></a>
         <h2 class="cena_za_sztuke">Cena za sztukę: 43,99zł</h2>
         <h2 class="cena_za_x_sztuk">Cena łączna: z bazy x 43,99zł</h2>
     </div>
 END;
 
 ?>
-    <a href="./order_form.html"><button class="zamow">Zamów</button></a>
+    <a href="order_form.php"><button class="zamow">Zamów</button></a>
 </main>
 
 <footer>

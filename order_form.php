@@ -82,7 +82,7 @@
             </label>
         </div>
 
-        <a href="./sum_up.html" style="text-decoration: none"><button type="submit" name="wyslij" class="wyslij">Wyślij</button></a>
+        <a href="sum_up.php" style="text-decoration: none"><button type="submit" name="wyslij" class="wyslij">Wyślij</button></a>
     </div>
 </main>
 
