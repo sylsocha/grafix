@@ -40,7 +40,7 @@
     for($i=0; $i<3; $i++)
     echo <<<END
     <div class="prod_in_cart">
-        <img src="photos/calendars/no_dates/birthday-reminders-calendar-silver-stars.jpg" alt="produkt" class="prod_photo">
+        <img src="photos/calendars/no_dates/wooden.jpg" alt="produkt" class="prod_photo">
         <a href="product.php" style="text-decoration: none; color: black"><h3 class="nazw_prod">Nazwa produktu</h3></a>
         <label class="label_select_sztuki">
             Liczba sztuk:

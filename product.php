@@ -37,12 +37,15 @@
 
 <main>
     <?php
-
-    echo<<<END
+    $polaczenie = new mysqli('localhost', 'root', '', 'grafix_database');
+    $sql = "select * from product";
+    $wynik = $polaczenie->query($sql);
+    $record=$wynik->fetch_assoc();
+    echo <<<END
     <div class="product">
-        <img src="photos/calendars/dates/close-up-calendar-design.jpg" alt="product" class="product_photo">
-        <h3 class="nazwa_prod">Nazwa produktu</h3>
-        <p class="opis_duzy">Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem.</p>
+        <img src="$record[photo_link]" alt="product" class="product_photo">
+        <h3 class="nazwa_prod">$record[nazwa_prod]</h3>
+        <p class="opis_duzy">$record[opis_long]</p>
         <label class="lable_liczna_produtku">
             Podaj liczbę sztuk:
             <input type="number" placeholder="1 - 10" min='1' max='10' class="liczba_produktu">

@@ -37,15 +37,20 @@
 
 <main class="main_cat">
     <?php
-    for($i = 0; $i <= 5; $i++)
+
+    $polaczenie = new mysqli('localhost', 'root', '', 'grafix_database');
+    $sql = "select * from product where rok is NULL";
+    $wynik = $polaczenie->query($sql);
+
+    while(($record=$wynik->fetch_assoc()) != null)
         echo <<<END
     <div class="prod_in_cat">
-        <img src="photos/calendars/no_dates/birthday-reminders-calendar-silver-stars.jpg" alt="produkt" class="prod_photo">
-        <h3 class="nazw_prod">Nazwa produktu</h3>
-        <p class="opis_mały">Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.</p>
+        <img src="$record[photo_link]" alt="produkt" class="prod_photo">
+        <h3 class="nazw_prod">$record[nazwa_prod]</h3>
+        <p class="opis_mały">$record[opis_short]</p>
         <a href="product.php"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
         <a href=""><img src="photos/icons/cart-plus-solid_red.png" class="icon_in_cat" alt="Dodaj do koszyka"></a>
-        <h2 class="cena">43,99zł</h2>
+        <h2 class="cena">$record[cena_unit]</h2>
     </div>
 END;
 ?>

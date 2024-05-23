@@ -50,7 +50,7 @@
     </div>
     <div class="produkty">
         <div class="prod_in_sum">
-            <img src="photos/calendars/no_dates/birthday-reminders-calendar-silver-stars.jpg" alt="produkt" class="prod_photo_sum">
+            <img src="photos/calendars/no_dates/wooden.jpg" alt="produkt" class="prod_photo_sum">
             <h3 class="nazw_prod_sum">Nazwa produktu</h3>
             <h4 class="h4_sum">Liczba sztuk: z bazy</h4>
             <h4 class="h4_sum">Cena za sztukę: 43,99zł</h4>
