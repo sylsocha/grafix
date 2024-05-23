@@ -37,7 +37,6 @@
 
 <main class="main_cat">
     <?php
-
     $polaczenie = new mysqli('localhost', 'root', '', 'grafix_database');
     $sql = "select * from product where rok is NULL";
     $wynik = $polaczenie->query($sql);
