@@ -37,26 +37,18 @@
 
 <main>
     <?php
-    for($i=0; $i<3; $i++)
-    echo <<<END
-    <div class="prod_in_cart">
+    $conn = new mysqli('localhost', 'root', '', 'grafix_database');
+    $sql = "select * from product where rok is not NULL";
+    $wynik = $conn->query($sql);
+
+    while(($record=$wynik->fetch_assoc()) != null)
+        echo <<<END
+        <div class="prod_in_cart">
         <img src="photos/calendars/no_dates/wooden.jpg" alt="produkt" class="prod_photo">
         <a href="product.php" style="text-decoration: none; color: black"><h3 class="nazw_prod">Nazwa produktu</h3></a>
         <label class="label_select_sztuki">
             Liczba sztuk:
-            <select class="select_sztuki">
-                <option>z bazy</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-            </select>
+            <input type="number" class="select_sztuki" min="0" max="$record[na_stanie]" name="l_sztuk">
         </label>
         <a href="product.php" class="href_to_icon"><img src="photos/icons/trash-can-solid.png" class="icon_in_cart" alt="Usuń z koszyka"></a>
         <h2 class="cena_za_sztuke">Cena za sztukę: 43,99zł</h2>

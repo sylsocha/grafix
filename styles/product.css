@@ -10,84 +10,62 @@
     font-family: "Urbanist", sans-serif;
 }
 
-.zamow_teraz{
-    text-align: center;
-    padding: 2%;
-    background-color: #BF1120;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 30px;
-    text-decoration: none;
-    font-family: "Urbanist", sans-serif;
-    outline: none;
-}
-
 @media only screen and (min-width: 1046px) and (min-device-width: 769px) {
     .product{
-        grid-template-columns: 1.5fr 0.8fr 0.8fr;
-        grid-template-rows: 0.2fr 0.5fr 0.3fr 0.5fr;
+        grid-template-columns: 1.5fr 1.6fr;
+        grid-template-rows: 0.2fr 0.5fr 0.8fr;
         width: 80%;
-        row-gap: 2%;
+        row-gap: 10%;
         margin: 5% auto;
     }
 
     .product_photo{
         width: 80%;
         grid-row-start: 1;
-        grid-row-end: 5;
+        grid-row-end: 4;
         grid-column: 1;
     }
 
     .nazwa_prod{
-        grid-column-start: 2;
-        grid-column-end: 4;
+        grid-column: 2;
         grid-row: 1;
         padding-top: 3%;
     }
 
     .opis_duzy{
-        grid-column-start: 2;
-        grid-column-end: 4;
+        grid-column: 2;
         grid-row: 2;
     }
 
-    .lable_liczna_produtku{
-        grid-column-start: 2;
-        grid-column-end: 4;
+    .form_prod{
         grid-row: 3;
-    }
-
-    .liczba_produktu{
         grid-column: 2;
-        grid-row: 3;
-        margin-left: 2%;
     }
 
     .icon_prod{
-        grid-row: 4;
-        grid-column: 2;
-        margin-left: 35%;
+        display: grid;
+        grid-template-columns: 1fr 0.1fr 1fr;
+    }
+
+    .lable_liczna_produtku{
+        grid-column: 1;
+    }
+
+    .liczba_produktu{
+        margin-left: 2%;
     }
 
     .add_to_cart{
-        width: 30%;
-    }
-
-    .zamow{
-        grid-row: 4;
         grid-column: 3;
-        height: 30%;
-        width: 50%;
-        margin: 1% 20%;
-
+        height: 120%;
     }
 }
 
 
 @media only screen and (max-width: 1045px) and (min-device-width: 769px) {
     .product{
-        grid-template-columns: 1.3fr 1fr 1fr;
-        grid-template-rows: 0.3fr 1fr 0.4fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.2fr 0.7fr 0.1fr;
         width: 90%;
         gap: 2%;
         margin: 5% auto;
@@ -101,52 +79,41 @@
     }
 
     .nazwa_prod{
-        grid-column-start: 2;
-        grid-column-end: 4;
+        grid-column: 2;
         grid-row: 1;
         padding-top: 3%;
     }
 
     .opis_duzy{
-        grid-column-start: 2;
-        grid-column-end: 4;
+        grid-column: 2;
         grid-row: 2;
+        font-size: 100%;
+    }
+
+    .form_prod{
+        grid-row: 3;
+        grid-column: 2;
+    }
+
+    .icon_prod{
+        display: grid;
+        grid-template-columns: 1.5fr 0.1fr 0.5fr;
     }
 
     .lable_liczna_produtku{
         grid-column: 1;
-        grid-row: 3;
-    }
-
-    .liczba_produktu{
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .icon_prod{
-        grid-row: 3;
-        grid-column: 2;
-        margin-left: 35%;
+        font-size: 100%;
     }
 
     .add_to_cart{
-        width: 30%;
-    }
-
-    .zamow{
-        grid-row: 3;
-        grid-column: 3;
-        height: 40%;
-        width: 50%;
-        margin: 2% 20%;
-        cursor: pointer;
+        width: 100%;
     }
 }
 
 @media only screen and (max-width: 768px) {
     .product{
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 0.1fr 0.3fr 0.2fr 0.4fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.1fr 0.4fr 0.5fr;
         width: 90%;
         gap: 2%;
         margin: 5% auto;
@@ -155,51 +122,38 @@
     .product_photo{
         width: 70%;
         grid-row: 1;
-        grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column: 1;
         margin: 0 auto;
     }
 
     .nazwa_prod{
-        grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column: 1;
         grid-row: 2;
         padding-top: 3%;
     }
 
     .opis_duzy{
-        grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column: 1;
         grid-row: 3;
     }
 
-    .lable_liczna_produtku{
-        grid-column-start: 1;
-        grid-column-end: 3;
-        grid-row: 4;
-    }
-
-    .liczba_produktu{
-        grid-column-start: 1;
-        grid-column-end: 3;
+    .form_prod{
+        grid-column: 1;
         grid-row: 4;
     }
 
     .icon_prod{
-        grid-row: 5;
+        display: grid;
+        grid-template-columns: 1fr 0.1fr 1fr;
+        height: 30%;
+    }
+
+    .lable_liczna_produtku{
         grid-column: 1;
-        margin-left: 35%;
+        margin: 5% 0 0 30%;
     }
 
     .add_to_cart{
-        width: 30%;
-    }
-
-    .zamow_teraz{
-        grid-row: 5;
-        grid-column: 2;
-        height: 30%;
-        width: 50%;
-        margin: 2% 20%;
+        width: 100%;
     }
 }

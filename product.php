@@ -46,12 +46,17 @@
         <img src="$record[photo_link]" alt="product" class="product_photo">
         <h3 class="nazwa_prod">$record[nazwa_prod]</h3>
         <p class="opis_duzy">$record[opis_long]</p>
-        <label class="lable_liczna_produtku">
-            Podaj liczbę sztuk:
-            <input type="number" placeholder="1 - 10" min='1' max='10' class="liczba_produktu">
-        </label>
-        <a href="cart.php" class="icon_prod"><img src="photos/icons/cart-plus-solid_red.png" class="add_to_cart" alt="dodaj do koszyka"></a>
-        <a href="order_form.php"><button type="submit" class="zamow_teraz">Zamów teraz</button></a>
+        <form action="./cart.php" method="get" class="form_prod">
+        <div class="icon_prod">
+            <label class="lable_liczna_produtku">
+                Podaj liczbę sztuk:
+                <input type="number" placeholder="1 - 10" min='1' max='10' class="liczba_produktu" name="l_sztuk">
+            </label>
+            <input type="checkbox" name="prod_to_cart" value=$record[id_prod] style="appearance: none; margin: 0; grid-column: 2" checked>
+            <input type="submit" value="" class="add_to_cart" style="width: 100%; background-image: url('photos/icons/cart-plus-solid_red.png'); background-size: contain; background-repeat: no-repeat; background-position: center; cursor: pointer; color: #FFFFFF; border: #FFFFFF; margin: 0 auto 0 auto">
+        </div>
+        </form>
+        
     </div>
 END;
     ?>

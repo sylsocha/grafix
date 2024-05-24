@@ -37,19 +37,24 @@
 
 <main class="main_cat">
     <?php
-
-    $polaczenie = new mysqli('localhost', 'root', '', 'grafix_database');
+    $conn = new mysqli('localhost', 'root', '', 'grafix_database');
     $sql = "select * from product where rok is not NULL";
-    $wynik = $polaczenie->query($sql);
+    $wynik = $conn->query($sql);
 
     while(($record=$wynik->fetch_assoc()) != null)
-    echo <<<END
-    <div class="prod_in_cat">
+        echo <<<END
+    <div class="prod_in_cat" xmlns="http://www.w3.org/1999/html">
         <img src="$record[photo_link]" alt="produkt" class="prod_photo">
         <h3 class="nazw_prod">$record[nazwa_prod]</h3>
         <p class="opis_mały">$record[opis_short]</p>
-        <a href="product.php"><img src="photos/icons/magnifying-glass-solid.png" class="icon_in_cat" alt="Zobacz produkt"></a>
-        <a href=""><img src="photos/icons/cart-plus-solid_red.png" class="icon_in_cat" alt="Dodaj do koszyka"></a>
+        <form action="./product.php" method="get" class="icon_in_cat">
+            <input type="checkbox" name="prod_view" value=$record[id_prod] style="appearance: none" checked>
+            <input type="submit" class="submit_cat" value="" style="height: 50%; width: 100%; background-image: url('photos/icons/magnifying-glass-solid.png'); background-size: contain; background-repeat: no-repeat; background-position: center; cursor: pointer; color: #FFFFFF; border: #FFFFFF">
+        </form>
+        <form action="./cart.php" method="get" class="icon_in_cat">
+            <input type="checkbox" name="prod_view" value=$record[id_prod] style="appearance: none" checked>
+            <input type="submit" class="submit_cat" value="" style="height: 50%; width: 100%; background-image: url('photos/icons/cart-plus-solid_red.png'); background-size: contain; background-repeat: no-repeat; background-position: center; cursor: pointer; color: #FFFFFF; border: #FFFFFF">
+        </form>
         <h2 class="cena">$record[cena_unit]</h2>
     </div>
 END;
