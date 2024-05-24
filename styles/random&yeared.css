@@ -41,9 +41,9 @@
     }
 
     .icon_in_cat{
-        width: 55%;
-        margin-top: 25%;
+        width: 100%;
     }
+
 
     .cena{
         grid-column: 4;

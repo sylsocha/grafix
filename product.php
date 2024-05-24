@@ -38,7 +38,7 @@
 <main>
     <?php
     $polaczenie = new mysqli('localhost', 'root', '', 'grafix_database');
-    $sql = "select * from product";
+    $sql = "select * from product where id_prod='$_GET[prod_view]'";
     $wynik = $polaczenie->query($sql);
     $record=$wynik->fetch_assoc();
     echo <<<END
