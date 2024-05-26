@@ -38,8 +38,21 @@
 <main>
     <?php
     $conn = new mysqli('localhost', 'root', '', 'grafix_database');
-    $sql = "select * from product where rok is not NULL";
-    $wynik = $conn->query($sql);
+    $sql2 = "insert into cart (id_order, id_prod, liczba_sztuk, cena_unit) select o.id_order, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit from orders o join product p on o.id_prod = p.id_prod";
+    $conn->query($sql2);
+    /*$sql3 = "select * from product P join cart C on P.id_prod = C.id_prod";*/
+    $sql4 = "select O.id_user as o_user, U.id_user as u_user, U.imie as u_imie from orders O join users U on O.id_user = U.id_user";
+    $wynik = $conn->query($sql4);
+
+    if ($wynik->num_rows > 0) {
+        while ($record = $wynik->fetch_assoc()) {
+            echo '<h2>' . $record['o_user'] . ' ' . $record['u_user'] . ' ' . $record['u_imie'] . '</h2>';
+        }
+    } else {
+        echo '<h2>No records found</h2>';
+    }
+/*
+    $wynik = $conn->query($sql1);
 
     while(($record=$wynik->fetch_assoc()) != null)
         echo <<<END
@@ -48,14 +61,14 @@
         <a href="product.php" style="text-decoration: none; color: black"><h3 class="nazw_prod">Nazwa produktu</h3></a>
         <label class="label_select_sztuki">
             Liczba sztuk:
-            <input type="number" class="select_sztuki" min="0" max="$record[na_stanie]" name="l_sztuk">
+            <input type="number" class="select_sztuki" min="0" max="$record[id_user]" name="l_sztuk">
         </label>
         <a href="product.php" class="href_to_icon"><img src="photos/icons/trash-can-solid.png" class="icon_in_cart" alt="Usuń z koszyka"></a>
         <h2 class="cena_za_sztuke">Cena za sztukę: 43,99zł</h2>
         <h2 class="cena_za_x_sztuk">Cena łączna: z bazy x 43,99zł</h2>
     </div>
 END;
-
+*/
 ?>
     <a href="order_form.php"><button class="zamow">Zamów</button></a>
 </main>

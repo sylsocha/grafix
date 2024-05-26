@@ -37,9 +37,33 @@
 
 <main>
     <?php
-    $polaczenie = new mysqli('localhost', 'root', '', 'grafix_database');
-    $sql = "select * from product where id_prod='$_GET[prod_view]'";
-    $wynik = $polaczenie->query($sql);
+    $conn = new mysqli('localhost', 'root', '', 'grafix_database');
+    $sql1 = "select id_order from orders where id_user = 1";
+    $conn->query($sql1);
+    $wynik = $conn->query($sql1);
+    if($wynik->num_rows>0) {
+
+        $sql2 = "select id_order, finalised from orders where id_user = 1";
+        $conn->query($sql2);
+        $wynik = $conn->query($sql2);
+        $record = $wynik->fetch_assoc();
+        if($record['finalised'] != 0)
+        {
+
+        }
+
+        echo 'id:' . $record['id_order'] . ' finalised: ' . $record['finalised'];
+    }
+    else{
+        $sql3 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship) select u.id_user, 0, NULL, NULL, 1, 1 from users u";
+        $conn->query($sql3);
+    }
+
+    /*
+    $sql2 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship) select u.id_user, 0, NULL, NULL, 2, 1 from users u";
+    $conn->query($sql2);
+    $sql3 = "select * from product where id_prod='$_GET[prod_view]'";
+    $wynik = $conn->query($sql3);
     $record=$wynik->fetch_assoc();
     echo <<<END
     <div class="product">
@@ -52,13 +76,14 @@
                 Podaj liczbę sztuk:
                 <input type="number" placeholder="1 - 10" min='1' max='10' class="liczba_produktu" name="l_sztuk">
             </label>
-            <input type="checkbox" name="prod_to_cart" value=$record[id_prod] style="appearance: none; margin: 0; grid-column: 2" checked>
+            <input type="checkbox" name="id_prod" value=$record[id_prod] style="appearance: none; margin: 0; grid-column: 2" checked>
             <input type="submit" value="" class="add_to_cart" style="width: 100%; background-image: url('photos/icons/cart-plus-solid_red.png'); background-size: contain; background-repeat: no-repeat; background-position: center; cursor: pointer; color: #FFFFFF; border: #FFFFFF; margin: 0 auto 0 auto">
         </div>
         </form>
         
     </div>
 END;
+    */
     ?>
 </main>
 

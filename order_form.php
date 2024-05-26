@@ -59,26 +59,26 @@
         <div class="container_sposob">
             <h3 class="h3_sposob">sposób dostawy</h3>
             <label class="label_s">
-                <input type="radio" name="dostawa" checked>Kurier Inpost
+                <input type="radio" name="dostawa" value="1" checked>Kurier Inpost
             </label>
             <label class="label_s">
-                <input type="radio" name="dostawa">Kurier DPD
+                <input type="radio" name="dostawa" value="2">Kurier DPD
             </label>
             <label class="label_s">
-                <input type="radio" name="dostawa">Poczta polska
+                <input type="radio" name="dostawa" value="3">Poczta polska
             </label>
         </div>
 
         <div class="container_sposob">
             <h3 class="h3_sposob">sposób płatności</h3>
             <label class="label_s">
-                <input type="radio" name="platnosc" checked>Karta
+                <input type="radio" name="platnosc" value="1"checked>Karta
             </label>
             <label class="label_s">
-                <input type="radio" name="platnosc">Kod BLIK
+                <input type="radio" name="platnosc" value="2">Kod BLIK
             </label>
             <label class="label_s">
-                <input type="radio" name="platnosc">Żabsy
+                <input type="radio" name="platnosc" value="3">Żabsy
             </label>
         </div>
 
