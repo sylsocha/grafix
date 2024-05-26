@@ -401,7 +401,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 0.1fr 0.3fr 0.5fr;
         width: 100%;
-        gap: 2%;
+        row-gap: 2%;
     }
 
     .product_photo{
@@ -433,19 +433,25 @@
 
     .icon_prod{
         display: grid;
-        grid-template-columns: 1fr 0.1fr 1fr;
+        grid-template-columns: 1.5fr 0.1fr 0.5fr;
         height: 30%;
     }
 
     .lable_liczna_produtku{
         grid-column: 1;
         margin: 5% 0 0 30%;
+        font-size: 100%;
+    }
+
+    .liczba_produktu{
+        width: 40%;
+        font-size: 100%;
     }
 
     .add_to_cart{
+        grid-column: 3;
         width: 100%;
     }
-
 
     /*KOSZYK*/
 
