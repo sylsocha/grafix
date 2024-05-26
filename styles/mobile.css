@@ -433,17 +433,18 @@
 
     .icon_prod{
         display: grid;
-        grid-template-columns: 1.5fr 0.1fr 0.5fr;
+        grid-template-columns: 1.5fr 0.1fr 1fr;
         height: 30%;
     }
 
     .lable_liczna_produtku{
         grid-column: 1;
-        margin: 5% 0 0 30%;
-        font-size: 100%;
+        margin: 5% 0 0 10%;
+        font-size: 200%;
     }
 
     .liczba_produktu{
+        margin: auto;
         width: 40%;
         font-size: 100%;
     }
