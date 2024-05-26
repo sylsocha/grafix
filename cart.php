@@ -69,6 +69,7 @@
                 echo "hehe";
         }
     }
+
     else{
         /*utwórz nowe zamówienie*/
         $sql4 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship)
@@ -81,7 +82,7 @@
         echo "!!!!";
     }
 
-    $sql5 = "insert into cart (id_order, id_prod, liczba_sztuk, cena_unit)
+    $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
              select $nr_zamowienia, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit
              from product p";
     $conn->query($sql5);
@@ -104,21 +105,22 @@
         echo '<h2>No records found</h2>';
     }*/
 
-    while(($record=$wynik->fetch_assoc()) != null)
+    while(($record=$wynik->fetch_assoc()) != null) {
+        $value = $record['p_cena_szt'] * $_GET['l_sztuk'];
         echo <<<END
         <div class="prod_in_cart">
         <img src="$record[p_photo]" alt="produkt" class="prod_photo">
         <a href="./product.php" style="text-decoration: none; color: black"><h3 class="nazw_prod">$record[p_name]</h3></a>
         <label class="label_select_sztuki">
             Liczba sztuk:
-            <input type="number" class="select_sztuki" min="0" max="$record[p_stan]" name="l_sztuk">$_GET[l_sztuk]
+            <input type="number" class="select_sztuki" min="0" max="$record[p_stan]" name="l_sztuk" value="$_GET[l_sztuk]">
         </label>
         <a href="product.php" class="href_to_icon"><img src="photos/icons/trash-can-solid.png" class="icon_in_cart" alt="Usuń z koszyka"></a>
         <h2 class="cena_za_sztuke">Cena za sztukę: $record[p_cena_szt]</h2>
-        <h2 class="cena_za_x_sztuk">Cena łączna: ($record[p_cena_szt]*$_GET[l_sztuk])</h2>
+        <h2 class="cena_za_x_sztuk">Cena łączna: $value</h2>
     </div>
 END;
-
+    }
 ?>
     <a href="order_form.php"><button class="zamow">Zamów</button></a>
 </main>
