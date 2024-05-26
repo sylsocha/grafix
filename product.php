@@ -37,33 +37,10 @@
 
 <main>
     <?php
+
     $conn = new mysqli('localhost', 'root', '', 'grafix_database');
-    $sql1 = "select id_order from orders where id_user = 1";
-    $conn->query($sql1);
-    $wynik = $conn->query($sql1);
-    if($wynik->num_rows>0) {
-
-        $sql2 = "select id_order, finalised from orders where id_user = 1";
-        $conn->query($sql2);
-        $wynik = $conn->query($sql2);
-        $record = $wynik->fetch_assoc();
-        if($record['finalised'] != 0)
-        {
-
-        }
-
-        echo 'id:' . $record['id_order'] . ' finalised: ' . $record['finalised'];
-    }
-    else{
-        $sql3 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship) select u.id_user, 0, NULL, NULL, 1, 1 from users u";
-        $conn->query($sql3);
-    }
-
-    /*
-    $sql2 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship) select u.id_user, 0, NULL, NULL, 2, 1 from users u";
-    $conn->query($sql2);
-    $sql3 = "select * from product where id_prod='$_GET[prod_view]'";
-    $wynik = $conn->query($sql3);
+    $sql4 = "select * from product where id_prod='$_GET[prod_view]'";
+    $wynik = $conn->query($sql4);
     $record=$wynik->fetch_assoc();
     echo <<<END
     <div class="product">
@@ -83,7 +60,6 @@
         
     </div>
 END;
-    */
     ?>
 </main>
 

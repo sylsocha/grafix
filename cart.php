@@ -38,11 +38,63 @@
 <main>
     <?php
     $conn = new mysqli('localhost', 'root', '', 'grafix_database');
-    $sql2 = "insert into cart (id_order, id_prod, liczba_sztuk, cena_unit) select o.id_order, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit from orders o join product p on o.id_prod = p.id_prod";
-    $conn->query($sql2);
-    /*$sql3 = "select * from product P join cart C on P.id_prod = C.id_prod";*/
-    $sql4 = "select O.id_user as o_user, U.id_user as u_user, U.imie as u_imie from orders O join users U on O.id_user = U.id_user";
-    $wynik = $conn->query($sql4);
+    $sql1 = "select id_order from orders where id_user = 1";
+    $conn->query($sql1);
+    $wynik = $conn->query($sql1);
+    $nr_zamowienia = 0;
+    if($wynik->num_rows>0) {
+
+        $sql2 = "select id_order, finalised from orders where id_user = 1";
+        $conn->query($sql2);
+        $wynik = $conn->query($sql2);
+        $num_row = 0;
+        while(($utworz = $wynik->fetch_assoc())!= null) {
+            $num_row++;
+            if($utworz['finalised'] != 0 && $num_row == $wynik->num_rows)
+            {
+                /*utwórz nowe zamówienie*/
+                $sql3 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship)
+                         select u.id_user, 0, NULL, NULL, 1, 1
+                         from users u";
+                $conn->query($sql3);
+                $nr_zamowienia = $utworz['id_order'];
+                echo "nowe";
+            }
+            else if($utworz['finalised'] == 0) {
+                $nr_zamowienia = $utworz['id_order'];
+                /*dodawaj do otwartedo zamówienia*/
+                echo 'id:' . $utworz['id_order'] . ' finalised: ' . $utworz['finalised'];
+            }
+            else
+                echo "hehe";
+        }
+    }
+    else{
+        /*utwórz nowe zamówienie*/
+        $sql4 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship)
+                 select u.id_user, 0, NULL, NULL, 1, 1
+                 from users u";
+        $conn->query($sql4);
+        $wynik = $conn->query($sql1);
+        $utworz = $wynik->fetch_assoc();
+        $nr_zamowienia = $utworz['id_order'];
+        echo "!!!!";
+    }
+
+    $sql5 = "insert into cart (id_order, id_prod, liczba_sztuk, cena_unit)
+             select $nr_zamowienia, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit
+             from product p";
+    $conn->query($sql5);
+
+    $sql6 = "select p.photo_link as p_photo,
+             p.nazwa_prod as p_name,
+             p.na_stanie as p_stan,
+             p.cena_unit as p_cena_szt
+             from product p join cart c on p.id_prod = c.id_prod";
+    $wynik = $conn->query($sql6);
+
+   /* $sql6 = "select O.id_user as o_user, U.id_user as u_user, U.imie as u_imie from orders O join users U on O.id_user = U.id_user";
+    $wynik = $conn->query($sql6);
 
     if ($wynik->num_rows > 0) {
         while ($record = $wynik->fetch_assoc()) {
@@ -50,25 +102,23 @@
         }
     } else {
         echo '<h2>No records found</h2>';
-    }
-/*
-    $wynik = $conn->query($sql1);
+    }*/
 
     while(($record=$wynik->fetch_assoc()) != null)
         echo <<<END
         <div class="prod_in_cart">
-        <img src="photos/calendars/no_dates/wooden.jpg" alt="produkt" class="prod_photo">
-        <a href="product.php" style="text-decoration: none; color: black"><h3 class="nazw_prod">Nazwa produktu</h3></a>
+        <img src="$record[p_photo]" alt="produkt" class="prod_photo">
+        <a href="./product.php" style="text-decoration: none; color: black"><h3 class="nazw_prod">$record[p_name]</h3></a>
         <label class="label_select_sztuki">
             Liczba sztuk:
-            <input type="number" class="select_sztuki" min="0" max="$record[id_user]" name="l_sztuk">
+            <input type="number" class="select_sztuki" min="0" max="$record[p_stan]" name="l_sztuk">$_GET[l_sztuk]
         </label>
         <a href="product.php" class="href_to_icon"><img src="photos/icons/trash-can-solid.png" class="icon_in_cart" alt="Usuń z koszyka"></a>
-        <h2 class="cena_za_sztuke">Cena za sztukę: 43,99zł</h2>
-        <h2 class="cena_za_x_sztuk">Cena łączna: z bazy x 43,99zł</h2>
+        <h2 class="cena_za_sztuke">Cena za sztukę: $record[p_cena_szt]</h2>
+        <h2 class="cena_za_x_sztuk">Cena łączna: ($record[p_cena_szt]*$_GET[l_sztuk])</h2>
     </div>
 END;
-*/
+
 ?>
     <a href="order_form.php"><button class="zamow">Zamów</button></a>
 </main>
