@@ -92,7 +92,9 @@
              p.nazwa_prod as p_name,
              p.na_stanie as p_stan,
              p.cena_unit as p_cena_szt,
-             c.liczba_sztuk as c_l_sztuk
+             c.liczba_sztuk as c_l_sztuk,
+             c.id_order as id_order,
+             c.id_prod as id_prod
              from product p join cart c on p.id_prod = c.id_prod";
     $wynik = $conn->query($sql6);
 
@@ -117,8 +119,10 @@
             Liczba sztuk:
             <input type="number" class="select_sztuki" min="0" max="$record[p_stan]" name="l_sztuk" value="$record[c_l_sztuk]" style="text-align: center">
         </label>
-        <form method="get" action="">
-            <a href="./product.php" class="href_to_icon"><img src="photos/icons/trash-can-solid.png" class="icon_in_cart" alt="Usuń z koszyka"></a>
+        <form method="post" action="./delete.php" class="href_to_icon">
+            <input type="checkbox" name="id_order" value=$record[id_order] style="appearance: none; margin: 0;" checked>
+            <input type="checkbox" name="id_prod" value=$record[id_prod] style="appearance: none; margin: 0;" checked>
+            <input type="submit" value="" class="icon_in_cart" style="height: 60%; width: 80%; background-image: url('photos/icons/trash-can-solid.png'); background-size: contain; background-repeat: no-repeat; background-position: center; cursor: pointer; color: #FFFFFF; border: #FFFFFF""></input>
         </form>
         
         <h2 class="cena_za_sztuke">Cena za sztukę: $record[p_cena_szt]</h2>

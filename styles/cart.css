@@ -69,7 +69,7 @@
 
     .icon_in_cart{
         width: 100%;
-        margin-top:70%;
+        margin:30% 0 40% 0;
         grid-row-start: 1;
         grid-row-end: 3;
         grid-column: 5;
@@ -135,8 +135,10 @@
 
     .prod_in_cart{
         grid-template-columns: 0.3fr 1fr 1fr 0.2fr;
-        grid-template-rows: 0.4fr 0.4fr;
+        grid-template-rows: 0.6fr 0.4fr;
+        row-gap: 10%;
         width: 90%;
+
     }
 
     .prod_photo{
