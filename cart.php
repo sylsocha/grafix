@@ -82,15 +82,17 @@
         echo "!!!!";
     }
 
-    $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
+    if(isset($GET['id_prod'])) {
+        $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
              select $nr_zamowienia, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit
              from product p";
-    $conn->query($sql5);
-
+        $conn->query($sql5);
+    }
     $sql6 = "select p.photo_link as p_photo,
              p.nazwa_prod as p_name,
              p.na_stanie as p_stan,
-             p.cena_unit as p_cena_szt
+             p.cena_unit as p_cena_szt,
+             c.liczba_sztuk as c_l_sztuk
              from product p join cart c on p.id_prod = c.id_prod";
     $wynik = $conn->query($sql6);
 
@@ -106,23 +108,27 @@
     }*/
 
     while(($record=$wynik->fetch_assoc()) != null) {
-        $value = $record['p_cena_szt'] * $_GET['l_sztuk'];
+        $value = $record['p_cena_szt'] * $record['c_l_sztuk'];
         echo <<<END
         <div class="prod_in_cart">
         <img src="$record[p_photo]" alt="produkt" class="prod_photo">
         <a href="./product.php" style="text-decoration: none; color: black"><h3 class="nazw_prod">$record[p_name]</h3></a>
         <label class="label_select_sztuki">
             Liczba sztuk:
-            <input type="number" class="select_sztuki" min="0" max="$record[p_stan]" name="l_sztuk" value="$_GET[l_sztuk]">
+            <input type="number" class="select_sztuki" min="0" max="$record[p_stan]" name="l_sztuk" value="$record[c_l_sztuk]" style="text-align: center">
         </label>
-        <a href="product.php" class="href_to_icon"><img src="photos/icons/trash-can-solid.png" class="icon_in_cart" alt="Usuń z koszyka"></a>
+        <form method="get" action="">
+            <a href="./product.php" class="href_to_icon"><img src="photos/icons/trash-can-solid.png" class="icon_in_cart" alt="Usuń z koszyka"></a>
+        </form>
+        
         <h2 class="cena_za_sztuke">Cena za sztukę: $record[p_cena_szt]</h2>
         <h2 class="cena_za_x_sztuk">Cena łączna: $value</h2>
     </div>
 END;
     }
+
+    echo  '<a href="order_form.php"><button class="zamow">Zamów</button></a>';
 ?>
-    <a href="order_form.php"><button class="zamow">Zamów</button></a>
 </main>
 
 <footer>

@@ -32,11 +32,6 @@
     margin-left: 2%;
 }
 
-.cena_za_x_sztuk,
-.cena_za_sztuke{
-    font-size: 160%;
-}
-
 .zamow{
     border: none;
     background-color: #BF1120;
@@ -246,6 +241,11 @@
 
     .icon_in_cart{
         width: 80%;
+    }
+
+    .cena_za_x_sztuk,
+    .cena_za_sztuke{
+        font-size: 160%
     }
 
     .label_select_sztuki{

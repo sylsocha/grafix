@@ -489,6 +489,7 @@
         grid-row: 4;
         margin-left: 3%;
         margin-top: 3%;
+        font-size: 80%
     }
 
     .cena_za_x_sztuk{
@@ -497,6 +498,7 @@
         grid-row: 2;
         margin-left: 3%;
         margin-top: 0;
+        font-size: 80%
     }
 
     .zamow{
