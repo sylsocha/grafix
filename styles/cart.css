@@ -17,10 +17,6 @@
     cursor: pointer;
 }
 
-.label_select_sztuki{
-    margin-left: 3%;
-}
-
 .cena_za_sztuke,
 .cena_za_x_sztuk,
 .label_select_sztuki{
@@ -78,6 +74,7 @@
         grid-column: 2;
         grid-row: 2;
         margin-top: -6%;
+        margin-left: 3%;
         font-size: 110%;
     }
 
@@ -165,6 +162,7 @@
         grid-column: 2;
         grid-row: 2;
         margin-top: -1%;
+        margin-left: 3%;
         font-size: 100%;
     }
 
@@ -246,6 +244,7 @@
     .cena_za_sztuke,
     .label_select_sztuki{
         font-size: 100%;
+        margin-left: 3%;
     }
 
     .zamow{

@@ -35,26 +35,15 @@
         <div class="menu_elem"><a href="cart.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
-<!-- if $record[wszytsko co do formu po kolei] isset $zmienna = $record[] else $zmienna = zawartość placeholderu -->
+
 <main>
     <h2 class="h2_contact">dAne do zAmówieniA</h2>
     <?php
     $conn = new mysqli('localhost', 'root', '', 'grafix_database');
-/*
-    $sql2="select * from cart where id_order=2 and id_prod=7";
-    $conn->query($sql2);
-    $wynik = $conn->query($sql2);
-    $record=$wynik->fetch_assoc();
-
-    echo $record['liczba_sztuk'];
-*/
-
-
     $sql1 = "select * from users where id_user = 1";
     $conn->query($sql1);
     $wynik = $conn->query($sql1);
     $record=$wynik->fetch_assoc();
-
 
 
     //sprawdzanie, czy jest zalogowany?
@@ -129,7 +118,7 @@ END;
             </label>
         </div>
 
-        <button type="submit" name="wyslij" class="wyslij">Wyślij</button>
+        <input type="submit" name="wyslij" class="wyslij">
     </form>
 END;
 
