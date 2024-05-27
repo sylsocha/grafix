@@ -85,7 +85,7 @@
     if(isset($_GET['id_prod'])) {
         $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
              select $nr_zamowienia, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit
-             from product p";
+             from product p where id_prod='$_GET[id_prod]'";
         $conn->query($sql5);
     }
 
@@ -99,17 +99,6 @@
              c.id_prod as id_prod
              from product p join cart c on p.id_prod = c.id_prod";
     $wynik = $conn->query($sql6);
-
-   /* $sql6 = "select O.id_user as o_user, U.id_user as u_user, U.imie as u_imie from orders O join users U on O.id_user = U.id_user";
-    $wynik = $conn->query($sql6);
-
-    if ($wynik->num_rows > 0) {
-        while ($record = $wynik->fetch_assoc()) {
-            echo '<h2>' . $record['o_user'] . ' ' . $record['u_user'] . ' ' . $record['u_imie'] . '</h2>';
-        }
-    } else {
-        echo '<h2>No records found</h2>';
-    }*/
 
     while(($record=$wynik->fetch_assoc()) != null) {
         $value = $record['p_cena_szt'] * $record['c_l_sztuk'];
