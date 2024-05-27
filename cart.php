@@ -116,10 +116,12 @@
         echo <<<END
         <div class="prod_in_cart">
         <img src="$record[p_photo]" alt="produkt" class="prod_photo">
-        <a href="./product.php" style="text-decoration: none; color: black"><h3 class="nazw_prod">$record[p_name]</h3></a>
+        <form action="./product.php" method="get">
+            <input type="submit" class="nazw_prod" value="$record[p_name]" style="font-family: 'Urbanist', sans-serif; font-weight: 700;font-size: 120%; border: none; text-align: left">
+        </form>
         <label class="label_select_sztuki">
             Liczba sztuk:
-            <input type="number" class="select_sztuki" min="0" max="$record[p_stan]" name="l_sztuk" value="$record[c_l_sztuk]" style="text-align: center">
+            <input type="number" class="select_sztuki" min="0" max="$record[p_stan]" name="l_sztuk" value="$record[c_l_sztuk]">
         </label>
         <form method="post" action="./delete.php" class="href_to_icon">
             <input type="checkbox" name="id_order" value=$record[id_order] style="appearance: none; margin: 0;" checked>
