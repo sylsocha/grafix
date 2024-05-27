@@ -35,24 +35,71 @@
         <div class="menu_elem"><a href="cart.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
-
+<!-- if $record[wszytsko co do formu po kolei] isset $zmienna = $record[] else $zmienna = zawartość placeholderu -->
 <main>
     <h2 class="h2_contact">dAne do zAmówieniA</h2>
+    <?php
+    $conn = new mysqli('localhost', 'root', '', 'grafix_database');
+/*
+    $sql2="select * from cart where id_order=2 and id_prod=7";
+    $conn->query($sql2);
+    $wynik = $conn->query($sql2);
+    $record=$wynik->fetch_assoc();
 
-    <div class="formularz">
-        <input type="text" name="imie" placeholder='Imię' required>
-        <input type="text" name="nazwisko" placeholder='Nazwisko' required>
-        <input type="text" name="ulica" placeholder='Ulica' required>
-        <input type="text" name="nr_domu" placeholder='Numer domu' required>
-        <input type="text" name="nr_mieszk" placeholder='Numer mieszkania'>
-        <input type="text" name="miasto" placeholder="Miasto">
-        <input type="text" pattern="^\d{2}-\d{3}$" name="kodpocztowy" placeholder="Kod pocztowy">
-        <input type="email" name="ad_email" id="ad_emial" placeholder="Adres e-mail" required>
-        <input type="tel" placeholder="Numer telefonu" required>
+    echo $record['liczba_sztuk'];
+*/
+
+
+    $sql1 = "select * from users where id_user = 1";
+    $conn->query($sql1);
+    $wynik = $conn->query($sql1);
+    $record=$wynik->fetch_assoc();
+
+
+
+    //sprawdzanie, czy jest zalogowany?
+    if($record['imie'] == null){
+        header("Location: ./log_in_form.php");
+        exit();
+    }
+
+    echo<<<END
+    <form class="formularz" action="./update.php" method="post">
+        <input type="text" name="imie" placeholder='$record[imie]' required>
+        <input type="text" name="nazwisko" placeholder='$record[nazwisko]' required>
+END;
+        if($record['ulica'] == null)
+            echo "<input type='text' name='ulica' placeholder='Ulica' required>";
+        else
+            echo "<input type='text' name='ulica' placeholder='$record[ulica]' required>";
+
+        if($record['nr_domu'] == null)
+            echo "<input type='text' name='nr_domu' placeholder='Numer domu' value='$record[nr_domu]' required>";
+        else
+            echo "<input type='text' name='nr_domu' placeholder='$record[nr_domu]' value='$record[nr_domu]' required>";
+
+        if($record['nr_mieszkania'] == null)
+            echo "<input type='text' name='nr_mieszk' placeholder='Numer Mieszkania'>";
+        else
+            echo "<input type='text' name='nr_mieszk' placeholder='$record[nr_mieszkania]'>";
+
+        if($record['miasto'] == null)
+            echo "<input type='text' name='miasto' placeholder='Miasto'>";
+        else
+            echo "<input type='text' name='miasto' placeholder='$record[miasto]'>";
+
+        if($record['kod_pocztowy'] == null)
+            echo "<input type='text' pattern='^\d{2}-\d{3}$' name='kodpocztowy' placeholder='Kod pocztowy'>";
+        else
+            echo "<input type='text' pattern='^\d{2}-\d{3}$' name='kodpocztowy' placeholder='$record[kod_pocztowy]'>";
+
+    echo<<<END
+        <input type="email" name="ad_email" id="ad_emial" placeholder="$record[e_mail]" required>
+        <input type="tel" placeholder="$record[nr_tel]" required>
         <label>
             <textarea name="zniżka" class="znizka" placeholder="Jeśli zamawiasz kalendarz z danego roku, podaj nam powód dlaczego wybierasz dany rok, a dostaniesz zniżkę 5%"></textarea>
         </label>
-
+        
         <input type="checkbox" name="rodo" id="rodo" class="rodo">
         <label for="rodo">Akceptuję politykę prywatności</label>
 
@@ -82,8 +129,12 @@
             </label>
         </div>
 
-        <a href="sum_up.php" style="text-decoration: none"><button type="submit" name="wyslij" class="wyslij">Wyślij</button></a>
-    </div>
+        <button type="submit" name="wyslij" class="wyslij">Wyślij</button>
+    </form>
+END;
+
+
+?>
 </main>
 
 <footer>

@@ -58,15 +58,11 @@
                          from users u";
                 $conn->query($sql3);
                 $nr_zamowienia = $utworz['id_order'];
-                echo "nowe";
             }
             else if($utworz['finalised'] == 0) {
-                $nr_zamowienia = $utworz['id_order'];
                 /*dodawaj do otwartedo zamówienia*/
-                echo 'id:' . $utworz['id_order'] . ' finalised: ' . $utworz['finalised'];
+                $nr_zamowienia = $utworz['id_order'];
             }
-            else
-                echo "hehe";
         }
     }
 
@@ -79,7 +75,6 @@
         $wynik = $conn->query($sql1);
         $utworz = $wynik->fetch_assoc();
         $nr_zamowienia = $utworz['id_order'];
-        echo "!!!!";
     }
 
     if(isset($_GET['id_prod']) & isset($_GET['l_sztuk'])) {   //teorzenie nowego koszyka przy wejściu przez produkt
@@ -109,14 +104,11 @@
         $value = $record['p_cena_szt'] * $record['c_l_sztuk'];
         echo <<<END
         <div class="prod_in_cart">
-        <img src="$record[p_photo]" alt="produkt" class="prod_photo">
+        <img src="$record[p_photo]" alt="produkt" class="prod_photo_cart">
         <form action="./product.php" method="get">
-            <input type="submit" class="nazw_prod" value="$record[p_name]" name="p_name" style="font-family: 'Urbanist', sans-serif; font-weight: 700;; border: none; text-align: left">
+            <input type="submit" class="nazw_prod_cart" value="$record[p_name]" name="p_name" style="font-family: 'Urbanist', sans-serif; font-weight: 700; border: none; text-align: left">
         </form>
-        <label class="label_select_sztuki">
-            Liczba sztuk:
-            <input type="number" class="select_sztuki" min="0" max="$record[p_stan]" name="l_sztuk" placeholder="$record[c_l_sztuk]">
-        </label>
+        <h2 class="label_select_sztuki"> Liczba sztuk: $record[c_l_sztuk]</h2>
         <form method="post" action="./delete.php" class="href_to_icon">
             <input type="checkbox" name="id_order" value=$record[id_order] style="appearance: none; margin: 0;" checked>
             <input type="checkbox" name="id_prod" value=$record[id_prod] style="appearance: none; margin: 0;" checked>
@@ -129,7 +121,7 @@
 END;
     }
 
-    echo  '<a href="order_form.php"><button class="zamow">Zamów</button></a>';
+    echo  '<a href="./order_form.php"><button class="zamow">Zamów</button></a>';
 ?>
 </main>
 
