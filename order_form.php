@@ -47,15 +47,15 @@
 
 
     //sprawdzanie, czy jest zalogowany?
-    if($record['imie'] == null){
+    if($record['id_user'] == null){
         header("Location: ./log_in_form.php");
         exit();
     }
 
     echo<<<END
     <form class="formularz" action="./update.php" method="post">
-        <input type="text" name="imie" placeholder='$record[imie]' required>
-        <input type="text" name="nazwisko" placeholder='$record[nazwisko]' required>
+        <input type="text" name="imie" value='$record[imie]' required>
+        <input type="text" name="nazwisko" value='$record[nazwisko]' required>
 END;
         if($record['ulica'] == null)
             echo "<input type='text' name='ulica' placeholder='Ulica' required>";
@@ -83,8 +83,8 @@ END;
             echo "<input type='text' pattern='^\d{2}-\d{3}$' name='kodpocztowy' placeholder='$record[kod_pocztowy]'>";
 
     echo<<<END
-        <input type="email" name="ad_email" id="ad_emial" placeholder="$record[e_mail]" required>
-        <input type="tel" placeholder="$record[nr_tel]" required>
+        <input type="email" name="email" id="emial" value="$record[e_mail]" required>
+        <input type="tel" name='nr_tel' value="$record[nr_tel]" required>
         <label>
             <textarea name="zniżka" class="znizka" placeholder="Jeśli zamawiasz kalendarz z danego roku, podaj nam powód dlaczego wybierasz dany rok, a dostaniesz zniżkę 5%"></textarea>
         </label>
