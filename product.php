@@ -59,7 +59,7 @@
         <div class="icon_prod">
             <label class="lable_liczna_produtku">
                 Podaj liczbę sztuk:
-                <input type="number" placeholder="1 - 10" min='1' max='10' class="liczba_produktu" name="l_sztuk">
+                <input type="number" placeholder='1 - $record[na_stanie]' min='1' max='$record[na_stanie]' class="liczba_produktu" name="l_sztuk" required>
             </label>
             <input type="checkbox" name="id_prod" value=$record[id_prod] style="appearance: none; margin: 0; grid-column: 2" checked>
             <input type="submit" value="" class="add_to_cart" style="width: 100%; background-image: url('photos/icons/cart-plus-solid_red.png'); background-size: contain; background-repeat: no-repeat; background-position: center; cursor: pointer; color: #FFFFFF; border: #FFFFFF; margin: 0 auto 0 auto">

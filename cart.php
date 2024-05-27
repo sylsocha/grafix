@@ -88,13 +88,12 @@
              from product p where id_prod='$_GET[id_prod]'";
         $conn->query($sql5);
     }
-    else if(!isset($_GET['l_sztuk'])) {  //tworzenie nowego koszyka przy dodaniu artykułu z category.php
+    else if(!isset($_GET['l_sztuk']) & isset($_GET['id_prod'])) {  //tworzenie nowego koszyka przy dodaniu artykułu z category.php
         $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
              select $nr_zamowienia, $_GET[id_prod], 1, p.cena_unit
              from product p where id_prod='$_GET[id_prod]'";
         $conn->query($sql5);
     }
-
 
     $sql6 = "select p.photo_link as p_photo,
              p.nazwa_prod as p_name,
@@ -116,7 +115,7 @@
         </form>
         <label class="label_select_sztuki">
             Liczba sztuk:
-            <input type="number" class="select_sztuki" min="0" max="$record[p_stan]" name="l_sztuk" value="$record[c_l_sztuk]">
+            <input type="number" class="select_sztuki" min="0" max="$record[p_stan]" name="l_sztuk" placeholder="$record[c_l_sztuk]">
         </label>
         <form method="post" action="./delete.php" class="href_to_icon">
             <input type="checkbox" name="id_order" value=$record[id_order] style="appearance: none; margin: 0;" checked>

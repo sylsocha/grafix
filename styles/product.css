@@ -53,6 +53,7 @@
 
     .liczba_produktu{
         margin-left: 2%;
+        width: 30%;
     }
 
     .add_to_cart{
@@ -103,6 +104,10 @@
     .lable_liczna_produtku{
         grid-column: 1;
         font-size: 100%;
+    }
+
+    .liczba_produktu{
+        width: 30%;
     }
 
     .add_to_cart{
