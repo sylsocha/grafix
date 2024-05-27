@@ -117,7 +117,7 @@
         <div class="prod_in_cart">
         <img src="$record[p_photo]" alt="produkt" class="prod_photo">
         <form action="./product.php" method="get">
-            <input type="submit" class="nazw_prod" value="$record[p_name]" style="font-family: 'Urbanist', sans-serif; font-weight: 700;font-size: 120%; border: none; text-align: left">
+            <input type="submit" class="nazw_prod" value="$record[p_name]" name="p_name" style="font-family: 'Urbanist', sans-serif; font-weight: 700;; border: none; text-align: left">
         </form>
         <label class="label_select_sztuki">
             Liczba sztuk:
@@ -129,8 +129,8 @@
             <input type="submit" value="" class="icon_in_cart" style="height: 60%; width: 80%; background-image: url('photos/icons/trash-can-solid.png'); background-size: contain; background-repeat: no-repeat; background-position: center; cursor: pointer; color: #FFFFFF; border: #FFFFFF""></input>
         </form>
         
-        <h2 class="cena_za_sztuke">Cena za sztukę: $record[p_cena_szt]</h2>
-        <h2 class="cena_za_x_sztuk">Cena łączna: $value</h2>
+        <h2 class="cena_za_sztuke">Cena za sztukę: $record[p_cena_szt] zł</h2>
+        <h2 class="cena_za_x_sztuk">Cena łączna: $value zł</h2>
     </div>
 END;
     }

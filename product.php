@@ -39,7 +39,15 @@
     <?php
 
     $conn = new mysqli('localhost', 'root', '', 'grafix_database');
-    $sql4 = "select * from product where id_prod='$_GET[prod_view]'";
+    if(isset($_GET['p_name'])){
+        $sql3="select id_prod from product where nazwa_prod='$_GET[p_name]'";
+        $record=$conn->query($sql3)->fetch_assoc();
+        $id=$record['id_prod'];
+    }
+    else{
+        $id = $_GET['prod_view'];
+    }
+    $sql4 = "select * from product where id_prod='$id'";
     $wynik = $conn->query($sql4);
     $record=$wynik->fetch_assoc();
     echo <<<END
