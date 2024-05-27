@@ -82,9 +82,15 @@
         echo "!!!!";
     }
 
-    if(isset($_GET['id_prod'])) {
+    if(isset($_GET['id_prod']) & isset($_GET['l_sztuk'])) {   //teorzenie nowego koszyka przy wejściu przez produkt
         $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
              select $nr_zamowienia, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit
+             from product p where id_prod='$_GET[id_prod]'";
+        $conn->query($sql5);
+    }
+    else if(!isset($_GET['l_sztuk'])) {  //tworzenie nowego koszyka przy dodaniu artykułu z category.php
+        $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
+             select $nr_zamowienia, $_GET[id_prod], 1, p.cena_unit
              from product p where id_prod='$_GET[id_prod]'";
         $conn->query($sql5);
     }
