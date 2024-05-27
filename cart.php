@@ -82,12 +82,14 @@
         echo "!!!!";
     }
 
-    if(isset($GET['id_prod'])) {
+    if(isset($_GET['id_prod'])) {
         $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
              select $nr_zamowienia, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit
              from product p";
         $conn->query($sql5);
     }
+
+
     $sql6 = "select p.photo_link as p_photo,
              p.nazwa_prod as p_name,
              p.na_stanie as p_stan,
