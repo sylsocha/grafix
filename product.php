@@ -31,7 +31,7 @@
         <div class="menu_elem"><a href="./log_in_form.html" class="a_menu">logowanie / rejestracja</a></div>
         <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
         <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
-        <div class="menu_elem"><a href="cart.php" class="a_menu">koszyk</a></div>
+        <div class="menu_elem"><a href="./create_order.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
 
@@ -39,7 +39,7 @@
     <?php
 
     $conn = new mysqli('localhost', 'root', '', 'grafix_database');
-    if(isset($_GET['p_name'])){
+    if(isset($_GET['p_name'])){ //wejście z koszyka
         $sql3="select id_prod from product where nazwa_prod='$_GET[p_name]'";
         $record=$conn->query($sql3)->fetch_assoc();
         $id=$record['id_prod'];
@@ -47,6 +47,7 @@
     else{
         $id = $_GET['prod_view'];
     }
+
     $sql4 = "select * from product where id_prod='$id'";
     $wynik = $conn->query($sql4);
     $record=$wynik->fetch_assoc();

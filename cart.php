@@ -31,64 +31,15 @@
         <div class="menu_elem"><a href="./log_in_form.html" class="a_menu">logowanie / rejestracja</a></div>
         <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
         <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
-        <div class="menu_elem"><a href="cart.php" class="a_menu">koszyk</a></div>
+        <div class="menu_elem"><a href="./create_order.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
 
 <main>
     <?php
     $conn = new mysqli('localhost', 'root', '', 'grafix_database');
-    $sql1 = "select id_order from orders where id_user = 1";
-    $conn->query($sql1);
-    $wynik = $conn->query($sql1);
-    $nr_zamowienia = 0;
-    if($wynik->num_rows>0) {
 
-        $sql2 = "select id_order, finalised from orders where id_user = 1";
-        $conn->query($sql2);
-        $wynik = $conn->query($sql2);
-        $num_row = 0;
-        while(($utworz = $wynik->fetch_assoc())!= null) {
-            $num_row++;
-            if((int)$utworz['finalised'] != 0 && $num_row == $wynik->num_rows)
-            {
-                /*utwórz nowe zamówienie*/
-                $sql3 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship)
-                         select u.id_user, 0, NULL, NULL, 1, 1
-                         from users u";
-                $conn->query($sql3);
-                $nr_zamowienia = $utworz['id_order'];
-            }
-            else if((int)$utworz['finalised'] == 0) {
-                /*dodawaj do otwartedo zamówienia*/
-                $nr_zamowienia = $utworz['id_order'];
-            }
-        }
-    }
-    else{
-        /*utwórz nowe zamówienie*/
-        $sql4 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship)
-                 select u.id_user, 0, NULL, NULL, 1, 1
-                 from users u";
-        $conn->query($sql4);
-        $wynik = $conn->query($sql1);
-        $utworz = $wynik->fetch_assoc();
-        $nr_zamowienia = $utworz['id_order'];
-    }
-
-    if(isset($_GET['id_prod']) & isset($_GET['l_sztuk'])) {   //teorzenie nowego koszyka przy wejściu przez produkt
-        $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
-             select $nr_zamowienia, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit
-             from product p where id_prod='$_GET[id_prod]'";
-        $conn->query($sql5);
-    }
-    else if(!isset($_GET['l_sztuk']) & isset($_GET['id_prod'])) {  //tworzenie nowego koszyka przy dodaniu artykułu z category.php
-        $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
-             select $nr_zamowienia, $_GET[id_prod], 1, p.cena_unit
-             from product p where id_prod='$_GET[id_prod]'";
-        $conn->query($sql5);
-    }
-
+    $nr_zamowienia = include_once('create_order.php');
 
     $sql2 = "select p.photo_link as p_photo,
              p.nazwa_prod as p_name,
@@ -97,7 +48,7 @@
              c.liczba_sztuk as c_l_sztuk,
              c.id_order as id_order,
              c.id_prod as id_prod
-             from product p join cart c on p.id_prod = c.id_prod";
+             from product p join cart c on p.id_prod = c.id_prod where c.id_order=$nr_zamowienia";
     $wynik = $conn->query($sql2);
 
     while(($record=$wynik->fetch_assoc()) != null) {

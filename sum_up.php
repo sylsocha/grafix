@@ -32,7 +32,7 @@
         <div class="menu_elem"><a href="./log_in_form.html" class="a_menu">logowanie / rejestracja</a></div>
         <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
         <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
-        <div class="menu_elem"><a href="./cart.php" class="a_menu">koszyk</a></div>
+        <div class="menu_elem"><a href="./create_order.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
 
@@ -104,7 +104,7 @@ END;
     <h1 style="margin: 3% auto; width:70%; text-align: center">$calosc zl</h1>
 
     <div class="sum_but_container">
-        <a href="./cart.php"><button class="dalej_sum">Edytuj zamówienie</button></a>
+        <a href="./create_order.php"><button class="dalej_sum">Edytuj zamówienie</button></a>
         <a href="./finalise.php"><button class="dalej_sum">Przejdź do płatności</button></a>
     </div>
 END;

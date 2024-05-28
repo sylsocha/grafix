@@ -31,7 +31,7 @@
         <div class="menu_elem"><a href="./log_in_form.html" class="a_menu">logowanie / rejestracja</a></div>
         <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
         <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
-        <div class="menu_elem"><a href="cart.php" class="a_menu">koszyk</a></div>
+        <div class="menu_elem"><a href="./create_order.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
 
