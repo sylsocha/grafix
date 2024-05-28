@@ -40,6 +40,13 @@ else{
     $nr_zamowienia = $utworz['id_order'];
 }
 
+try{
+    $sql5 = "select c.id_order as fin from orders o join cart c on o.id_order=c.id_order where o.id_user=1 and o.id_order='$nr_zamowienia'";
+    $conn->query($sql5);
+    $final = $conn->query($sql5)->fetch_assoc()['fin'];
+}catch(Exception $e){
+    $final = 1;
+}
 
 
 if(isset($_GET['id_prod']) & isset($_GET['l_sztuk'])) {   //tworzenie nowego koszyka przy wejściu przez produkt
@@ -56,12 +63,12 @@ else if(!isset($_GET['l_sztuk']) & isset($_GET['id_prod'])) {  //tworzenie noweg
     $conn->query($sql5);
     return $nr_zamowienia;
 }
-else if(!isset($_GET['id_prod']) & !isset($_GET['l_sztuk'])){   //wejście do koszyka z nav_baru, gdy nie ma nowego zamówienia
-    return 0;
-
+else if(!isset($_GET['id_prod']) & !isset($_GET['l_sztuk']) & $final==1){   //wejście do koszyka z nav_baru, gdy nie ma nowego zamówienia
+    return -1;
+}
+else{
+    return $nr_zamowienia;
 }
 
-header("Location: ./cart.php");
-exit();
 
 

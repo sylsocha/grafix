@@ -31,7 +31,7 @@
         <div class="menu_elem"><a href="./log_in_form.html" class="a_menu">logowanie / rejestracja</a></div>
         <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
         <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
-        <div class="menu_elem"><a href="./create_order.php" class="a_menu">koszyk</a></div>
+        <div class="menu_elem"><a href="./cart.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
 
@@ -51,7 +51,7 @@
             <input type="checkbox" name="prod_view" value=$record[id_prod] style="appearance: none" checked>
             <input type="submit" class="submit_cat" value="" style="height: 50%; width: 100%; background-image: url('photos/icons/magnifying-glass-solid.png'); background-size: contain; background-repeat: no-repeat; background-position: center; cursor: pointer; color: #FFFFFF; border: #FFFFFF">
         </form>
-        <form action="./create_order.php" method="get" class="icon_in_cat">
+        <form action="./cart.php" method="get" class="icon_in_cat">
             <input type="checkbox" name="id_prod" value=$record[id_prod] style="appearance: none" checked>
             <input type="submit" class="submit_cat" value="" style="height: 50%; width: 100%; background-image: url('photos/icons/cart-plus-solid_red.png'); background-size: contain; background-repeat: no-repeat; background-position: center; cursor: pointer; color: #FFFFFF; border: #FFFFFF">
         </form>

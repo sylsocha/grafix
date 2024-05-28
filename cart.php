@@ -31,7 +31,7 @@
         <div class="menu_elem"><a href="./log_in_form.html" class="a_menu">logowanie / rejestracja</a></div>
         <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
         <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
-        <div class="menu_elem"><a href="./create_order.php" class="a_menu">koszyk</a></div>
+        <div class="menu_elem"><a href="./cart.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
 
@@ -41,7 +41,7 @@
 
     $nr_zamowienia = include_once('create_order.php');
 
-    if($nr_zamowienia == 0)
+    if($nr_zamowienia == -1)
     {
         echo "<h1 style='margin: 5% auto; width:70%; text-align: center'>ups! jeszcze nic tu nie ma, wróć do strony głównej aby zacząć zamówienie</h1>";
         echo "<a href='./index.html' id='a_thanks'><button class='zamow' id='a_thanks_button style='text-decoration: none'>Powrót do strony głównej</button></a>";

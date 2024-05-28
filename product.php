@@ -31,7 +31,7 @@
         <div class="menu_elem"><a href="./log_in_form.html" class="a_menu">logowanie / rejestracja</a></div>
         <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
         <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
-        <div class="menu_elem"><a href="./create_order.php" class="a_menu">koszyk</a></div>
+        <div class="menu_elem"><a href="./cart.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
 
@@ -56,7 +56,7 @@
         <img src="$record[photo_link]" alt="product" class="product_photo">
         <h3 class="nazwa_prod">$record[nazwa_prod]</h3>
         <p class="opis_duzy">$record[opis_long]</p>
-        <form action="./create_order.php" method="get" class="form_prod">
+        <form action="./cart.php" method="get" class="form_prod">
         <div class="icon_prod">
             <label class="lable_liczna_produtku">
                 Podaj liczbę sztuk:
