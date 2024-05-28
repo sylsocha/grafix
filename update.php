@@ -62,7 +62,6 @@ $kw_cal=number_format($kw_cal, 2);
 
 $sql7="update orders set kwota_calosc='$kw_cal' where id_order='$o_id'";
 $conn->query($sql7);
-/*
+
 header("Location: ./sum_up.php");
 exit();
-*/
