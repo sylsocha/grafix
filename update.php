@@ -23,41 +23,33 @@ $sql3="update orders set id_pay='$_POST[platnosc]',
                         where id_user=1 and finalised=0";
 $conn->query($sql3);
 
-$kw_cal = 0;
-
-$sql4="select cena_ship from shipment where id_ship='$_POST[dostawa]'";
-$conn->query($sql4);
-$ship=$conn->query($sql4)->fetch_assoc();
-
-$sql5="select * from cart where id_order=2";
-$conn->query($sql5);
-$wynik=$conn->query($sql5);
-while($cart=$wynik->fetch_assoc()){
-var_dump($cart);
-    echo'<br>';}
-
-
-
-$sql6="select * from orders where id_order=2";
-$conn->query($sql6);
-$order=$conn->query($sql6)->fetch_assoc();
-var_dump($order);
-
-$kw_cal=(float)$ship["cena_ship"];
-
-
 if(isset($_POST['uwaga_znizka'])){
-    $sql7 = "update orders set uwaga_znizka='$_POST[uwaga_znizka]',
+    $sql4 = "update orders set uwaga_znizka='$_POST[uwaga_znizka]',
                          znizka=0.05
                          where id_user=1 and finalised=0";
-    $conn->query($sql7);
+    $conn->query($sql4);
 }
-/*
+
+/*obliczanie kwoty zamówienia*/
+$kw_cal = 0;
+
+$sql5="select cena_ship from shipment where id_ship='$_POST[dostawa]'";
+$conn->query($sql5);
+$ship=$conn->query($sql5)->fetch_assoc();
+
+$sql6="select c.liczba_sztuk as sztuki, c.cena_unit as cena, o.znizka as znizka from cart c join orders o on c.id_order=o.id_order where c.id_order=2 and o.id_order=2";
+$conn->query($sql6);
+$wynik=$conn->query($sql6);
+while($cart=$wynik->fetch_assoc()) {
+    $kw_cal += (float)$cart['sztuki'] * (float)$cart['cena'] - (float)$cart['sztuki'] * (float)$cart['cena'] * (float)$cart['znizka'];
+}
+
+$kw_cal+=(float)$ship['cena_ship'];
+
+$kw_cal=number_format($kw_cal, 2);
+
 $sql7="update orders set kwota_calosc='$kw_cal' where id_user=1 and finalised=0";
 $conn->query($sql7);
-*/
-echo '<br><hr>';
-echo 'Edytowane rekordy: ' . $conn->affected_rows;
-/*
+
 header("Location: ./sum_up.php");
-exit();*/
+exit();
