@@ -39,15 +39,18 @@ else{
     $utworz = $wynik->fetch_assoc();
     $nr_zamowienia = $utworz['id_order'];
 }
-
-try{
-    $sql5 = "select c.id_order as fin from orders o join cart c on o.id_order=c.id_order where o.id_user=1 and o.id_order='$nr_zamowienia'";
+    $sql5 = "select finalised as fin from orders where id_user = 1 and id_order='$nr_zamowienia'";
     $conn->query($sql5);
     $final = $conn->query($sql5)->fetch_assoc()['fin'];
-}catch(Exception $e){
-    $final = 1;
-}
 
+
+    $sql6 = "select count(*) as row from cart where id_order='$nr_zamowienia'";
+    $conn->query($sql6);
+    $row = $conn->query($sql6)->fetch_assoc()['row'];
+    if($row == 0)
+        $cart=-1;
+    else
+        $cart=1;
 
 if(isset($_GET['id_prod']) & isset($_GET['l_sztuk'])) {   //tworzenie nowego koszyka przy wejściu przez produkt
     $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
@@ -63,7 +66,7 @@ else if(!isset($_GET['l_sztuk']) & isset($_GET['id_prod'])) {  //tworzenie noweg
     $conn->query($sql5);
     return $nr_zamowienia;
 }
-else if(!isset($_GET['id_prod']) & !isset($_GET['l_sztuk']) & $final==1){   //wejście do koszyka z nav_baru, gdy nie ma nowego zamówienia
+else if($cart==-1 || $final=1){   //wejście do koszyka, gdy nie ma nowego zamówienia
     return -1;
 }
 else{
