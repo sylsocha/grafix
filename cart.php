@@ -41,7 +41,14 @@
 
     $nr_zamowienia = include_once('create_order.php');
 
-    $sql2 = "select p.photo_link as p_photo,
+    if($nr_zamowienia == 0)
+    {
+        echo "<h1 style='margin: 5% auto; width:70%; text-align: center'>ups! jeszcze nic tu nie ma, wróć do strony głównej aby zacząć zamówienie</h1>";
+        echo "<a href='./index.html' id='a_thanks'><button class='zamow' id='a_thanks_button style='text-decoration: none'>Powrót do strony głównej</button></a>";
+    }
+    else {
+
+        $sql2 = "select p.photo_link as p_photo,
              p.nazwa_prod as p_name,
              p.na_stanie as p_stan,
              p.cena_unit as p_cena_szt,
@@ -49,11 +56,11 @@
              c.id_order as id_order,
              c.id_prod as id_prod
              from product p join cart c on p.id_prod = c.id_prod where c.id_order=$nr_zamowienia";
-    $wynik = $conn->query($sql2);
+        $wynik = $conn->query($sql2);
 
-    while(($record=$wynik->fetch_assoc()) != null) {
-        $value = $record['p_cena_szt'] * $record['c_l_sztuk'];
-        echo <<<END
+        while (($record = $wynik->fetch_assoc()) != null) {
+            $value = $record['p_cena_szt'] * $record['c_l_sztuk'];
+            echo <<<END
         <div class="prod_in_cart">
         <img src="$record[p_photo]" alt="produkt" class="prod_photo_cart">
         <form action="./product.php" method="get">
@@ -70,9 +77,10 @@
         <h2 class="cena_za_x_sztuk">Cena łączna: $value zł</h2>
     </div>
 END;
-    }
+        }
 
-    echo  '<a href="./order_form.php"><button class="zamow">Zamów</button></a>';
+        echo '<a href="./order_form.php"><button class="zamow">Zamów</button></a>';
+    }
 ?>
 </main>
 

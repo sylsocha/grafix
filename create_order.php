@@ -22,14 +22,6 @@ if($wynik->num_rows>0) {
                          from users u";
             $conn->query($sql3);
             $nr_zamowienia = $utworz['id_order'];
-
-            /*i nowy koszyk*/
-
-            $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
-                         select $nr_zamowienia, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit
-                         from product p where id_prod='$_GET[id_prod]'";
-            $conn->query($sql5);
-
         }
         else if((int)$utworz['finalised'] == 0) {
             /*dodawaj do otwartedo zamówienia*/
@@ -46,30 +38,30 @@ else{
     $wynik = $conn->query($sql1);
     $utworz = $wynik->fetch_assoc();
     $nr_zamowienia = $utworz['id_order'];
-
-    /*i nowy koszyk*/
-
-    $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
-                 select $nr_zamowienia, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit
-                 from product p where id_prod='$_GET[id_prod]'";
-    $conn->query($sql5);
 }
+
+
 
 if(isset($_GET['id_prod']) & isset($_GET['l_sztuk'])) {   //tworzenie nowego koszyka przy wejściu przez produkt
     $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
              select $nr_zamowienia, $_GET[id_prod], $_GET[l_sztuk], p.cena_unit
              from product p where id_prod='$_GET[id_prod]'";
     $conn->query($sql5);
+    return $nr_zamowienia;
 }
 else if(!isset($_GET['l_sztuk']) & isset($_GET['id_prod'])) {  //tworzenie nowego koszyka przy dodaniu artykułu z category.php
     $sql5 = "insert ignore into cart (id_order, id_prod, liczba_sztuk, cena_unit)
              select $nr_zamowienia, $_GET[id_prod], 1, p.cena_unit
              from product p where id_prod='$_GET[id_prod]'";
     $conn->query($sql5);
+    return $nr_zamowienia;
 }
+else if(!isset($_GET['id_prod']) & !isset($_GET['l_sztuk'])){   //wejście do koszyka z nav_baru, gdy nie ma nowego zamówienia
+    return 0;
 
-return $nr_zamowienia;
+}
 
 header("Location: ./cart.php");
 exit();
+
 
