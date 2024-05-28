@@ -88,7 +88,7 @@ END;
             <textarea name="uwaga_znizka" class="znizka" placeholder="Jeśli zamawiasz kalendarz z danego roku, podaj nam powód dlaczego wybierasz dany rok, a dostaniesz zniżkę 5%"></textarea>
         </label>
         
-        <input type="checkbox" name="rodo" id="rodo" class="rodo" required>
+        <input type="checkbox" name="rodo" id="rodo" class="rodo" value="$record[id_user]" required>
         <label for="rodo">Akceptuję politykę prywatności</label>
 
         <div class="container_sposob">
