@@ -45,7 +45,6 @@
     $wynik = $conn->query($sql1);
     $record=$wynik->fetch_assoc();
 
-
     //sprawdzanie, czy jest zalogowany?
     if($record['id_user'] == null){
         header("Location: ./log_in_form.php");
@@ -54,42 +53,42 @@
 
     echo<<<END
     <form class="formularz" action="./update.php" method="post">
-        <input type="text" name="imie" value='$record[imie]' required>
-        <input type="text" name="nazwisko" value='$record[nazwisko]' required>
+        <input type="text" name="imie" value='$record[imie]'>
+        <input type="text" name="nazwisko" value='$record[nazwisko]'>
 END;
         if($record['ulica'] == null)
             echo "<input type='text' name='ulica' placeholder='Ulica' required>";
         else
-            echo "<input type='text' name='ulica' placeholder='$record[ulica]' required>";
+            echo "<input type='text' name='ulica' value='$record[ulica]'>";
 
         if($record['nr_domu'] == null)
             echo "<input type='text' name='nr_domu' placeholder='Numer domu' value='$record[nr_domu]' required>";
         else
-            echo "<input type='text' name='nr_domu' placeholder='$record[nr_domu]' value='$record[nr_domu]' required>";
+            echo "<input type='text' name='nr_domu' value='$record[nr_domu]'>";
 
         if($record['nr_mieszkania'] == null)
             echo "<input type='text' name='nr_mieszk' placeholder='Numer Mieszkania'>";
         else
-            echo "<input type='text' name='nr_mieszk' placeholder='$record[nr_mieszkania]'>";
+            echo "<input type='text' name='nr_mieszk' value='$record[nr_mieszkania]'>";
 
         if($record['miasto'] == null)
-            echo "<input type='text' name='miasto' placeholder='Miasto'>";
+            echo "<input type='text' name='miasto' placeholder='Miasto' required>";
         else
-            echo "<input type='text' name='miasto' placeholder='$record[miasto]'>";
+            echo "<input type='text' name='miasto' value='$record[miasto]'>";
 
         if($record['kod_pocztowy'] == null)
-            echo "<input type='text' pattern='^\d{2}-\d{3}$' name='kodpocztowy' placeholder='Kod pocztowy'>";
+            echo "<input type='text' pattern='^\d{2}-\d{3}' name='kodpocztowy' placeholder='Kod pocztowy' required>";
         else
-            echo "<input type='text' pattern='^\d{2}-\d{3}$' name='kodpocztowy' placeholder='$record[kod_pocztowy]'>";
+            echo "<input type='text' pattern='^\d{2}-\d{3}' name='kodpocztowy' value='$record[kod_pocztowy]'>";
 
     echo<<<END
-        <input type="email" name="email" id="emial" value="$record[e_mail]" required>
-        <input type="tel" name='nr_tel' value="$record[nr_tel]" required>
+        <input type="email" name="email" id="emial" value="$record[e_mail]">
+        <input type="tel" name='nr_tel' value="$record[nr_tel]">
         <label>
-            <textarea name="zniżka" class="znizka" placeholder="Jeśli zamawiasz kalendarz z danego roku, podaj nam powód dlaczego wybierasz dany rok, a dostaniesz zniżkę 5%"></textarea>
+            <textarea name="uwaga_znizka" class="znizka" placeholder="Jeśli zamawiasz kalendarz z danego roku, podaj nam powód dlaczego wybierasz dany rok, a dostaniesz zniżkę 5%"></textarea>
         </label>
         
-        <input type="checkbox" name="rodo" id="rodo" class="rodo">
+        <input type="checkbox" name="rodo" id="rodo" class="rodo" required>
         <label for="rodo">Akceptuję politykę prywatności</label>
 
         <div class="container_sposob">
