@@ -55,7 +55,7 @@
         <img src="$record[photo_link]" alt="product" class="product_photo">
         <h3 class="nazwa_prod">$record[nazwa_prod]</h3>
         <p class="opis_duzy">$record[opis_long]</p>
-        <form action="./cart.php" method="get" class="form_prod">
+        <form action="./create_order.php" method="get" class="form_prod">
         <div class="icon_prod">
             <label class="lable_liczna_produtku">
                 Podaj liczbę sztuk:

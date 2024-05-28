@@ -50,7 +50,7 @@
         $num_row = 0;
         while(($utworz = $wynik->fetch_assoc())!= null) {
             $num_row++;
-            if($utworz['finalised'] != 0 && $num_row == $wynik->num_rows)
+            if((int)$utworz['finalised'] != 0 && $num_row == $wynik->num_rows)
             {
                 /*utwórz nowe zamówienie*/
                 $sql3 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship)
@@ -59,13 +59,12 @@
                 $conn->query($sql3);
                 $nr_zamowienia = $utworz['id_order'];
             }
-            else if($utworz['finalised'] == 0) {
+            else if((int)$utworz['finalised'] == 0) {
                 /*dodawaj do otwartedo zamówienia*/
                 $nr_zamowienia = $utworz['id_order'];
             }
         }
     }
-
     else{
         /*utwórz nowe zamówienie*/
         $sql4 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship)
@@ -90,7 +89,8 @@
         $conn->query($sql5);
     }
 
-    $sql6 = "select p.photo_link as p_photo,
+
+    $sql2 = "select p.photo_link as p_photo,
              p.nazwa_prod as p_name,
              p.na_stanie as p_stan,
              p.cena_unit as p_cena_szt,
@@ -98,7 +98,7 @@
              c.id_order as id_order,
              c.id_prod as id_prod
              from product p join cart c on p.id_prod = c.id_prod";
-    $wynik = $conn->query($sql6);
+    $wynik = $conn->query($sql2);
 
     while(($record=$wynik->fetch_assoc()) != null) {
         $value = $record['p_cena_szt'] * $record['c_l_sztuk'];
