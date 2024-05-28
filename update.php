@@ -31,7 +31,7 @@ $sql3="update orders set id_pay='$_POST[platnosc]',
                         where id_order='$o_id'";
 $conn->query($sql3);
 
-if(isset($_POST['uwaga_znizka'])){
+if($_POST['uwaga_znizka']!=""){
     $sql4 = "update orders set uwaga_znizka='$_POST[uwaga_znizka]',
                          znizka=0.05
                          where id_order='$o_id'";

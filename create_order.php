@@ -14,7 +14,7 @@ if($wynik->num_rows>0) {
 
     while(($utworz = $wynik->fetch_assoc())!= null) {
         $num_row++;
-        if((int)$utworz['finalised'] == 1 && $num_row == $wynik->num_rows)
+        if($utworz['finalised'] == 1 && $num_row == $wynik->num_rows)
         {
             /*utwórz nowe zamówienie*/
             $sql3 = "insert into orders (id_user, kwota_calosc, uwaga_znizka, znizka, id_pay, id_ship)
@@ -23,7 +23,7 @@ if($wynik->num_rows>0) {
             $conn->query($sql3);
             $nr_zamowienia = $utworz['id_order'];
         }
-        else if((int)$utworz['finalised'] == 0) {
+        else if($utworz['finalised'] == 0) {
             /*dodawaj do otwartedo zamówienia*/
             $nr_zamowienia = $utworz['id_order'];
         }
@@ -39,12 +39,14 @@ else{
     $utworz = $wynik->fetch_assoc();
     $nr_zamowienia = $utworz['id_order'];
 }
+
+
     $sql5 = "select finalised as fin from orders where id_user = 1 and id_order='$nr_zamowienia'";
     $conn->query($sql5);
     $final = $conn->query($sql5)->fetch_assoc()['fin'];
 
 
-    $sql6 = "select count(*) as row from cart where id_order='$nr_zamowienia'";
+    $sql6 = "select count(id_order) as row from cart where id_order='$nr_zamowienia'";
     $conn->query($sql6);
     $row = $conn->query($sql6)->fetch_assoc()['row'];
     if($row == 0)
@@ -66,7 +68,7 @@ else if(!isset($_GET['l_sztuk']) & isset($_GET['id_prod'])) {  //tworzenie noweg
     $conn->query($sql5);
     return $nr_zamowienia;
 }
-else if($cart==-1 || $final=1){   //wejście do koszyka, gdy nie ma nowego zamówienia
+else if($cart==-1 || $final==1){   //wejście do koszyka z nava, gdy nie ma nowego zamówienia
     return -1;
 }
 else{
