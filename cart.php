@@ -22,13 +22,13 @@
 </head>
 <body>
 <div class="navbar">
-    <a href="./index.html"><img src="photos/logo.png" class="logo" alt="LOGO"></a>
+    <a href="index.php"><img src="photos/logo.png" class="logo" alt="LOGO"></a>
     <label class="hamburger">
         <input type="checkbox">
     </label>
     <nav>
-        <div class="menu_elem"><a href="./index.html" class="a_menu">home</a></div>
-        <div class="menu_elem"><a href="./log_in_form.html" class="a_menu">logowanie / rejestracja</a></div>
+        <div class="menu_elem"><a href="index.php" class="a_menu">home</a></div>
+        <div class="menu_elem"><a href="./log_in_form.php" class="a_menu">logowanie / rejestracja</a></div>
         <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
         <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
         <div class="menu_elem"><a href="./cart.php" class="a_menu">koszyk</a></div>
@@ -39,12 +39,12 @@
     <?php
     $conn = new mysqli('localhost', 'root', '', 'grafix_database');
 
-    $nr_zamowienia = include_once('create_order.php');
+    $nr_zamowienia = require_once('create_order.php');
 
     if($nr_zamowienia == -1)
     {
         echo "<h1 style='margin: 5% auto; width:70%; text-align: center'>ups! jeszcze nic tu nie ma, wróć do strony głównej aby zacząć zamówienie</h1>";
-        echo "<a href='./index.html' id='a_thanks'><button class='zamow' id='a_thanks_button style='text-decoration: none'>Powrót do strony głównej</button></a>";
+        echo "<a href='index.php' id='a_thanks'><button class='zamow' id='a_thanks_button style='text-decoration: none'>Powrót do strony głównej</button></a>";
     }
     else {
 
