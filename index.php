@@ -24,18 +24,22 @@
 <body>
 
 <div class="navbar">
-    <a href="index.php"><img src="photos/logo.png" class="logo" alt="LOGO"></a>
+    <a href="./index.php"><img src="photos/logo.png" class="logo" alt="LOGO"></a>
     <label class="hamburger">
         <input type="checkbox">
     </label>
     <nav>
-        <div class="menu_elem"><a href="index.php" class="a_menu">home</a></div>
+        <div class="menu_elem"><a href="./index.php" class="a_menu">home</a></div>
         <?php
-            echo "<div class='menu_elem'><a href='log_in_form.php' class='a_menu>logowanie / rejestracja'</a></div>"
+            session_start();
+            if(!isset($_SESSION['user']))
+                echo "<div class='menu_elem'><a href='./log_in_form.php' class='a_menu'>zaloguj / zarejestruj</a></div>";
+            else
+                echo "<div class='menu_elem'><a href='./log_out.php' class='a_menu'>wyloguj</a></div>";
         ?>
 
-        <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
-        <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
+        <div class="menu_elem"><a href="contact.php" class="a_menu">kontakt</a></div>
+        <div class="menu_elem"><a href="news.php" class="a_menu">aktualności</a></div>
         <div class="menu_elem"><a href="./cart.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
@@ -52,13 +56,13 @@
     <h2 id="h2_category">Niespodzianka, czy zakup zaplanowany?</h2>
     <div class="category">
         <div class="cat_menu_elem">
-            <a href="random_calendar.php"><img src="photos/icons/calendar-xmark-solid.png" alt="losowe kalendarze" class="category_photo"></a>
-            <a href="random_calendar.php" class="cat_menu">losowe kAlendArze</a>
+            <a href="./random_calendar.php"><img src="photos/icons/calendar-xmark-solid.png" alt="losowe kalendarze" class="category_photo"></a>
+            <a href="./random_calendar.php" class="cat_menu">losowe kAlendArze</a>
             <p class="p_category">O tym, z którego roku jest dany kalendarz dowiesz się dopiero po otwarciu paczki.<br><br>Możesz wylosować kalendarz nawet z 1850 lub na 2050 rok!</p>
         </div>
         <div class="cat_menu_elem">
-            <a href="yeared_calendar.php"><img src="photos/icons/calendar-check-regular.png" alt="losowe kalendarze" class="category_photo"></a>
-            <a href="yeared_calendar.php" class="cat_menu">kAlendArze z dAnego roku</a>
+            <a href="./yeared_calendar.php"><img src="photos/icons/calendar-check-regular.png" alt="losowe kalendarze" class="category_photo"></a>
+            <a href="./yeared_calendar.php" class="cat_menu">kAlendArze z dAnego roku</a>
             <p class="p_category">Żaden z kalendarzy nie jest na obecny rok, ale przynajmniej wiesz na który!<br><br>Powiedz nam, dlaczego wybierasz dany rok, a otrzymasz zniżkę!</p>
         </div>
     </div>

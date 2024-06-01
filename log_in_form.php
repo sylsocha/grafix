@@ -28,9 +28,15 @@
     </label>
     <nav>
         <div class="menu_elem"><a href="./index.php" class="a_menu">home</a></div>
-        <div class="menu_elem"><a href="./log_in_form.php" class="a_menu">logowanie / rejestracja</a></div>
-        <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
-        <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
+        <?php
+        session_start();
+        if(!isset($_SESSION['user']))
+            echo "<div class='menu_elem'><a href='./log_in_form.php' class='a_menu'>zaloguj / zarejestruj</a></div>";
+        else
+            echo "<div class='menu_elem'><a href='./log_out.php' class='a_menu'>wyloguj</a></div>";
+        ?>
+        <div class="menu_elem"><a href="./contact.php" class="a_menu">kontakt</a></div>
+        <div class="menu_elem"><a href="news.php" class="a_menu">aktualności</a></div>
         <div class="menu_elem"><a href="./cart.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
@@ -41,11 +47,6 @@
         <a href="#logowanie" id="link_to_log" class="log_form_button">Logowanie</a>
         <img src="./photos/Tiny%20man%20in%20front%20of%20giant%20calendar%20cartoon%20vector%20illustration.jpg" class="log_photo" alt="Człowiek z kalendarzem">
     </div>
-
-
-    <?php
-    session_start();
-    ?>
 
     <form action="./valid_rej.php" method="post" class="formularz_logowania" id="rejestracja">
         <img src="photos/icons/address-card-regular.png" class="ikona_log" alt="rejestracja">

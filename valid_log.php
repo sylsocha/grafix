@@ -27,6 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }else{
         unset($_SESSION['sign_in']);
+        $sql2 = "select id_user from users where e_mail='$email'";
+        $conn->query($sql2);
+        $_SESSION['user'] = $conn->query($sql2)->fetch_assoc()['id_user'];
+
         header("Location: index.php");
         exit();
     }

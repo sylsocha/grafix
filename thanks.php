@@ -28,10 +28,16 @@
         <input type="checkbox">
     </label>
     <nav>
-        <div class="menu_elem"><a href="index.php" class="a_menu">home</a></div>
-        <div class="menu_elem"><a href="log_in_form.php" class="a_menu">logowanie / rejestracja</a></div>
-        <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
-        <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
+        <div class="menu_elem"><a href="./index.php" class="a_menu">home</a></div>
+        <?php
+        session_start();
+        if(!isset($_SESSION['user']))
+            echo "<div class='menu_elem'><a href='./log_in_form.php' class='a_menu'>zaloguj / zarejestruj</a></div>";
+        else
+            echo "<div class='menu_elem'><a href='./log_out.php' class='a_menu'>wyloguj</a></div>";
+        ?>
+        <div class="menu_elem"><a href="./contact.php" class="a_menu">kontakt</a></div>
+        <div class="menu_elem"><a href="./news.php" class="a_menu">aktualności</a></div>
         <div class="menu_elem"><a href="./cart.php" class="a_menu">koszyk</a></div>
     </nav>
 </div>
@@ -39,7 +45,7 @@
 
 <main>
     <h1 style="margin: 3% auto 5% auto; text-align: center; font-size: 250%; position:relative;">dziękujemy zA zAkupy</h1>
-    <a href="index.php" id="a_thanks"><button class="zamow" id="a_thanks_button" style="text-decoration:none">Powrót do strony głównej</button></a>
+    <a href="./index.php" id="a_thanks"><button class="zamow" id="a_thanks_button" style="text-decoration:none">Powrót do strony głównej</button></a>
     <img src="./photos/Tiny%20man%20in%20front%20of%20giant%20calendar%20cartoon%20vector%20illustration.jpg" class="img_thanks" style="margin-bottom: 15%">
 </main>
 
