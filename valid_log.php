@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email_count = $conn->query($sql1)->fetch_assoc()['email'];
     $h_baza= $conn->query($sql1)->fetch_assoc()['haslo'];
 
-    if ($email_count==0 || $haslo !== $h_baza) {
+    if ($email_count==0 || !password_verify($haslo, $h_baza)) {
         $pop_dane=false;
         $_SESSION['sign_in'] = "Nieprawidłowy adres e-mail lub hasło.";
     }

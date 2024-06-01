@@ -58,7 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: log_in_form.php");
         exit();
     }else{
-        $sql2="insert into users set imie='$imie', nazwisko='$nazwisko', haslo='$haslo', e_mail='$email', nr_tel='$tel'";
+        $haslo_hash = password_hash($haslo, PASSWORD_DEFAULT);
+        $sql2="insert into users set imie='$imie', nazwisko='$nazwisko', haslo='$haslo_hash', e_mail='$email', nr_tel='$tel'";
         $conn->query($sql2);
         unset($_SESSION['errors']);
         header("Location: sign_in_info.php");
