@@ -1,10 +1,10 @@
 <?php
-
+session_start();
 var_dump($_POST);
 
 $conn = new mysqli('localhost', 'root', '', 'grafix_database');
 
-$sql0="select id_order from orders where id_user='$_POST[rodo]' and finalised=0";
+$sql0="select id_order from orders where id_user='$_SESSION[user]' and finalised=0";
 $conn->query($sql0);
 $record=$conn->query($sql0)->fetch_assoc();
 $o_id=$record['id_order'];
@@ -17,12 +17,12 @@ $sql = "update users set imie='$_POST[imie]',
                          kod_pocztowy='$_POST[kodpocztowy]',
                          e_mail='$_POST[email]',
                          nr_tel=$_POST[nr_tel]
-             where id_user=1";
+             where id_user='$_SESSION[user]'";
 
 $conn->query($sql);
 
 if((float)$_POST['nr_mieszk']>0) {
-    $sql2 = "update users set nr_mieszkania='$_POST[nr_mieszk]' where id_user=1";
+    $sql2 = "update users set nr_mieszkania='$_POST[nr_mieszk]' where id_user='$_SESSION[user]'";
     $conn->query($sql2);
 }
 

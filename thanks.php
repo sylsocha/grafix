@@ -44,9 +44,20 @@
 
 
 <main>
+    <?php
+    if(!isset($_SESSION['user'])){
+        header("Location: log_in_form.php");
+        exit();
+    }
+    else {
+        echo <<<END
     <h1 style="margin: 3% auto 5% auto; text-align: center; font-size: 250%; position:relative;">dziękujemy zA zAkupy</h1>
     <a href="./index.php" id="a_thanks"><button class="zamow" id="a_thanks_button" style="text-decoration:none">Powrót do strony głównej</button></a>
     <img src="./photos/Tiny%20man%20in%20front%20of%20giant%20calendar%20cartoon%20vector%20illustration.jpg" class="img_thanks" style="margin-bottom: 15%">
+    
+END;
+    }
+    ?>
 </main>
 
 <footer>

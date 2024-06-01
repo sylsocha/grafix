@@ -44,42 +44,55 @@
 
 <main>
     <?php
+    if(!isset($_SESSION['user'])){
+        header("Location: log_in_form.php");
+        exit();
+    }
+    else {
 
-    $conn = new mysqli('localhost', 'root', '', 'grafix_database');
+        $conn = new mysqli('localhost', 'root', '', 'grafix_database');
 
-    $sql0="select id_order from orders where id_user=1 and finalised=0";
-    $conn->query($sql0);
-    $o_id=$conn->query($sql0)->fetch_assoc()['id_order'];
+        $sql0 = "select id_order from orders where id_user='$_SESSION[user]' and finalised=0";  //numer zamówienia
+        $conn->query($sql0);
+        $o_id = $conn->query($sql0)->fetch_assoc()['id_order'];
 
-    $sql="select * from users where id_user=1";
-    $conn->query($sql);
-    $record=$conn->query($sql)->fetch_assoc();
+        $sql = "select * from users where id_user='$_SESSION[user]'";   //dane użytkownika
+        $conn->query($sql);
+        $record = $conn->query($sql)->fetch_assoc();
 
-    $sql2="select p.nazwa_pay as pay from payment p join orders o on p.id_pay=o.id_pay where o.id_order='$o_id'";
-    $conn->query($sql2);
-    $pay=$conn->query($sql2)->fetch_assoc()['pay'];
+        $sql2 = "select p.nazwa_pay as pay from payment p join orders o on p.id_pay=o.id_pay where o.id_order='$o_id'"; //sposób płatności
+        $conn->query($sql2);
+        $pay = $conn->query($sql2)->fetch_assoc()['pay'];
 
-    $sql3="select s.nazwa_ship as ship from shipment s join orders o on s.id_ship=o.id_ship where o.id_order='$o_id'";
-    $conn->query($sql3);
-    $ship=$conn->query($sql3)->fetch_assoc()['ship'];
+        $sql3 = "select s.nazwa_ship as ship from shipment s join orders o on s.id_ship=o.id_ship where o.id_order='$o_id'";    //sposób dostawy
+        $conn->query($sql3);
+        $ship = $conn->query($sql3)->fetch_assoc()['ship'];
 
-    $sql4="select p.photo_link as photo,p.nazwa_prod as nazwa, c.cena_unit as cena_u, c.liczba_sztuk as sztuki, o.kwota_calosc as calosc from cart c join product p on c.id_prod=p.id_prod join orders o on c.id_order=o.id_order where o.id_order='$o_id'";
-    $conn->query($sql4);
-    $wynik=$conn->query($sql4);
+        $sql4 = "select p.photo_link as photo,
+                        p.nazwa_prod as nazwa,
+                        c.cena_unit as cena_u,
+                        c.liczba_sztuk as sztuki,
+                        o.kwota_calosc as calosc 
+                 from cart c 
+                     join product p on c.id_prod=p.id_prod 
+                     join orders o on c.id_order=o.id_order
+                 where o.id_order='$o_id'";
+        $conn->query($sql4);
+        $wynik = $conn->query($sql4);   //dane danego produktu
 
 
-    echo<<<END
+        echo <<<END
     <h1 style="margin: 3% auto; width:70%; text-align: center">podsumowanie</h1>
     <div class="dane">
         <h2 class="h2_sum_up">dane do zamówienia</h2>
         <h5 class="dana_sum">$record[imie] $record[nazwisko]</h5>
 END;
-        if(!isset($record['nr_mieszkania']))
+        if (!isset($record['nr_mieszkania']))   //adres domu, bez nr mieszkania
             echo "<h5 class='dana_sum'>ul. $record[ulica] $record[nr_domu]</h5>";
         else
             echo "<h5 class='dana_sum'>ul. $record[ulica] $record[nr_domu]/$record[nr_mieszkania]</h5>";
 
-        echo<<<END
+        echo <<<END
         <h5 class="dana_sum">$record[kod_pocztowy] $record[miasto]</h5>
         <h5 class="dana_sum">$record[e_mail]</h5>
         <h5 class="dana_sum">+48 $record[nr_tel]</h5>
@@ -88,12 +101,12 @@ END;
     </div>
 END;
 
-        while($cart=$wynik->fetch_assoc()){
+        while ($cart = $wynik->fetch_assoc()) {
 
-        $caly_prod = $cart['sztuki'] * $cart['cena_u'];
-        $calosc = number_format($cart['calosc'], 2);
+            $caly_prod = $cart['sztuki'] * $cart['cena_u'];
+            $calosc = number_format($cart['calosc'], 2);
 
-        echo<<<END
+            echo <<<END
         <div class="produkty">
             <div class="prod_in_sum">
                 <img src='$cart[photo]' alt="produkt" class="prod_photo_sum">
@@ -104,9 +117,9 @@ END;
             </div>
         </div>
 END;
-}
+        }
 
-    echo<<<END
+        echo <<<END
     <h1 style="margin: 3% auto; width:70%; text-align: center">$calosc zl</h1>
 
     <div class="sum_but_container">
@@ -114,6 +127,7 @@ END;
         <a href="./finalise.php"><button class="dalej_sum">Przejdź do płatności</button></a>
     </div>
 END;
+    }
 ?>
 
 </main>

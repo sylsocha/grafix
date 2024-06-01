@@ -43,70 +43,81 @@
 </div>
 
 <main>
-    <h2 class="h2_contact">dAne do zAmówieniA</h2>
     <?php
-    $conn = new mysqli('localhost', 'root', '', 'grafix_database');
-    $sql1 = "select * from users where id_user = 1";
-    $conn->query($sql1);
-    $wynik = $conn->query($sql1);
-    $record=$wynik->fetch_assoc();
-
-    //sprawdzanie, czy jest zalogowany?
-    if($record['id_user'] == null){
-        header("Location: ./log_in_form.php");
+    if(!isset($_SESSION['user'])){
+        header("Location: log_in_form.php");
         exit();
     }
+    else {
 
-    echo<<<END
+        $conn = new mysqli('localhost', 'root', '', 'grafix_database');
+        $sql1 = "select * from users where id_user = '$_SESSION[user]'";
+        $conn->query($sql1);
+        $wynik = $conn->query($sql1);
+        $record = $wynik->fetch_assoc();
+
+        echo <<<END
+    <h2 class="h2_contact">dAne do zAmówieniA</h2>
     <form class="formularz" action="./update.php" method="post">
         <input type="text" name="imie" value='$record[imie]'>
         <input type="text" name="nazwisko" value='$record[nazwisko]'>
 END;
-        if($record['ulica'] == null)
+        if ($record['ulica'] == null)
             echo "<input type='text' name='ulica' placeholder='Ulica' required>";
         else
             echo "<input type='text' name='ulica' value='$record[ulica]'>";
 
-        if($record['nr_domu'] == null)
+        if ($record['nr_domu'] == null)
             echo "<input type='text' name='nr_domu' placeholder='Numer domu' value='$record[nr_domu]' required>";
         else
             echo "<input type='text' name='nr_domu' value='$record[nr_domu]'>";
 
-        if($record['nr_mieszkania'] == null)
+        if ($record['nr_mieszkania'] == null)
             echo "<input type='text' name='nr_mieszk' placeholder='Numer Mieszkania'>";
         else
             echo "<input type='text' name='nr_mieszk' value='$record[nr_mieszkania]'>";
 
-        if($record['miasto'] == null)
+        if ($record['miasto'] == null)
             echo "<input type='text' name='miasto' placeholder='Miasto' required>";
         else
             echo "<input type='text' name='miasto' value='$record[miasto]'>";
 
-        if($record['kod_pocztowy'] == null)
+        if ($record['kod_pocztowy'] == null)
             echo "<input type='text' pattern='^\d{2}-\d{3}' name='kodpocztowy' placeholder='Kod pocztowy' required>";
         else
             echo "<input type='text' pattern='^\d{2}-\d{3}' name='kodpocztowy' value='$record[kod_pocztowy]'>";
 
-    echo<<<END
+        echo <<<END
         <input type="email" name="email" id="emial" value="$record[e_mail]">
         <input type="tel" name='nr_tel' value="$record[nr_tel]">
-        <label>
-            <textarea name="uwaga_znizka" class="znizka" placeholder="Jeśli zamawiasz kalendarz z danego roku, podaj nam powód dlaczego wybierasz dany rok, a dostaniesz zniżkę 5%"></textarea>
-        </label>
-        
-        <input type="checkbox" name="rodo" id="rodo" class="rodo" value="$record[id_user]" required>
+END;
+        $sql2="select count(p.rok) as rok_znizka
+               from cart c join orders o on c.id_order=o.id_order
+               join product p on c.id_prod=p.id_prod
+               where o.id_user='$_SESSION[user]' and o.finalised=0 and p.rok is not null";
+        $conn->query($sql2);
+        $r_znizka = $conn->query($sql2)->fetch_assoc()['rok_znizka'];
+        if($r_znizka>0) {
+            echo <<<END
+                <label>
+                    <textarea name="uwaga_znizka" class="znizka" placeholder="Jeśli zamawiasz kalendarz z danego roku, podaj nam powód dlaczego wybierasz dany rok, a dostaniesz zniżkę 5%"></textarea>
+                </label>
+END;
+        }
+        echo<<<END
+        <input type="checkbox" name="rodo" id="rodo" class="rodo" required>
         <label for="rodo">Akceptuję politykę prywatności</label>
 
         <div class="container_sposob">
             <h3 class="h3_sposob">sposób dostawy</h3>
             <label class="label_s">
-                <input type="radio" name="dostawa" value="1" checked>Kurier Inpost
+                <input type="radio" name="dostawa" value="1" checked>Kurier Inpost 11,99zł
             </label>
             <label class="label_s">
-                <input type="radio" name="dostawa" value="2">Kurier DPD
+                <input type="radio" name="dostawa" value="2">Kurier DPD 13,99zł
             </label>
             <label class="label_s">
-                <input type="radio" name="dostawa" value="3">Poczta polska
+                <input type="radio" name="dostawa" value="3">Poczta polska 17,20 zł
             </label>
         </div>
 
@@ -127,7 +138,7 @@ END;
     </form>
 END;
 
-
+    }
 ?>
 </main>
 
