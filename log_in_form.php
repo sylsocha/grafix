@@ -101,14 +101,24 @@
         <button type="submit" name="wyslij" class="wyslij">Zarejestruj</button>
     </form>
 
-    <form class="formularz_logowania" id="logowanie">
+    <form action="./valid_log.php" class="formularz_logowania" id="logowanie">
         <img src="photos/icons/circle-user-solid.png" class="ikona_log">
         <h2>formulArz logowAnia</h2>
 
         <input type="email" name="ad_email" id="ad_emial" placeholder="Wpisz adres e-mail" required>
-
+        <?php
+        if (isset($_SESSION['errors']['e_mail'])) {
+            echo "<p class='error'>{$_SESSION['errors']['e_mail']}</p>";
+            unset ($_SESSION['errors']['e_mail']);
+        }
+        ?>
         <input type="password" name="haslo" placeholder="Wpisz hasło" required>
-
+        <?php
+        if (isset($_SESSION['errors']['e_haslo'])) {
+            echo "<p class='error'>{$_SESSION['errors']['e_haslo']}</p>";
+            unset ($_SESSION['errors']['e_haslo']);
+        }
+        ?>
         <button type="submit" name="wyslij" class="wyslij">Zaloguj</button>
     </form>
 </main>

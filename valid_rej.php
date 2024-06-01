@@ -54,15 +54,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // POWRÓT DO RORMULARZA REJESTRACJI JEŚLI WYSTĘPUJĄ BŁĘDY
-    if ($pop_dane) {
+    if (!$pop_dane) {
         header("Location: log_in_form.php");
         exit();
     }else{
         $sql2="insert into users set imie='$imie', nazwisko='$nazwisko', haslo='$haslo', e_mail='$email', nr_tel='$tel'";
         $conn->query($sql2);
         unset($_SESSION['errors']);
-        $_SESSION['user_id'] = 4;
-        header("Location: index.php");
+        header("Location: sign_in_info.php");
         exit();
     }
 }

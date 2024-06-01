@@ -30,7 +30,10 @@
     </label>
     <nav>
         <div class="menu_elem"><a href="index.php" class="a_menu">home</a></div>
-        <div class="menu_elem"><a href="log_in_form.php" class="a_menu">logowanie / rejestracja</a></div>
+        <?php
+            echo "<div class='menu_elem'><a href='log_in_form.php' class='a_menu>logowanie / rejestracja'</a></div>"
+        ?>
+
         <div class="menu_elem"><a href="./contact.html" class="a_menu">kontakt</a></div>
         <div class="menu_elem"><a href="./news.html" class="a_menu">aktualności</a></div>
         <div class="menu_elem"><a href="./cart.php" class="a_menu">koszyk</a></div>
