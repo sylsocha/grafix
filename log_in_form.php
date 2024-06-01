@@ -54,7 +54,7 @@
         <input type="text" name="imie" placeholder='Wpisz swoje imię*' required>
         <?php
             if (isset($_SESSION['errors']['e_imie'])) {
-                echo "<p class='error'>{$_SESSION['errors']['e_imie']}</p>";
+                echo "<p style='text-align: center; color: #BF1120;'>{$_SESSION['errors']['e_imie']}</p>";
                 unset ($_SESSION['errors']['e_imie']);
             }
         ?>
@@ -62,35 +62,35 @@
         <input type="text" name="nazwisko" placeholder='Wpisz swoje nazwisko*' required>
         <?php
         if (isset($_SESSION['errors']['e_nazwisko'])) {
-            echo "<p class='error'>{$_SESSION['errors']['e_nazwisko']}</p>";
+            echo "<p style='text-align: center; color: #BF1120;'>{$_SESSION['errors']['e_nazwisko']}</p>";
             unset ($_SESSION['errors']['e_nazwisko']);
         }
         ?>
         <input type="email" name="ad_email" id="ad_emial_rej" placeholder="Wpisz adres e-mail*" required>
         <?php
         if (isset($_SESSION['errors']['e_email'])) {
-            echo "<p class='error'>{$_SESSION['errors']['e_email']}</p>";
+            echo "<p style='text-align: center; color: #BF1120;'>{$_SESSION['errors']['e_email']}</p>";
             unset ($_SESSION['errors']['e_email']);
         }
         ?>
         <input type="password" name="haslo" placeholder="Wpisz hasło (min 8 znaków)*" required>
         <?php
         if (isset($_SESSION['errors']['e_haslo'])) {
-            echo "<p class='error'>{$_SESSION['errors']['e_haslo']}</p>";
+            echo "<p style='text-align: center; color: #BF1120;'>{$_SESSION['errors']['e_haslo']}</p>";
             unset ($_SESSION['errors']['e_haslo']);
         }
         ?>
         <input type="password" name="haslo_conf" placeholder="Powtórz hasło*" required>
         <?php
         if (isset($_SESSION['errors']['e_haslo_con'])) {
-            echo "<p class='error'>{$_SESSION['errors']['e_haslo_con']}</p>";
+            echo "<p style='text-align: center; color: #BF1120;'>{$_SESSION['errors']['e_haslo_con']}</p>";
             unset ($_SESSION['errors']['e_haslo_con']);
         }
         ?>
         <input type="tel" name="nr_tel" placeholder="Podaj swój numer telefonu*">
         <?php
         if (isset($_SESSION['errors']['e_tel'])) {
-            echo "<p class='error'>{$_SESSION['errors']['e_tel']}</p>";
+            echo "<p style='text-align: center; color: #BF1120;'>{$_SESSION['errors']['e_tel']}</p>";
             unset ($_SESSION['errors']['e_tel']);
         }
         ?>
@@ -101,22 +101,16 @@
         <button type="submit" name="wyslij" class="wyslij">Zarejestruj</button>
     </form>
 
-    <form action="./valid_log.php" class="formularz_logowania" id="logowanie">
+    <form action="./valid_log.php" method="post" class="formularz_logowania" id="logowanie">
         <img src="photos/icons/circle-user-solid.png" class="ikona_log">
         <h2>formulArz logowAnia</h2>
 
         <input type="email" name="ad_email" id="ad_emial" placeholder="Wpisz adres e-mail" required>
-        <?php
-        if (isset($_SESSION['errors']['e_mail'])) {
-            echo "<p class='error'>{$_SESSION['errors']['e_mail']}</p>";
-            unset ($_SESSION['errors']['e_mail']);
-        }
-        ?>
         <input type="password" name="haslo" placeholder="Wpisz hasło" required>
         <?php
-        if (isset($_SESSION['errors']['e_haslo'])) {
-            echo "<p class='error'>{$_SESSION['errors']['e_haslo']}</p>";
-            unset ($_SESSION['errors']['e_haslo']);
+        if (isset($_SESSION['sign_in'])) {
+            echo "<p style='text-align: center; color: #BF1120;'>{$_SESSION['sign_in']}</p>";
+            unset ($_SESSION['sign_in']);
         }
         ?>
         <button type="submit" name="wyslij" class="wyslij">Zaloguj</button>

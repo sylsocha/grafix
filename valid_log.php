@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["ad_email"]);
     $haslo = $_POST["haslo"];
     $pop_dane = true;
-    $_SESSION['sign_in'] = [];
+    $_SESSION['sign_in'] = "";
 
 
     $conn = new mysqli('localhost', 'root', '', 'grafix_database');
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($email_count==0 || $haslo !== $h_baza) {
         $pop_dane=false;
-        $_SESSION['errors']['e_email'] = "Nieprawidłowy adres e-mail lub hasło.";
+        $_SESSION['sign_in'] = "Nieprawidłowy adres e-mail lub hasło.";
     }
 
     // POWRÓT DO RORMULARZA REJESTRACJI JEŚLI WYSTĘPUJĄ BŁĘDY
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: log_in_form.php");
         exit();
     }else{
-        unset($_SESSION['errors']);
+        unset($_SESSION['sign_in']);
         header("Location: index.php");
         exit();
     }
